@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitLogic - Crypto Trading Strategy Builder & Screener</title>
+    <title>BitLogic - Your Ultimate Crypto Strategy Builder & Live Market Screener</title>
+    <meta name="description" content="BitLogic is a powerful crypto screener and strategy automation tool. Build custom technical analysis strategies and scan markets 24/7.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,92 +16,223 @@
             <div class="nav-container">
                 <div class="logo">
                     <img src="app_logo.png" alt="BitLogic Logo" class="logo-img">
+                    <span class="logo-text">BitLogic</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms & Conditions</a>
-                    <a href="data-deletion.html">Data Deletion</a>
+                    <a href="#features">Features</a>
+                    <a href="#indicators">Indicators</a>
+                    <a href="#exchanges">Exchanges</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>BitLogic</h1>
-                    <h2>Advanced Crypto Trading Strategy Builder & Screener</h2>
-                    <p>Build powerful trading strategies and screen cryptocurrency markets with professional tools designed for serious traders.</p>
-                    <div class="cta-buttons">
-                        <button class="primary-btn">Get Started</button>
-                        <button class="secondary-btn">Learn More</button>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="badge">🚀 The Ultimate Trading Assistant</div>
+                    <h1>Your Ultimate <span class="highlight">Crypto Strategy Builder</span><br/>& Live Market Screener</h1>
+                    <p class="hero-subtitle">Stop staring at charts all day. BitLogic is a powerful crypto screener and strategy automation tool designed for day traders, swing traders, and crypto enthusiasts.</p>
+                    <p class="hero-description">Build your own custom technical analysis strategies and let BitLogic scan the market for you 24/7, sending instant push notifications directly to your device the moment your conditions are met. Continuously monitor hundreds of crypto pairs across multiple timeframes and multiple exchanges so you never miss a breakout or trading opportunity.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" class="download-btn google-play">
+                            <svg viewBox="0 0 512 512" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#00e676"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#ffeb3b"/><path d="M325.3 277.5L368.4 234.4l-43.1-43.1L104.6 13.2c-5.4-5.4-11.8-8.5-18.4-9.2L325.3 277.5z" fill="#ff3d00"/><path d="M325.3 234.4L104.6 498.7c-6.6-5.4-13-12.7-18.4-18.1L325.3 234.4z" fill="#00b0ff"/></svg>
+                            <div class="btn-text">
+                                <span class="btn-small">GET IT ON</span>
+                                <span class="btn-large">Google Play</span>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn windows disabled" aria-disabled="true">
+                            <svg viewBox="0 0 512 512" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="#00a4ef"/></svg>
+                            <div class="btn-text">
+                                <span class="btn-small">Coming Soon</span>
+                                <span class="btn-large">Windows Store</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
+                
                 <div class="hero-visual">
-                    <div class="logo-large">
-                        <div class="bitlogic-logo">
-                            <svg width="200" height="200" viewBox="0 0 200 200">
-                                <defs>
-                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="100" cy="100" r="80" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
-                                <circle cx="70" cy="70" r="8" fill="url(#logoGradient)"/>
-                                <circle cx="130" cy="70" r="8" fill="url(#logoGradient)"/>
-                                <circle cx="100" cy="130" r="8" fill="url(#logoGradient)"/>
-                                <circle cx="70" cy="130" r="8" fill="url(#logoGradient)"/>
-                                <circle cx="130" cy="130" r="8" fill="url(#logoGradient)"/>
-                                <line x1="70" y1="70" x2="130" y2="70" stroke="url(#logoGradient)" stroke-width="2"/>
-                                <line x1="70" y1="70" x2="100" y2="130" stroke="url(#logoGradient)" stroke-width="2"/>
-                                <line x1="130" y1="70" x2="100" y2="130" stroke="url(#logoGradient)" stroke-width="2"/>
-                                <line x1="100" y1="130" x2="70" y2="130" stroke="url(#logoGradient)" stroke-width="2"/>
-                                <line x1="100" y1="130" x2="130" y2="130" stroke="url(#logoGradient)" stroke-width="2"/>
-                            </svg>
+                    <div class="glass-card mockup">
+                        <div class="mockup-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-logo">
+                                <img src="app_logo.png" alt="BitLogic Logo" width="60">
+                            </div>
+                            <div class="pulse-container">
+                                <div class="pulse-ring"></div>
+                                <div class="pulse-ring delay"></div>
+                                <div class="mockup-title">Background Automation Active</div>
+                            </div>
+                            <div class="mockup-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Market</span>
+                                    <span class="stat-value highlight-text">Binance Futures</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Condition</span>
+                                    <span class="stat-value">RSI &lt; 30 AND MACD Cross</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Timeframes</span>
+                                    <span class="stat-value">15m, 1h, 4h</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Status</span>
+                                    <span class="stat-value success">● Scanning 24/7</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Core Features Section -->
         <section id="features" class="features">
             <div class="container">
-                <h2>Powerful Features</h2>
+                <div class="section-header">
+                    <h2>🔥 Core Features</h2>
+                    <p>Automate your crypto trading strategy with our powerful suite of tools.</p>
+                </div>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <h3>Strategy Builder</h3>
-                        <p>Create custom trading strategies with our intuitive drag-and-drop interface. No coding required.</p>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 4-4-4-4"/><path d="m8 8-4 4 4 4"/><path d="m12 4v16"/></svg>
+                        </div>
+                        <h3>Zero-Code Strategy Builder</h3>
+                        <p>Combine conditions using advanced AND/OR logic blocks without writing a single line of code.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Market Screener</h3>
-                        <p>Screen thousands of cryptocurrencies based on technical indicators, market cap, and custom criteria.</p>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3>True Background Automation</h3>
+                        <p>Your strategies run continuously in the background, even when the app is closed, pushing instant notifications when your exact setups hit.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Real-time Data</h3>
-                        <p>Access live market data and price feeds from major exchanges to make informed trading decisions.</p>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3>Simultaneous Multi-Timeframe</h3>
+                        <p>Scan across various intervals at the exact same time (1m, 5m, 15m, 1h, 4h, 1d) to catch micro momentum matching macro trends.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <h3>Frictionless Guest Mode</h3>
+                        <p>Test the core strategy builder and manual scanning tools instantly without creating an account or providing an email.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <!-- Indicators & Data Points Section -->
+        <section id="indicators" class="indicators-section">
             <div class="container">
-                <h2>About BitLogic</h2>
-                <p>BitLogic is a comprehensive crypto trading platform designed for both beginners and experienced traders. Our mission is to democratize advanced trading tools and make them accessible to everyone in the cryptocurrency market.</p>
-                <p>Whether you're looking to automate your trading strategies, screen the market for opportunities, or simply analyze market trends, BitLogic provides the tools you need to succeed in the dynamic world of cryptocurrency trading.</p>
+                <div class="section-header">
+                    <h2>📊 Supported Indicators & Data Points</h2>
+                    <p>We are currently using a total of <span class="highlight-text">124 data points</span> to power your strategies, breaking down into exactly 60 indicators/price actions and 64 candlestick patterns.</p>
+                </div>
+                
+                <div class="indicators-grid">
+                    <div class="indicator-group">
+                        <div class="group-header">
+                            <span class="count">19</span>
+                            <h3>Trend & Overlap</h3>
+                        </div>
+                        <p>SMA, EMA, MACD, Bollinger Bands, Ichimoku, Supertrend, etc.</p>
+                    </div>
+                    
+                    <div class="indicator-group">
+                        <div class="group-header">
+                            <span class="count">23</span>
+                            <h3>Momentum & Oscillators</h3>
+                        </div>
+                        <p>RSI, Stochastic, MFI, ADX, CCI, MACD, etc.</p>
+                    </div>
+                    
+                    <div class="indicator-group">
+                        <div class="group-header">
+                            <span class="count">6</span>
+                            <h3>Volatility</h3>
+                        </div>
+                        <p>ATR, Keltner Channels, Donchian Channels, etc.</p>
+                    </div>
+                    
+                    <div class="indicator-group">
+                        <div class="group-header">
+                            <span class="count">7</span>
+                            <h3>Volume</h3>
+                        </div>
+                        <p>OBV, Chaikin Money Flow, VWMA, etc.</p>
+                    </div>
+                    
+                    <div class="indicator-group">
+                        <div class="group-header">
+                            <span class="count">5</span>
+                            <h3>Price Action</h3>
+                        </div>
+                        <p>Open, High, Low, Close, Volume</p>
+                    </div>
+                    
+                    <div class="indicator-group accent-group">
+                        <div class="group-header">
+                            <span class="count highlight-badge">64</span>
+                            <h3>Candlestick Patterns</h3>
+                        </div>
+                        <p>Fully dedicated to identifying advanced candlestick formations.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="contact">
+        <!-- Exchanges Section -->
+        <section id="exchanges" class="exchanges-section">
             <div class="container">
-                <h2>Get in Touch</h2>
-                <p>Have questions or need support? We're here to help.</p>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:Support@bitlogic.info">Support@bitlogic.info</a></p>
-                    <p><strong>Website:</strong> <a href="https://bitlogic.info">bitlogic.info</a></p>
+                <div class="section-header">
+                    <h2>📈 Supported Exchanges</h2>
+                    <p>Connect and scan markets across top-tier cryptocurrency exchanges.</p>
+                </div>
+                <div class="exchange-grid">
+                    <div class="exchange-card">
+                        <h3>Binance</h3>
+                        <p>Spot & Futures</p>
+                    </div>
+                    <div class="exchange-card">
+                        <h3>Bybit</h3>
+                        <p>Spot & Futures</p>
+                    </div>
+
+                    <div class="exchange-card">
+                        <h3>CoinDCX</h3>
+                        <p>Spot & Futures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action Banner -->
+        <section class="cta-banner">
+            <div class="container text-center">
+                <h2>Take the emotion out of your trading</h2>
+                <p>Let data drive your decisions. Download BitLogic today and automate your crypto market analysis!</p>
+                <div class="cta-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" class="download-btn google-play pulse">
+                        <svg viewBox="0 0 512 512" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#00e676"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#ffeb3b"/><path d="M325.3 277.5L368.4 234.4l-43.1-43.1L104.6 13.2c-5.4-5.4-11.8-8.5-18.4-9.2L325.3 277.5z" fill="#ff3d00"/><path d="M325.3 234.4L104.6 498.7c-6.6-5.4-13-12.7-18.4-18.1L325.3 234.4z" fill="#00b0ff"/></svg>
+                        <div class="btn-text">
+                            <span class="btn-small">GET IT ON</span>
+                            <span class="btn-large">Google Play</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -105,13 +240,32 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 BitLogic. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms & Conditions</a>
-                <a href="data-deletion.html">Data Deletion</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="app_logo.png" alt="BitLogic Logo" class="logo-img">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges listed above. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Legal Policies</h4>
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="data-deletion.html">Data Deletion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2024</span> BitLogic. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
