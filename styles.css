@@ -819,3 +819,47 @@ footer {
     font-weight: 600;
 }
 
+
+
+/* Breadcrumbs */
+.breadcrumb-nav {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+}
+
+.breadcrumb-item a {
+    color: var(--accent-primary);
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.breadcrumb-item a:hover {
+    color: #fff;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    margin: 0 0.5rem;
+    color: var(--surface-lighter);
+    font-size: 1.2rem;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-secondary);
+    pointer-events: none;
+}
