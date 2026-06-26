@@ -7,7 +7,18 @@
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
-    "prefer_related_applications": false,
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "com.bitlogic.screener.pro"
+        },
+        {
+            "platform": "windows",
+            "url": "https://apps.microsoft.com/detail/9PGBXSLTP4DS",
+            "id": "9PGBXSLTP4DS"
+        }
+    ],
     "icons": [
         {
             "src": "icons/Icon-192.png",
