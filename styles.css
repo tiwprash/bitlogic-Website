@@ -956,9 +956,19 @@ footer {
     z-index: 1001;
     border-radius: 8px;
     border: 1px solid var(--surface-lighter);
-    overflow: hidden;
+    overflow: visible; /* changed from hidden so the pseudo-element can stick out */
     top: 100%;
     margin-top: 15px;
+}
+
+.nav-download-dropdown .dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: transparent;
 }
 
 .nav-download-dropdown:hover .dropdown-content {
@@ -975,8 +985,15 @@ footer {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+.dropdown-content a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
 .dropdown-content a:last-child {
     border-bottom: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .dropdown-content a:hover {
