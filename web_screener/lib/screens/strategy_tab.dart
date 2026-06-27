@@ -70,12 +70,18 @@ class _StrategyTabState extends State<StrategyTab> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            Image.asset('assets/images/logo.png', height: 24),
-            const SizedBox(width: 10),
-            const Text('Strategy Builder', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-          ],
+        title: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () => html.window.location.href = '../index.html',
+            child: Row(
+              children: [
+                Image.asset('assets/images/logo.png', height: 24),
+                const SizedBox(width: 10),
+                const Text('Strategy Builder', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+              ],
+            ),
+          ),
         ),
         elevation: 0,
         actions: [
@@ -97,6 +103,39 @@ class _StrategyTabState extends State<StrategyTab> {
           TextButton(
             onPressed: () => html.window.location.href = '../strategies/index.html',
             child: const Text('Strategies', style: TextStyle(color: Colors.white70, fontWeight: FontWeight.w500, fontSize: 14)),
+          ),
+          const SizedBox(width: 16),
+          PopupMenuButton<String>(
+            tooltip: 'Download App',
+            position: PopupMenuPosition.under,
+            offset: const Offset(0, 8),
+            color: const Color(0xFF1E293B),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              decoration: BoxDecoration(
+                color: const Color(0xFF00E676),
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: const Text('Download Free ▾', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14)),
+            ),
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'android',
+                child: Text('Android App', style: TextStyle(color: Colors.white)),
+              ),
+              const PopupMenuItem<String>(
+                value: 'windows',
+                child: Text('Windows App', style: TextStyle(color: Colors.white)),
+              ),
+            ],
+            onSelected: (String result) {
+              if (result == 'android') {
+                html.window.open('https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro', '_blank');
+              } else if (result == 'windows') {
+                html.window.open('https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare', '_blank');
+              }
+            },
           ),
           const SizedBox(width: 24),
         ],

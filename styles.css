@@ -117,12 +117,11 @@ header {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
+    padding: 140px 0 60px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 /* Background grid effect */
