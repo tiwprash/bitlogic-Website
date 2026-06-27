@@ -7,7 +7,13 @@ domain = "https://bitlogic.info"
 urls = []
 for root, dirs, files in os.walk(base_dir):
     for file in files:
-        if file.endswith('.html') and 'web_screener\\build' not in root:
+        # Exclude web_screener entirely and verified.html
+        if 'web_screener' in root:
+            continue
+        if file == 'verified.html':
+            continue
+            
+        if file.endswith('.html'):
             # Get relative path
             rel_path = os.path.relpath(os.path.join(root, file), base_dir).replace('\\', '/')
             if rel_path == "index.html":
@@ -20,14 +26,19 @@ for root, dirs, files in os.walk(base_dir):
             # Determine priority and changefreq
             priority = "0.8"
             changefreq = "weekly"
+            
             if url == f"{domain}/":
                 priority = "1.0"
                 changefreq = "daily"
-            elif "/blog/" in url:
+            elif "/crypto-screener/" in url:
                 priority = "0.9"
+                changefreq = "weekly"
+            elif "/blog/" in url:
+                priority = "0.7"
+                changefreq = "monthly"
             elif "/privacy.html" in url or "/terms.html" in url or "/data-deletion.html" in url:
                 priority = "0.3"
-                changefreq = "monthly"
+                changefreq = "yearly"
                 
             urls.append({
                 "loc": url,
@@ -54,16 +65,4 @@ sitemap_path = os.path.join(base_dir, 'sitemap.xml')
 with open(sitemap_path, 'w', encoding='utf-8') as f:
     f.write('\n'.join(xml_content))
 
-print(f"Generated sitemap.xml at {sitemap_path}")
-
-# Generate robots.txt
-robots_content = f"""User-agent: *
-Allow: /
-
-Sitemap: {domain}/sitemap.xml
-"""
-robots_path = os.path.join(base_dir, 'robots.txt')
-with open(robots_path, 'w', encoding='utf-8') as f:
-    f.write(robots_content)
-
-print(f"Generated robots.txt at {robots_path}")
+print(f"Generated updated sitemap.xml at {sitemap_path}")
