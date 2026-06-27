@@ -1,59 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bitlogic.info/</loc>
-    <lastmod>2026-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://bitlogic.info/privacy.html</loc>
-    <lastmod>2026-06-26</lastmod>
-  </url>
-  <url>
-    <loc>https://bitlogic.info/terms.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/about.html</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/data-deletion.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/privacy.html</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/terms.html</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/verified.html</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-triple-ema-cross-momentum-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-bollinger-band-squeeze-breakout-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-rsi-reversal-bounce-crypto-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-macd-zero-cross-momentum-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-macd-zero-cross-momentum-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-rsi-reversal-bounce-crypto-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-bollinger-band-squeeze-breakout-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-stochrsi-cross-momentum-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-supertrend-flip-rsi-crypto-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-supertrend-flip-rsi-crypto-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-stochrsi-cross-momentum-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-triple-ema-cross-momentum-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bitlogic.info/strategies/prebuilt-vwap-pullback-bounce-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://bitlogic.info/blog/prebuilt-vwap-pullback-bounce-screener/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/crypto-screener/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/web_screener/web/</loc>
+    <lastmod>2026-06-27T15:28:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
