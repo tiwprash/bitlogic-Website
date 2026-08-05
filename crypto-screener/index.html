@@ -38,6 +38,46 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    #bl-ad-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999999;
+      background: rgba(15, 20, 32, 0.96);
+      border-top: 1px solid rgba(148, 163, 184, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 6px 12px 8px;
+      max-height: 110px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      pointer-events: none;
+    }
+    #bl-ad-bar > * {
+      pointer-events: auto;
+    }
+    #bl-ad-bar .bl-ad-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7690;
+      margin-bottom: 4px;
+    }
+    #bl-ad-bar .bl-ad-inner {
+      width: 100%;
+      max-width: 760px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body style="background-color: #0B0E14; margin: 0; padding: 0;">
 
@@ -51,5 +91,24 @@
 
   <!-- Flutter Web Initialization -->
   <script src="flutter_bootstrap.js" async></script>
+
+  <!-- Ad placement: fixed bottom bar overlay so it never interferes with the Flutter app's own layout -->
+  <div id="bl-ad-bar">
+    <span class="bl-ad-label">Advertisement</span>
+    <div class="bl-ad-inner">
+<script>
+(function(afqa){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = afqa || {};
+s.src = "\/\/untimely-hello.com\/bwXTVSsXd.GNlQ0\/YKWzcl\/aeRmy9UuFZwUvlOkPPZTuc_yuMUj_c\/2SN\/jZEGtPNpzCIhysN\/zgYW2\/N\/QT";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+    </div>
+  </div>
 </body>
 </html>
