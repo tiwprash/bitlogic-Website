@@ -12,32 +12,63 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
     <title>About Us | BitLogic Crypto Strategy Builder</title>
-    <meta name="description" content="Learn more about BitLogic, the ultimate no code crypto strategy builder and screener. Discover our mission to empower traders with advanced tools while promoting responsible trading.">
+    <meta name="description" content="Learn more about BitLogic, the no-code crypto strategy builder and screener. Discover our mission to empower traders with advanced tools while promoting responsible trading.">
+    <link rel="canonical" href="https://bitlogic.info/about.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:title" content="About Us | BitLogic Crypto Strategy Builder">
+    <meta property="og:description" content="Learn more about BitLogic, the no-code crypto strategy builder and live market screener for Android, Windows, and the web.">
+    <meta property="og:url" content="https://bitlogic.info/about.html">
+    <meta property="og:image" content="https://bitlogic.info/app_logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | BitLogic Crypto Strategy Builder">
+    <meta name="twitter:description" content="Learn more about BitLogic, the no-code crypto strategy builder and live market screener.">
+    <meta name="twitter:image" content="https://bitlogic.info/app_logo.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitlogic.info/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://bitlogic.info/about.html" }
+  ]
+}
+</script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <header>
         <nav>
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.65rem;">
                         <img src="app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
                         <span class="logo-text">BitLogic</span>
                     </a>
                 </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="terms.html">Terms</a>
-                
+                    <a href="blog/index.html">Blog</a>
+                    <a href="crypto-screener/">Crypto Screener</a>
+
                     <div class="nav-download-dropdown">
                         <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
                         <div class="dropdown-content">
-                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank">Android App</a>
-                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank">Windows App</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Windows App</a>
                         </div>
                     </div>
                 </div>
@@ -45,27 +76,45 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <div class="legal-page">
             <h1>About BitLogic</h1>
-            
-            <p><strong>Empowering Traders with Zero-Code Automation</strong></p>
-            
+
+            <p><strong>Zero-code automation for crypto traders.</strong></p>
+
             <h2>Who We Are</h2>
-            <p>BitLogic was founded with a singular mission: to democratize algorithmic trading. For years, the ability to rapidly scan the crypto markets for complex technical conditions and build automated trading strategies was locked behind a barrier of programming knowledge. We saw traders struggling to monitor multiple timeframes across hundreds of coins simultaneously, missing out on critical opportunities.</p>
-            <p>Our team of experienced software engineers, data scientists, and veteran crypto traders came together to build a solution. The result is BitLogic—a state-of-the-art, no-code crypto strategy builder and real-time market screener designed to give everyday traders the same analytical firepower as institutional quants.</p>
-            
+            <p>BitLogic was built to make algorithmic-style market scanning accessible without requiring any programming knowledge. Traders who need to monitor multiple timeframes across many coins at once have always faced a trade-off: sit glued to charts, or learn to code. BitLogic removes that trade-off.</p>
+            <p>Our team of software engineers and crypto traders built BitLogic to be a no-code crypto strategy builder and real-time market screener, giving everyday traders a visual way to define and automate the exact setups they look for.</p>
+
             <h2>Our Mission</h2>
-            <p>We believe that technology should serve the trader, not complicate their workflow. We strive to provide unparalleled access to advanced technical indicators, backtesting paradigms, and real-time scanning through an intuitive, visual interface. Whether you're tracking a simple RSI divergence or a complex Bollinger Band squeeze combined with MACD crossovers, BitLogic does the heavy lifting so you can focus on strategy.</p>
+            <p>We believe technology should serve the trader, not complicate their workflow. BitLogic gives you access to a wide range of technical indicators and real-time scanning through an intuitive, visual interface. Whether you're tracking a simple RSI divergence or a Bollinger Band squeeze combined with a MACD crossover, BitLogic does the scanning so you can focus on strategy.</p>
 
             <h2>Why Trust Us?</h2>
-            <p>Transparency and reliability are the cornerstones of BitLogic. Our scanning engines connect directly to top-tier exchanges like Binance, Bybit, and CoinDCX to ensure you receive the most accurate and up-to-date market data. We are continuously refining our algorithms to minimize latency, ensuring that when your strategy's conditions are met, you receive a push notification instantly.</p>
-            <p>We do not manage your funds, ask for your private keys, or execute trades automatically on your behalf without your explicit permission and secure API integration. BitLogic is, at its core, an analytical tool designed to enhance your decision-making.</p>
+            <p>Our scanning engines connect directly to top-tier exchanges — Binance, Bybit, CoinDCX, Kraken, and OKX — to keep the data you see accurate and current. We continue refining our scanning pipeline to minimize latency, so that when your strategy's conditions are met, you get a notification as close to instantly as possible.</p>
+            <p>We do not manage your funds, ask for your private keys, or execute trades automatically on your behalf. BitLogic is, at its core, an analytical tool designed to support your decision-making — not replace it.</p>
 
-            <div class="disclaimer-box" style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1.5rem; margin-top: 2rem; border-radius: 4px;">
-                <h2 style="color: #ef4444; margin-top: 0;">Important Financial Disclaimer</h2>
+            <div class="ad-slot" style="margin: 2.5rem 0;">
+                <span class="ad-slot-label">Advertisement</span>
+                <div class="ad-slot-inner">
+<script>
+(function(afqa){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = afqa || {};
+s.src = "\/\/untimely-hello.com\/bwXTVSsXd.GNlQ0\/YKWzcl\/aeRmy9UuFZwUvlOkPPZTuc_yuMUj_c\/2SN\/jZEGtPNpzCIhysN\/zgYW2\/N\/QT";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+                </div>
+            </div>
+
+            <div class="disclaimer-box">
+                <h2>Important Financial Disclaimer</h2>
                 <p><strong>BitLogic does NOT provide financial, investment, or trading advice.</strong></p>
-                <p>All information, data, alerts, and strategy templates provided by BitLogic are for educational and informational purposes only. We provide software tools that assist traders in analyzing market data based on mathematical indicators, but we do not recommend or endorse any specific cryptocurrency, strategy, or trade.</p>
+                <p>All information, data, alerts, and strategy templates provided by BitLogic are for educational and informational purposes only. We provide software tools that help traders analyze market data based on mathematical indicators, but we do not recommend or endorse any specific cryptocurrency, strategy, or trade.</p>
                 <p><strong>Trading cryptocurrencies and futures involves a high degree of risk.</strong> The crypto market is highly volatile, and you can lose some or all of your initial capital. Past performance of any trading system or methodology is not necessarily indicative of future results.</p>
                 <p>You, the user, must do your own research (DYOR) and take full responsibility for your trading decisions. Never trade with money you cannot afford to lose. If you are unsure about a trade, we strongly advise consulting with a certified financial advisor before proceeding.</p>
             </div>
@@ -73,28 +122,40 @@
     </main>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>BitLogic</h3>
-                <p>Your ultimate no code crypto strategy builder and live market screener.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges listed above. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="crypto-screener/">Launch Crypto Screener</a>
+                        <a href="blog/index.html">Trading Strategies</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="about.html">About Us</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+                        <a href="data-deletion.html">Data Deletion</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Links</h3>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="crypto-screener/index.html">Live Screener</a>
-                <a href="blog/index.html">Prebuilt Strategies</a>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
             </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms & Conditions</a>
-                <a href="data-deletion.html">Data Deletion</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 BitLogic. All rights reserved.</p>
         </div>
     </footer>
+    <script src="nav.js"></script>
 </body>
 </html>

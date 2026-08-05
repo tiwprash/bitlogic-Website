@@ -12,11 +12,25 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitLogic Strategies - Crypto Trading Bot & Scanner Templates</title>
-    <meta name="description" content="Explore our library of proven crypto trading strategies. Automate high-win-rate setups like the Triple EMA Breakout and RSI Reversal Bounce directly with BitLogic.">
+    <meta name="theme-color" content="#06080f">
+    <title>BitLogic Strategies - Crypto Trading Bot &amp; Scanner Templates</title>
+    <meta name="description" content="Explore our library of prebuilt crypto trading strategies. Automate setups like the Triple EMA Breakout and RSI Reversal Bounce directly with BitLogic.">
+    <link rel="canonical" href="https://bitlogic.info/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:title" content="BitLogic Strategies - Crypto Trading Bot &amp; Scanner Templates">
+    <meta property="og:description" content="Explore our library of prebuilt crypto trading strategies you can automate instantly with BitLogic's no-code screener.">
+    <meta property="og:url" content="https://bitlogic.info/blog/">
+    <meta property="og:image" content="https://bitlogic.info/app_logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BitLogic Strategies - Crypto Trading Bot &amp; Scanner Templates">
+    <meta name="twitter:description" content="Explore our library of prebuilt crypto trading strategies you can automate instantly with BitLogic.">
+    <meta name="twitter:image" content="https://bitlogic.info/app_logo.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="preload" as="image" href="../app_logo.webp">
@@ -42,28 +56,32 @@
     </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <header>
         <nav>
             <div class="nav-container">
                 <div class="logo">
-                    <a href="../index.html" style="display: flex; align-items: center; gap: 0.75rem;">
+                    <a href="../index.html" style="display: flex; align-items: center; gap: 0.65rem;">
                         <img src="../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
                         <span class="logo-text">BitLogic</span>
                     </a>
                 </div>
-                                <div class="nav-links">
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
                     <a href="../about.html">About</a>
                     <a href="../index.html#features">Features</a>
                     <a href="../index.html#indicators">Indicators</a>
                     <a href="../index.html#exchanges">Exchanges</a>
                     <a href="../blog/index.html">Blog</a>
                     <a href="../crypto-screener/">Crypto Screener</a>
-                
+
                     <div class="nav-download-dropdown">
                         <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
                         <div class="dropdown-content">
-                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank">Android App</a>
-                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank">Windows App</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Windows App</a>
                         </div>
                     </div>
                 </div>
@@ -71,93 +89,129 @@
         </nav>
     </header>
 
-    <main>
-        <section class="features" style="padding-top: 120px; min-height: 80vh;">
+    <main id="main">
+        <section style="padding-top: calc(var(--header-h) + 64px); padding-bottom: 3rem;">
             <div class="container">
-                <div class="section-header">
-                    <h1 style="font-size: 3.5rem; margin-bottom: 1rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">BitLogic Crypto Trading Blog</h1>
-                    <p style="font-size: 1.2rem;">Read our latest posts on crypto trading, strategy tutorials, and algorithmic setups you can automate instantly. A growing library of mechanical trading systems.</p>
+                <div class="section-header blog-hero" style="max-width: 780px;">
+                    <h1>BitLogic Crypto Trading Blog</h1>
+                    <p>Prebuilt algorithmic setups you can automate instantly with BitLogic — strategy logic, risk parameters, and exactly how to run each one.</p>
                 </div>
-                
-                <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-                    
-                    <!-- Strategy 1 -->
-                    <a href="prebuilt-triple-ema-cross-momentum-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 55% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">The Triple EMA Breakout</h3>
-                        <p style="margin-bottom: 1.5rem;">Learn the exact blueprint for this high-performance setup and how to automate it across major exchanges without writing a single line of code.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+
+                <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+
+                    <a href="prebuilt-triple-ema-cross-momentum-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">55% Win Rate</div>
+                        <h3>The Triple EMA Breakout</h3>
+                        <p>The exact blueprint for this trend-following setup and how to automate it across major exchanges without writing a single line of code.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
 
-                    <!-- Strategy 2 -->
-                    <a href="prebuilt-rsi-reversal-bounce-crypto-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 58% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">RSI Reversal Bounce</h3>
-                        <p style="margin-bottom: 1.5rem;">Stop catching falling knives. Automate the RSI Reversal Bounce strategy with a 50 EMA trend filter to catch exact momentum shifts.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+                    <a href="prebuilt-rsi-reversal-bounce-crypto-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">58% Win Rate</div>
+                        <h3>RSI Reversal Bounce</h3>
+                        <p>Automate the RSI Reversal Bounce strategy with a 50 EMA trend filter to catch momentum shifts instead of catching falling knives.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
 
-                    <!-- Strategy 3 -->
-                    <a href="prebuilt-macd-zero-cross-momentum-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 53% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">MACD Zero Cross</h3>
-                        <p style="margin-bottom: 1.5rem;">Catch crypto trends before they explode. Use this early-warning system to enter trades at the exact baseline momentum shift.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+                    <a href="prebuilt-macd-zero-cross-momentum-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">53% Win Rate</div>
+                        <h3>MACD Zero Cross</h3>
+                        <p>Catch crypto trends early with this baseline momentum shift used as an early-warning entry system.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
 
-                    <!-- Strategy 4 -->
-                    <a href="prebuilt-bollinger-band-squeeze-breakout-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 62% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">Bollinger Band Squeeze</h3>
-                        <p style="margin-bottom: 1.5rem;">Ride massive crypto breakouts. Automate this strategy to catch explosive volatility expansions with an asymmetric 1:2.5 risk-to-reward ratio.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+                    <a href="prebuilt-bollinger-band-squeeze-breakout-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">62% Win Rate</div>
+                        <h3>Bollinger Band Squeeze</h3>
+                        <p>Automate this volatility-expansion strategy with an asymmetric 1:2.5 risk-to-reward ratio.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
 
-                    <!-- Strategy 5 -->
-                    <a href="prebuilt-supertrend-flip-rsi-crypto-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 59% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">SuperTrend Flip</h3>
-                        <p style="margin-bottom: 1.5rem;">Catch crypto trend reversals early. Automate the prebuilt SuperTrend + RSI strategy on Binance & Bybit with a 1:2 R:R.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+                    <a href="prebuilt-supertrend-flip-rsi-crypto-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">59% Win Rate</div>
+                        <h3>SuperTrend Flip</h3>
+                        <p>Catch crypto trend reversals early by automating the prebuilt SuperTrend + RSI strategy with a 1:2 R:R.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
 
-                    <!-- Strategy 6 -->
-                    <a href="prebuilt-stochrsi-cross-momentum-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 56% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">StochRSI Cross</h3>
-                        <p style="margin-bottom: 1.5rem;">Catch explosive short-term momentum changes. Automate the prebuilt StochRSI Cross strategy on Binance, Bybit, & CoinDCX.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+                    <a href="prebuilt-stochrsi-cross-momentum-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">56% Win Rate</div>
+                        <h3>StochRSI Cross</h3>
+                        <p>Catch explosive short-term momentum changes by automating the StochRSI Cross strategy on Binance, Bybit, &amp; CoinDCX.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
 
-                    <!-- Strategy 7 -->
-                    <a href="prebuilt-vwap-pullback-bounce-screener/index.html" class="feature-card" style="display: block; text-decoration: none; border-color: rgba(16, 185, 129, 0.2);">
-                        <div class="badge" style="margin-bottom: 1rem;">🔥 63% Win Rate</div>
-                        <h3 style="font-size: 1.5rem;">VWAP Pullback</h3>
-                        <p style="margin-bottom: 1.5rem;">Trade like an institution. Automate the prebuilt VWAP Pullback strategy on the 5M chart for Binance & Bybit.</p>
-                        <div style="color: var(--accent-primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Full Strategy 
+                    <a href="prebuilt-vwap-pullback-bounce-screener/index.html" class="feature-card blog-card">
+                        <div class="win-rate">63% Win Rate</div>
+                        <h3>VWAP Pullback</h3>
+                        <p>Automate the VWAP Pullback strategy on the 5-minute chart for Binance &amp; Bybit to trade institutional support levels.</p>
+                        <div class="read-more">
+                            Read Full Strategy
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </a>
-                    
+
+                </div>
+
+                <div class="ad-slot">
+                    <span class="ad-slot-label">Advertisement</span>
+                    <div class="ad-slot-inner">
+<script>
+(function(afqa){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = afqa || {};
+s.src = "\/\/untimely-hello.com\/bwXTVSsXd.GNlQ0\/YKWzcl\/aeRmy9UuFZwUvlOkPPZTuc_yuMUj_c\/2SN\/jZEGtPNpzCIhysN\/zgYW2\/N\/QT";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner-wrap section-alt" style="padding-top: 2rem;">
+            <div class="cta-banner">
+                <div class="container text-center">
+                    <h2>Stop reading charts. Start automating them.</h2>
+                    <p>Every strategy above ships as a one-tap prebuilt template inside BitLogic. Pick one, choose your exchanges, and let it scan for you.</p>
+                    <div class="cta-actions">
+                        <a href="../crypto-screener/" class="download-btn primary-download">
+                            <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#05130d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            <div class="btn-text">
+                                <span class="btn-small">TRY IT NOW</span>
+                                <span class="btn-large">Web Screener</span>
+                            </div>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener" class="download-btn pulse">
+                            <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#00e676"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#ffeb3b"/><path d="M325.3 277.5L368.4 234.4l-43.1-43.1L104.6 13.2c-5.4-5.4-11.8-8.5-18.4-9.2L325.3 277.5z" fill="#ff3d00"/><path d="M325.3 234.4L104.6 498.7c-6.6-5.4-13-12.7-18.4-18.1L325.3 234.4z" fill="#00b0ff"/></svg>
+                            <div class="btn-text">
+                                <span class="btn-small">GET IT ON</span>
+                                <span class="btn-large">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -171,6 +225,7 @@
                         <img src="../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
                         <span class="logo-text">BitLogic</span>
                     </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for Android, Windows, and the web.</p>
                     <p class="disclaimer">
                         <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges listed above. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
                     </p>
@@ -188,11 +243,11 @@
                     </div>
                 </div>
                 <div class="footer-links-group">
-                    <h4>Company & Legal</h4>
+                    <h4>Company &amp; Legal</h4>
                     <div class="footer-links">
                         <a href="../about.html">About Us</a>
                         <a href="../privacy.html">Privacy Policy</a>
-                        <a href="../terms.html">Terms & Conditions</a>
+                        <a href="../terms.html">Terms &amp; Conditions</a>
                         <a href="../data-deletion.html">Data Deletion</a>
                     </div>
                 </div>
@@ -202,8 +257,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="../nav.js"></script>
 </body>
 </html>
