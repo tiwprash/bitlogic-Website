@@ -879,36 +879,6 @@ section {
 }
 
 /* ==========================================================================
-   Ad Slot
-   ========================================================================== */
-.ad-slot {
-    max-width: 760px;
-    margin: 3rem auto;
-    padding: 1.1rem 1.25rem;
-    background: var(--surface-1);
-    border: 1px dashed var(--border-color-strong);
-    border-radius: var(--radius-md);
-    text-align: center;
-}
-
-.ad-slot-label {
-    display: block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-    margin-bottom: 0.7rem;
-}
-
-.ad-slot-inner {
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* ==========================================================================
    Footer
    ========================================================================== */
 footer {
