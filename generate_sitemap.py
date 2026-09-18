@@ -10,7 +10,7 @@ for root, dirs, files in os.walk(base_dir):
         # Exclude web_screener entirely and verified.html
         if 'web_screener' in root:
             continue
-        if file == 'verified.html':
+        if file in ('verified.html', 'app.html'):
             continue
             
         if file.endswith('.html'):

@@ -13,20 +13,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#06080f">
-    <title>BitLogic - No-Code Crypto Strategy Builder & Live Market Screener</title>
-    <meta name="description" content="BitLogic is a no-code crypto strategy builder and live crypto screener for Android and Windows. Scan Binance, Bybit, CoinDCX, Kraken & OKX 24/7 across 124 indicators and get instant push notifications — free to start.">
+    <title>BitLogic Crypto Alert Screener – Free Alerts & No-Code Strategy Builder</title>
+    <meta name="description" content="BitLogic is a free crypto screener and alert app for Android and Windows. Get liquidation, funding rate, volume and multi-indicator alerts across 9 exchanges, or build your own strategy with no code. No signup needed.">
     <link rel="canonical" href="https://bitlogic.info/">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="BitLogic">
-    <meta property="og:title" content="BitLogic - No-Code Crypto Strategy Builder & Live Market Screener">
-    <meta property="og:description" content="Build crypto trading strategies visually and scan Binance, Bybit, CoinDCX, Kraken & OKX 24/7 across 124 indicators. Free no-code screener for Android, Windows, and the web.">
+    <meta property="og:title" content="BitLogic Crypto Alert Screener – Free Alerts & No-Code Strategy Builder">
+    <meta property="og:description" content="Free real-time crypto alerts across 9 exchanges, plus a no-code strategy builder. Android, Windows, and the web. No signup needed.">
     <meta property="og:url" content="https://bitlogic.info/">
     <meta property="og:image" content="https://bitlogic.info/app_logo.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BitLogic - No-Code Crypto Strategy Builder & Live Market Screener">
-    <meta name="twitter:description" content="Build crypto trading strategies visually and scan 5 major exchanges 24/7 across 124 indicators. Free to start, no coding required.">
+    <meta name="twitter:title" content="BitLogic Crypto Alert Screener – Free Alerts & No-Code Strategy Builder">
+    <meta name="twitter:description" content="Free real-time crypto alerts across 9 exchanges, plus a no-code strategy builder. No signup needed.">
     <meta name="twitter:image" content="https://bitlogic.info/app_logo.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,9 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "BitLogic",
+  "name": "BitLogic Crypto Alert Screener",
+  "url": "https://bitlogic.info/",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro",
   "operatingSystem": "Android, Windows, Web",
   "applicationCategory": "FinanceApplication",
   "offers": {
@@ -60,7 +62,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "No-code crypto strategy builder and live market screener covering Binance, Bybit, CoinDCX, Kraken and OKX."
+  "description": "Free real-time crypto screener and alert app with liquidation, funding rate, open interest, volume spike, price move and multi-condition alerts across Binance, Bybit, CoinDCX, OKX, KuCoin, Kraken, Bitstamp, VALR and Upbit, plus a no-code strategy builder."
 }
     </script>
     <script type="application/ld+json">
@@ -73,7 +75,7 @@
       "name": "Is BitLogic free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can download and use the basic features of the BitLogic crypto screener for free on Android and Windows, and try the core screener directly on this website."
+        "text": "Yes. All six alert types and the screener are free on Android and Windows, and you can try the core screener on this website. The free app is supported by ads; BitLogic Pro adds Telegram delivery, unlimited scans, an ad-free experience and priority support."
       }
     },
     {
@@ -81,7 +83,7 @@
       "name": "Do I need to know how to code to use BitLogic?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No coding experience is required. BitLogic is a 100% no-code crypto strategy builder with a visual drag-and-drop interface."
+        "text": "No coding experience is required. BitLogic is a no-code crypto strategy builder where you combine conditions with AND/OR logic."
       }
     },
     {
@@ -89,7 +91,7 @@
       "name": "Which exchanges are supported?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BitLogic currently supports real-time market scanning for Binance, Bybit, CoinDCX, Kraken, and OKX."
+        "text": "BitLogic supports real-time market scanning for Binance, Bybit, CoinDCX, OKX, KuCoin, Kraken, Bitstamp, VALR and Upbit."
       }
     },
     {
@@ -98,6 +100,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No. BitLogic offers a frictionless Guest Mode so you can test the strategy builder and scanner instantly without signing up or providing an email."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does BitLogic ask for my exchange API keys or handle my funds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. BitLogic never asks for your exchange API private keys and never touches your funds."
       }
     },
     {
@@ -141,6 +151,7 @@
                 <div class="nav-links">
                     <a href="about.html">About</a>
                     <a href="#features">Features</a>
+                    <a href="#alerts">Alerts</a>
                     <a href="#indicators">Indicators</a>
                     <a href="#exchanges">Exchanges</a>
                     <a href="blog/index.html">Blog</a>
@@ -163,10 +174,10 @@
         <section class="hero" id="home">
             <div class="hero-container">
                 <div class="hero-content">
-                    <div class="eyebrow"><span class="dot"></span>No-Code Crypto Screener</div>
-                    <h1>Build a <span class="highlight">crypto trading strategy</span> without writing a line of code</h1>
-                    <p class="hero-subtitle">A visual strategy builder and live market screener for Android, Windows, and the web — made for traders who are tired of staring at charts.</p>
-                    <p class="hero-description">Set your conditions once — RSI below 30, an EMA cross, a MACD divergence, or any combination of them. BitLogic scans Binance, Bybit, CoinDCX, Kraken, and OKX around the clock and notifies you the moment your setup fires.</p>
+                    <div class="eyebrow"><span class="dot"></span>Free crypto alerts · No signup</div>
+                    <h1>Real-time <span class="highlight">crypto alerts</span> and a no-code strategy builder</h1>
+                    <p class="hero-subtitle">Stop staring at charts 24/7. BitLogic scans hundreds of coins for you and sends an instant push alert the moment your setup triggers.</p>
+                    <p class="hero-description">Set your conditions once — RSI below 30, an EMA cross, a MACD divergence, or any combination of them. BitLogic scans Binance, Bybit, CoinDCX, OKX, KuCoin, Kraken, Bitstamp, VALR and Upbit, and notifies you the moment your setup fires.</p>
 
                     <div class="hero-actions">
                         <a href="crypto-screener/" class="download-btn primary-download">
@@ -195,8 +206,8 @@
 
                     <div class="stat-strip">
                         <div class="stat"><strong>124</strong><span>Indicators &amp; data points</span></div>
-                        <div class="stat"><strong>5</strong><span>Exchanges scanned</span></div>
-                        <div class="stat"><strong>6</strong><span>Timeframes at once</span></div>
+                        <div class="stat"><strong>9</strong><span>Exchanges scanned</span></div>
+                        <div class="stat"><strong>6</strong><span>Free alert types</span></div>
                         <div class="stat"><strong>$0</strong><span>To get started</span></div>
                     </div>
                 </div>
@@ -206,7 +217,7 @@
                     <div class="mockup-frame">
                         <img src="App%20Images/unnamed.webp" alt="BitLogic no-code strategy builder screenshot" width="320" height="640">
                     </div>
-                    <div class="floating-chip chip-1"><span class="chip-dot"></span>Scanning 5 exchanges</div>
+                    <div class="floating-chip chip-1"><span class="chip-dot"></span>Scanning 9 exchanges</div>
                     <div class="floating-chip chip-2"><span class="chip-dot"></span>No account required</div>
                 </div>
             </div>
@@ -228,13 +239,41 @@
                     <div class="step-card">
                         <span class="step-num">STEP 02</span>
                         <h3>Choose exchanges &amp; timeframes</h3>
-                        <p>Select from Binance, Bybit, CoinDCX, Kraken, and OKX, and scan multiple timeframes simultaneously — from 1 minute to 1 day.</p>
+                        <p>Select from nine exchanges, including Binance, Bybit, CoinDCX and OKX, and scan multiple timeframes simultaneously — from 1 minute to 1 day.</p>
                     </div>
                     <div class="step-card">
                         <span class="step-num">STEP 03</span>
                         <h3>Get notified instantly</h3>
                         <p>BitLogic runs your strategy in the background and sends a push notification the second a coin matches your exact setup.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alerts -->
+        <section id="alerts">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Six real-time alert types, free</h2>
+                    <p>Advanced alerts that other apps lock behind a subscription are included in BitLogic at no cost.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card"><h3>Liquidation alerts</h3><p>Know when large forced liquidations hit Binance or Bybit, before the cascade moves price.</p></div>
+                    <div class="feature-card"><h3>Funding rate alerts</h3><p>Catch extreme funding that can signal an overleveraged, reversal-prone market.</p></div>
+                    <div class="feature-card"><h3>Open interest alerts</h3><p>Spot sudden surges or drops in positioning early.</p></div>
+                    <div class="feature-card"><h3>Volume spike alerts</h3><p>See unusual volume before price fully reacts.</p></div>
+                    <div class="feature-card"><h3>Price move alerts</h3><p>Get pinged the second a coin moves fast in either direction.</p></div>
+                    <div class="feature-card"><h3>Multi-condition alerts</h3><p>Combine RSI, EMA, MACD, volume and 60+ indicators with AND/OR logic on any timeframe.</p></div>
+                </div>
+                <div class="pro-card" style="margin-top: 2.5rem;">
+                    <h3>BitLogic Pro</h3>
+                    <p>Everything above stays free. Upgrade for more:</p>
+                    <ul>
+                        <li>Alerts delivered to Telegram</li>
+                        <li>Unlimited scans</li>
+                        <li>Ad-free experience</li>
+                        <li>Priority support</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -344,31 +383,44 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Supported Exchanges</h2>
-                    <p>Connect and scan markets across top-tier cryptocurrency exchanges, spot and futures.</p>
+                    <p>Scan markets across nine cryptocurrency exchanges from a single screener.</p>
                 </div>
                 <div class="exchange-grid">
                     <div class="exchange-card">
                         <h3>Binance</h3>
-                        <p>Spot &amp; Futures</p>
-                        <p class="exchange-kw">Binance futures screener free</p>
+                        <p>Global liquidity &amp; futures</p>
                     </div>
                     <div class="exchange-card">
                         <h3>Bybit</h3>
-                        <p>Spot &amp; Futures</p>
-                        <p class="exchange-kw">Bybit screener free</p>
+                        <p>Global liquidity &amp; futures</p>
                     </div>
                     <div class="exchange-card">
                         <h3>CoinDCX</h3>
-                        <p>Spot &amp; Futures</p>
-                        <p class="exchange-kw">CoinDCX futures scanner</p>
-                    </div>
-                    <div class="exchange-card">
-                        <h3>Kraken</h3>
-                        <p>Spot &amp; Futures</p>
+                        <p>India's leading exchange</p>
                     </div>
                     <div class="exchange-card">
                         <h3>OKX</h3>
-                        <p>Spot &amp; Futures</p>
+                        <p>Altcoin tracking</p>
+                    </div>
+                    <div class="exchange-card">
+                        <h3>KuCoin</h3>
+                        <p>Altcoin tracking</p>
+                    </div>
+                    <div class="exchange-card">
+                        <h3>Kraken</h3>
+                        <p>Altcoin tracking</p>
+                    </div>
+                    <div class="exchange-card">
+                        <h3>Bitstamp</h3>
+                        <p>Fiat-to-crypto markets</p>
+                    </div>
+                    <div class="exchange-card">
+                        <h3>VALR</h3>
+                        <p>Fiat-to-crypto markets</p>
+                    </div>
+                    <div class="exchange-card">
+                        <h3>Upbit</h3>
+                        <p>Fiat-to-crypto markets</p>
                     </div>
                 </div>
             </div>
@@ -410,19 +462,23 @@
                 </div>
                 <div class="faq-item">
                     <h3>Is BitLogic free to use?</h3>
-                    <p>Yes, you can download and use the basic features of the BitLogic crypto screener for free on Android and Windows, and try the core screener directly on this website.</p>
+                    <p>Yes. All six alert types and the screener are free on Android and Windows, and you can try the core screener on this website. The free app is supported by ads; BitLogic Pro adds Telegram delivery, unlimited scans, an ad-free experience and priority support.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Do I need to know how to code to use BitLogic?</h3>
-                    <p>No coding experience is required. BitLogic is a 100% no-code crypto strategy builder with a visual drag-and-drop interface.</p>
+                    <p>No coding experience is required. BitLogic is a no-code crypto strategy builder where you combine conditions with AND/OR logic.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Which exchanges are supported?</h3>
-                    <p>BitLogic currently supports real-time market scanning for Binance, Bybit, CoinDCX, Kraken, and OKX.</p>
+                    <p>BitLogic supports real-time market scanning for Binance, Bybit, CoinDCX, OKX, KuCoin, Kraken, Bitstamp, VALR and Upbit.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Do I need to create an account to try BitLogic?</h3>
                     <p>No. BitLogic offers a frictionless Guest Mode so you can test the strategy builder and scanner instantly without signing up or providing an email.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does BitLogic ask for my exchange API keys or handle my funds?</h3>
+                    <p>No. BitLogic never asks for your exchange API private keys and never touches your funds.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Does BitLogic give financial advice or trade for me?</h3>

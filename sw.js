@@ -1,6 +1,10 @@
-self.options = {
-    "domain": "5gvci.com",
-    "zoneId": 11316715
-}
-self.lary = ""
-importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+// Legacy service worker left over from a removed third-party ad integration.
+// It no longer loads any third-party code; it simply unregisters itself so that
+// browsers which registered the old worker are cleaned up on their next visit.
+self.addEventListener('install', function () {
+    self.skipWaiting();
+});
+
+self.addEventListener('activate', function (event) {
+    event.waitUntil(self.registration.unregister());
+});
