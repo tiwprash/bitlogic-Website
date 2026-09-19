@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Funding Rate Alerts Explained: Trading Crowded Positions</title>
+    <meta name="description" content="What crypto funding rates mean, why extreme funding signals a crowded market, and how to set funding rate alerts that fire on real extremes, not noise.">
+    <link rel="canonical" href="https://bitlogic.info/blog/funding-rate-alerts-explained/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:title" content="Funding Rate Alerts Explained: Trading Crowded Positions">
+    <meta property="og:description" content="What funding rates mean, why extreme funding signals a crowded market, and how to set alerts that fire on real extremes.">
+    <meta property="og:url" content="https://bitlogic.info/blog/funding-rate-alerts-explained/">
+    <meta property="og:image" content="https://bitlogic.info/blog/funding-rate-alerts-explained/images/01-funding-alert-settings.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Funding Rate Alerts Explained: Trading Crowded Positions">
+    <meta name="twitter:description" content="What funding rates mean, why extreme funding signals a crowded market, and how to set alerts that fire on real extremes.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/funding-rate-alerts-explained/images/01-funding-alert-settings.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Funding Rate Alerts Explained: Trading Crowded Positions",
+      "description": "What crypto funding rates mean, how to read extreme funding, and how to configure funding rate alerts.",
+      "image": "https://bitlogic.info/blog/funding-rate-alerts-explained/images/01-funding-alert-settings.webp",
+      "datePublished": "2026-09-19",
+      "dateModified": "2026-09-19",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/funding-rate-alerts-explained/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a normal funding rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Around 0.01% per 8-hour interval is the usual baseline, roughly 11% annualized. Sustained readings above 0.05% mean positioning is getting one-sided; 0.20% and above is heavily crowded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does negative funding mean the price will go up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Negative funding means shorts are paying longs, so the crowd is positioned short. That raises squeeze risk if price turns, but funding can stay negative throughout a downtrend. It measures crowding, not direction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who pays the funding rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whichever side is crowded. Positive funding: longs pay shorts. Negative funding: shorts pay longs. It is paid between traders, not to the exchange."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What threshold should I set for funding rate alerts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "0.05% to 0.10% suits most traders. Use 0.20% or higher if you only want genuine extremes, and 0.01% if you want to watch the whole market's positioning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do funding alerts work when the app is closed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. They arrive as push notifications with the app closed, and on Pro they are delivered to Telegram as well."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bitlogic.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://bitlogic.info/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Funding Rate Alerts Explained",
+          "item": "https://bitlogic.info/blog/funding-rate-alerts-explained/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../index.html" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../index.html#features">Features</a>
+                    <a href="../../index.html#indicators">Indicators</a>
+                    <a href="../../index.html#exchanges">Exchanges</a>
+                    <a href="../../blog/index.html">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Windows App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../index.html">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Funding Rate Alerts Explained</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Explainer</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-09-19">Sep 19, 2026</time></span>
+                <span>Updated <time datetime="2026-09-19">Sep 19, 2026</time></span>
+            </div>
+
+            <h1>Funding Rate Alerts Explained: Trading Crowded Positions</h1>
+
+            <p>Funding rate is the closest thing crypto has to a crowd meter. It tells you which side of the market is paying to stay in its trade, and how much that privilege is costing them.</p>
+
+            <p>When funding goes extreme, it means positioning has become lopsided. That does not guarantee a reversal, but it does tell you where the squeeze risk sits.</p>
+
+            <p>This guide covers what funding actually is, how to read the number, what counts as extreme, and how funding rate alerts tell you the moment a market gets crowded.</p>
+
+            <div class="post-callout"><strong>Try it free:</strong> switch on funding rate alerts in <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">the BitLogic app</a>, or explore the scanner first in the <a href="../../crypto-screener/">free web screener</a>.</div>
+
+            <h2>What Is a Funding Rate?</h2>
+            <p>A perpetual futures contract never expires. That creates a problem: with no expiry to force convergence, nothing stops the contract price drifting away from the spot price.</p>
+            <p>Funding is the fix. Every few hours, one side pays the other:</p>
+            <ul>
+                <li><strong>Positive funding:</strong> the perp trades above spot. Longs pay shorts. The crowd is long.</li>
+                <li><strong>Negative funding:</strong> the perp trades below spot. Shorts pay longs. The crowd is short.</li>
+            </ul>
+            <p>The payment makes the crowded side expensive to hold, which nudges the contract back toward spot. On Binance, funding settles every 8 hours by default (at 00:00, 08:00 and 16:00 UTC), and some contracts move to 4-hour or 1-hour intervals when rates hit their caps. The payment goes directly between traders, not to the exchange. See <a href="https://www.binance.com/en/support/faq/introduction-to-binance-futures-funding-rates-360033525031" target="_blank" rel="noopener">Binance's funding rate documentation</a> for the exact mechanics.</p>
+            <p>Two consequences worth internalizing:</p>
+            <ol>
+                <li><strong>Funding is a cost you pay for holding, not a fee on trading.</strong> Scalpers rarely notice it. Anyone holding leverage for days absolutely does.</li>
+                <li><strong>The sign tells you the consensus.</strong> Persistently positive funding means the market is paying a premium to be long, which is the definition of a crowded trade.</li>
+            </ol>
+
+            <h2>Reading the Number</h2>
+            <p>Funding is quoted per interval, not per year, which is why it looks small until you annualize it. The table below assumes the standard 8-hour interval.</p>
+
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead><tr><th>Funding rate (per 8h)</th><th>Per day</th><th>Roughly per year</th><th>What it says</th></tr></thead>
+                    <tbody><tr><td>0.01% (the "normal" baseline)</td><td>0.03%</td><td>~11%</td><td>Balanced market</td></tr><tr><td>0.05%</td><td>0.15%</td><td>~55%</td><td>Getting one-sided</td></tr><tr><td>0.10%</td><td>0.30%</td><td>~110%</td><td>Crowded</td></tr><tr><td>0.20%</td><td>0.60%</td><td>~220%</td><td>Heavily crowded</td></tr><tr><td>0.60%</td><td>1.80%</td><td>~657%</td><td>Extreme: rare, and it does not last</td></tr></tbody>
+                </table>
+            </div>
+
+            <p>Annualized figures assume the rate persists, which it usually does not. They are there to show what the market is willing to pay right now.</p>
+            <p>At 0.20% per interval, longs are paying roughly 0.6% a day just to keep the position open. Price has to keep moving their way simply to break even. That is the pressure that makes crowded trades unstable.</p>
+
+            <h2>Why Extreme Funding Matters</h2>
+            <p>Three things follow from a very high funding rate, and only the first is certain:</p>
+            <ol>
+                <li><strong>Holding costs money.</strong> Certain. If you are on the paying side, the clock is working against you.</li>
+                <li><strong>Positioning is lopsided.</strong> Very likely. Funding is a price: it went up because demand for that side went up.</li>
+                <li><strong>A squeeze becomes more likely.</strong> Possible, not guaranteed. Crowded leveraged positioning is exactly what fuels a cascade when price turns, because everyone is offside at the same level.</li>
+            </ol>
+            <p>The mistake people make is treating high funding as a countertrend signal on its own. Funding can stay extreme through an entire trend while every fader gets run over. Treat it as fuel, not as a trigger: it tells you how violent a move would be if one started, not that one is starting.</p>
+            <p>Funding pairs naturally with liquidation data for this reason: funding shows the crowd building, liquidations show it being cleared out. <a href="../crypto-liquidation-alerts-explained/index.html">Read the liquidation alerts explainer</a> for the other half of the story.</p>
+
+            <h2>What It Costs in Practice</h2>
+            <p>Percentages per eight hours are hard to feel. Money is not. Take a $5,000 position at 10&times; leverage ($50,000 of exposure) on the paying side of funding:</p>
+
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead><tr><th>Funding rate</th><th>Cost per interval</th><th>Cost per day</th><th>Cost per week</th></tr></thead>
+                    <tbody><tr><td>0.01%</td><td>$5</td><td>$15</td><td>$105</td></tr><tr><td>0.05%</td><td>$25</td><td>$75</td><td>$525</td></tr><tr><td>0.10%</td><td>$50</td><td>$150</td><td>$1,050</td></tr><tr><td>0.20%</td><td>$100</td><td>$300</td><td>$2,100</td></tr></tbody>
+                </table>
+            </div>
+
+            <p>At 0.20%, that position bleeds $300 a day against $5,000 of your own capital: 6% of your margin per day before price moves at all. Hold it a week and funding alone has taken over 40% of your margin.</p>
+            <p>This is why crowded positioning is unstable. It is not sentiment; it is a bill arriving every eight hours, and it forces the crowded side to either be right quickly or get out.</p>
+
+            <h2>Setting Up Funding Rate Alerts</h2>
+            <p>BitLogic polls perpetual futures funding across the market and alerts you when a symbol clears the threshold you set.</p>
+
+            <figure class="blog-shot">
+                <img src="images/01-funding-alert-settings.webp" alt="BitLogic funding rate alert settings showing a 0.01% alert threshold" width="540" height="565" loading="lazy">
+                <figcaption>Funding rate alert settings with the threshold field.</figcaption>
+            </figure>
+
+            <p>The default is 0.01%, which is the ordinary baseline, useful if you want to see the whole landscape. Most traders want less than that.</p>
+
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead><tr><th>Threshold</th><th>Fires when</th><th>Suits</th></tr></thead>
+                    <tbody><tr><td>0.005%</td><td>Almost anything off-neutral</td><td>Research, not alerts</td></tr><tr><td>0.01%</td><td>Normal-to-elevated</td><td>Watching the whole market</td></tr><tr><td>0.05%</td><td>Clearly one-sided</td><td>Most traders</td></tr><tr><td>0.10%</td><td>Crowded</td><td>Swing traders</td></tr><tr><td>0.20%</td><td>Heavily crowded</td><td>Squeeze hunters</td></tr><tr><td>0.60%</td><td>Extremes</td><td>Rare events only</td></tr></tbody>
+                </table>
+            </div>
+
+            <p>0.05% to 0.10% is the sweet spot for most people: frequent enough to catch real crowding, quiet enough that each alert means something.</p>
+            <p>The alert names the symbol, the rate and which side is paying, so you can tell a crowded-long market from a crowded-short one immediately.</p>
+
+            <h2>Why You Won't Get Spammed</h2>
+            <p>A naive funding alert would re-fire every poll for as long as a symbol stays elevated. On a busy day, that is hundreds of notifications about the same handful of coins. The feed is designed against that:</p>
+            <ul>
+                <li><strong>It re-alerts on change, not on persistence.</strong> A symbol that is simply still extreme does not notify you again. It has to cross into a higher tier, flip direction, or keep growing.</li>
+                <li><strong>A quiet window between repeats.</strong> Once a symbol has alerted, it waits hours before it can alert again, and even then only if the rate has grown meaningfully, not drifted sideways.</li>
+                <li><strong>No restart floods.</strong> When the backend restarts, the first pass records where every symbol already sits without broadcasting. Otherwise a routine deploy would fire hundreds of alerts for conditions that were already true.</li>
+            </ul>
+            <p>That last one is the difference between an alert service you keep and one you mute in week two.</p>
+
+            <figure class="blog-shot">
+                <img src="images/02-alert-feeds.webp" alt="BitLogic alert feeds including funding rates, volume spikes, price anomalies and open interest" width="540" height="590" loading="lazy">
+                <figcaption>The Funding Rates feed in Smart Alerts, alongside the other feeds.</figcaption>
+            </figure>
+
+            <p>Funding sits alongside liquidations, volume spikes, price anomalies and open interest, each with its own threshold and each switchable on its own. See the <a href="../../index.html#alerts">full list of BitLogic alert types</a>. <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Download BitLogic free on Google Play</a> to switch on funding rate alerts in a minute.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">What is a normal funding rate?</h3>
+            <p>Around 0.01% per 8-hour interval is the usual baseline, roughly 11% annualized. Sustained readings above 0.05% mean positioning is getting one-sided; 0.20% and above is heavily crowded.</p>
+
+            <h3 class="faq-q">Does negative funding mean the price will go up?</h3>
+            <p>No. Negative funding means shorts are paying longs, so the crowd is positioned short. That raises squeeze risk if price turns, but funding can stay negative throughout a downtrend. It measures crowding, not direction.</p>
+
+            <h3 class="faq-q">Who pays the funding rate?</h3>
+            <p>Whichever side is crowded. Positive funding: longs pay shorts. Negative funding: shorts pay longs. It is paid between traders, not to the exchange.</p>
+
+            <h3 class="faq-q">What threshold should I set for funding rate alerts?</h3>
+            <p>0.05% to 0.10% suits most traders. Use 0.20% or higher if you only want genuine extremes, and 0.01% if you want to watch the whole market's positioning.</p>
+
+            <h3 class="faq-q">Do funding alerts work when the app is closed?</h3>
+            <p>Yes. They arrive as push notifications with the app closed, and on Pro they are delivered to Telegram as well.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>Funding rates tell you what the crowd is paying to hold its opinion. When that cost spikes, positioning is lopsided and the market has become fragile, whichever way it eventually breaks.</p>
+            <p>Set your threshold where crowding becomes interesting to you, read the sign to see which side is trapped, and use funding as context alongside price and liquidations rather than as a signal on its own.</p>
+            <p><a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Download BitLogic free on Google Play</a>, switch on funding rate alerts in a minute, and start the 14-day Pro trial when you want them delivered to Telegram.</p>
+            <p class="post-disclaimer">Educational content only, not financial advice. Funding cuts both ways, and crowded trades can stay crowded far longer than a position can survive.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#00e676"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#ffeb3b"/><path d="M325.3 277.5L368.4 234.4l-43.1-43.1L104.6 13.2c-5.4-5.4-11.8-8.5-18.4-9.2L325.3 277.5z" fill="#ff3d00"/><path d="M325.3 234.4L104.6 498.7c-6.6-5.4-13-12.7-18.4-18.1L325.3 234.4z" fill="#00b0ff"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">GET IT ON</span>
+                        <span class="btn-large">Google Play</span>
+                    </div>
+                </a>
+                <a href="../../crypto-screener/" class="ghost-btn">Try the free web screener →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../crypto-liquidation-alerts-explained/index.html" class="related-card">
+                        <h4>Crypto Liquidation Alerts Explained</h4>
+                        <p>The other half of the crowding story: forced closes.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../how-to-screen-crypto-on-coindcx/index.html" class="related-card">
+                        <h4>How to Screen Crypto on CoinDCX</h4>
+                        <p>Build a strategy, scan every pair, and get alerts.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../bitlogic-vs-tradingview-vs-3commas/index.html" class="related-card">
+                        <h4>BitLogic vs TradingView vs 3Commas</h4>
+                        <p>Three tools, three jobs. Features, prices, trade-offs.</p>
+                        <div class="read-more">Read the Comparison &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges listed above. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="../bitlogic-vs-tradingview-vs-3commas/index.html">BitLogic vs TradingView vs 3Commas</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/index.html">Screen Crypto on CoinDCX</a>
+                        <a href="../crypto-liquidation-alerts-explained/index.html">Crypto Liquidation Alerts Explained</a>
+                        <a href="../funding-rate-alerts-explained/index.html">Funding Rate Alerts Explained</a>
+                        <a href="../prebuilt-triple-ema-cross-momentum-screener/index.html">Triple EMA Strategy</a>
+                        <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/index.html">RSI Reversal Bounce</a>
+                        <a href="../prebuilt-macd-zero-cross-momentum-screener/index.html">MACD Zero Cross</a>
+                        <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/index.html">Bollinger Band Squeeze</a>
+                        <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/index.html">SuperTrend Flip</a>
+                        <a href="../prebuilt-stochrsi-cross-momentum-screener/index.html">StochRSI Cross</a>
+                        <a href="../prebuilt-vwap-pullback-bounce-screener/index.html">VWAP Pullback</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

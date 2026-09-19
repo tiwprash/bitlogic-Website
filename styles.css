@@ -1692,3 +1692,13 @@ footer {
 .exchange-card a:hover {
     text-decoration: underline;
 }
+
+.feature-card p a {
+    color: var(--emerald);
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.feature-card p a:hover {
+    text-decoration: underline;
+}
