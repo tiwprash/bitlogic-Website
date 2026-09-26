@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Free TradingView Alternative for Crypto Alerts &amp; Screening</title>
+    <meta name="description" content="Looking for a free TradingView alternative for crypto alerts? Build your own rules, scan every pair on an exchange, and get alerts on your phone, free.">
+    <link rel="canonical" href="https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:title" content="The Free TradingView Alternative for Crypto Alerts: Your Rules, Not Another Dashboard">
+    <meta property="og:description" content="Why alerting hits a wall on TradingView's free plan, and how to write one free rule that watches every pair on an exchange.">
+    <meta property="og:url" content="https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/">
+    <meta property="og:image" content="https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/images/05-completed-condition.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free TradingView Alternative for Crypto Alerts &amp; Screening">
+    <meta name="twitter:description" content="A free way to write one rule that watches every pair on an exchange and alerts your phone.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/images/05-completed-condition.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The Free TradingView Alternative for Crypto Alerts: Your Rules, Not Another Dashboard",
+      "description": "A free TradingView alternative for crypto alerts: why alerting hits a wall on TradingView's free plan, how rule-based alerts differ from a dashboard, and how to build your own crypto alert rules in BitLogic for free.",
+      "image": "https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/images/05-completed-condition.webp",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/" },
+      "author": { "@type": "Organization", "name": "BitLogic Team", "url": "https://bitlogic.info/about.html" },
+      "publisher": { "@type": "Organization", "name": "BitLogic", "logo": { "@type": "ImageObject", "url": "https://bitlogic.info/app_logo.webp" } }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is a good free TradingView alternative for crypto alerts?", "acceptedAnswer": { "@type": "Answer", "text": "It depends what you use TradingView for. If you mainly need alerts rather than charts, a rules-based crypto screener with alerts fits better. BitLogic's free tier includes the full rule builder, whole-exchange scans, live monitoring of up to five strategies and five market-wide alert feeds. Guests get 3 scans per 24 hours, and a free account raises that limit." } },
+        { "@type": "Question", "name": "Is BitLogic really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The rule builder, whole-exchange scans, live monitoring of up to five strategies, the five market feeds and push notifications are free. The free app is supported by ads. Pro (Rs 480/month or Rs 4,800/year, with a 14-day free trial) adds Telegram delivery, unlimited scans, an ad-free experience and priority support." } },
+        { "@type": "Question", "name": "Can I get crypto alerts on Telegram without TradingView webhooks?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. BitLogic Pro sends alerts straight to Telegram. Tap Connect Telegram, press Start in the bot, and alerts begin arriving. No webhook server or third-party relay is needed." } },
+        { "@type": "Question", "name": "Do I need to know Pine Script to build custom crypto alerts?", "acceptedAnswer": { "@type": "Answer", "text": "No. Rules are built by choosing an indicator, a comparison and a value from menus. You can still combine conditions with AND/OR, mix timeframes and compare one indicator against another." } },
+        { "@type": "Question", "name": "Does BitLogic need my exchange API keys?", "acceptedAnswer": { "@type": "Answer", "text": "No. It reads public market data only and never places trades, so there is no key to share or leak." } },
+        { "@type": "Question", "name": "Can I use BitLogic and TradingView together?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it is a sensible pairing. Let BitLogic watch the whole exchange and alert you, then open TradingView to study the chart before you decide." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitlogic.info/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bitlogic.info/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Free TradingView Alternative for Crypto Alerts", "item": "https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/" }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../index.html" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../index.html#features">Features</a>
+                    <a href="../../index.html#indicators">Indicators</a>
+                    <a href="../../index.html#exchanges">Exchanges</a>
+                    <a href="../../blog/index.html">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Windows App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../index.html">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Free TradingView Alternative</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-09-26">Sep 26, 2026</time></span>
+                <span>Updated <time datetime="2026-09-26">Sep 26, 2026</time></span>
+            </div>
+
+            <h1>The Free TradingView Alternative for Crypto Alerts: Your Rules, Not Another Dashboard</h1>
+
+            <p>TradingView is the best charting platform in crypto. Nobody serious disputes that.</p>
+
+            <p>But most people searching for a free TradingView alternative for crypto are not unhappy with the charts. They are unhappy with the job they end up doing around them: opening the app, flicking through symbols, and hoping to catch a setup before it is gone.</p>
+
+            <p>That is a dashboard problem. A dashboard shows you everything and waits for you to look. What most traders actually want is the reverse: describe the setup once, and be told the moment any coin on the exchange matches it, without paying for a bigger plan just to get more alerts.</p>
+
+            <p>This guide covers why alerting hits a wall on TradingView's free plan, the difference between a dashboard and rule-based alerts, and how to build your own crypto alert rules in BitLogic for free, with examples you can copy.</p>
+
+            <div class="post-callout"><strong>Free to start:</strong> no card needed. <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">download BitLogic on Google Play</a>, or explore the scanner first in the <a href="../../crypto-screener/">free web screener</a>.</div>
+
+            <p class="post-disclaimer">TradingView plan details were checked in September 2026 on its <a href="https://in.tradingview.com/pricing/" target="_blank" rel="noopener">official pricing page</a> (Indian pricing, annual billing). Limits change, so verify before you buy. BitLogic is not affiliated with TradingView.</p>
+
+            <h2>Why Traders Look for a Free TradingView Alternative for Crypto</h2>
+            <p>The reasons are rarely about quality. They are about shape and cost, and the free plan is where both bite hardest.</p>
+
+            <h3>Alerts are rationed by plan</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>TradingView plan</th><th>Price alerts</th><th>Technical alerts</th><th>Watchlist alerts</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Basic (free)</td><td>3</td><td>Not available</td><td>Not available</td></tr>
+                        <tr><td>Essential</td><td>20</td><td>20</td><td>Not available</td></tr>
+                        <tr><td>Plus</td><td>100</td><td>100</td><td>Not available</td></tr>
+                        <tr><td>Premium</td><td>400</td><td>400</td><td>2</td></tr>
+                        <tr><td>Ultimate</td><td>1,000</td><td>1,000</td><td>15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>On the free plan, three price alerts do not cover a watchlist, and you get no technical alerts at all: alerts on indicators start at Essential (₹995/month on annual billing). Alert headroom is the main reason people upgrade.</p>
+
+            <h3>One alert watches one symbol</h3>
+            <p>A standard TradingView alert is attached to a single symbol. If your setup is "RSI below 30 on the 1-hour" and you want it checked across 400 pairs, that is 400 alerts, which is more than any plan below Premium allows.</p>
+            <p>Watchlist alerts fix this, but they start at Premium (₹4,195/month on annual billing, Indian pricing), and Premium gives you two. Pine Script can also watch several symbols at once, if you are willing to write and maintain code.</p>
+
+            <h3>The screener is something you check</h3>
+            <p>TradingView's screener is genuinely powerful. But it is a screen: it filters the market when you open it. It does not tap you on the shoulder at 3 a.m. when a pair crosses your line.</p>
+
+            <h2>Dashboard vs Rules: Two Ways to Watch the Market</h2>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>Dashboard model</th><th>Rules model</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>You…</td><td>Open it and look</td><td>Describe the setup once</td></tr>
+                        <tr><td>It watches…</td><td>Whatever is on screen</td><td>Every pair on the exchange</td></tr>
+                        <tr><td>You find out…</td><td>When you next check</td><td>The moment it matches</td></tr>
+                        <tr><td>Limited by…</td><td>Your attention</td><td>How well you wrote the rule</td></tr>
+                        <tr><td>Fails by…</td><td>Missing setups</td><td>Noisy alerts, if the rule is loose</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Neither model is wrong. Charts are where you decide whether to take a trade. Rules are how you find out there is a trade worth considering. The trouble starts when you use a dashboard to do a rule's job.</p>
+            <p>Look at the last row, though. A rules-based tool is only as good as the rule you give it. If the builder cannot say exactly what you mean, you swap missed setups for spam. So the rule builder is the part worth judging.</p>
+
+            <h2>Alerts on Your Own Rules: How BitLogic Works</h2>
+            <p>BitLogic is a crypto screener and alert app built around the rules model. There is no wall of tickers to stare at. You write the condition once, and the app does the watching. (The steps below match our <a href="../how-to-screen-crypto-on-coindcx/index.html">step-by-step CoinDCX screening guide</a>, if you want more detail.)</p>
+
+            <h3>Step 1: Pick the exchange and market</h3>
+            <p>Choose CoinDCX, Binance, Bybit, OKX, Kraken, KuCoin, VALR, Bitstamp or Upbit, then spot or futures.</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/01-strategy-builder-coindcx.webp" alt="BitLogic Strategy Builder with CoinDCX selected as the exchange and Spot as the market" width="540" height="1200" loading="lazy">
+                <figcaption>Choosing the exchange and market in the Strategy Builder.</figcaption>
+            </figure>
+
+            <h3>Step 2: Build the rule</h3>
+            <p>Every strategy has a Long rule and a Short rule, and each rule is a chain of conditions.</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/02-signal-rules.webp" alt="Signal rules section showing Long Position and Short Position condition blocks" width="540" height="1200" loading="lazy">
+                <figcaption>Long and Short condition blocks.</figcaption>
+            </figure>
+            <p>Pick an indicator from the library:</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/03-indicator-picker.webp" alt="Indicator picker with a search for RSI showing Relative Strength Index and Stochastic RSI" width="540" height="1200" loading="lazy">
+                <figcaption>Searching the indicator library.</figcaption>
+            </figure>
+            <p>Set its period, source, and which candle to read:</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/04-configure-rsi.webp" alt="RSI configuration sheet showing candle offset, source and period settings" width="540" height="1200" loading="lazy">
+                <figcaption>Each indicator has its own settings.</figcaption>
+            </figure>
+            <p>Then choose the comparison:</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/05-completed-condition.webp" alt="Completed rule reading IF INDICATOR RSI(14) Last Closed Is Less Than 30" width="540" height="1200" loading="lazy">
+                <figcaption>The finished rule reads back in plain language.</figcaption>
+            </figure>
+
+            <h3>Step 3: Scan the whole exchange</h3>
+            <p>Run the strategy once to see what matches right now. In this test it checked 400 CoinDCX spot pairs in 17 seconds and returned three matches, each with an entry, target and stop:</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/06-scan-results.webp" alt="CoinDCX scan results in BitLogic showing three matched pairs with entry, target and stop loss levels" width="540" height="1200" loading="lazy">
+                <figcaption>One rule, 400 pairs, three matches in 17 seconds.</figcaption>
+            </figure>
+
+            <h3>Step 4: Turn the rule into an alert</h3>
+            <p>Live Monitoring re-runs the same strategy in the background (every 1, 5, 15 or 30 minutes, or hourly) and notifies you when a pair matches, even with the app closed. You can monitor up to five strategies at once.</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/08-live-monitoring.webp" alt="Live Monitoring tab with CoinDCX selected as the exchange and Spot as the market" width="540" height="1200" loading="lazy">
+                <figcaption>Live Monitoring keeps the rule running in the background.</figcaption>
+            </figure>
+            <p>On Pro, the same alerts also arrive in Telegram. Tap Connect Telegram, press Start in the bot, and you are done. There is no webhook server to set up.</p>
+            <figure class="blog-shot">
+                <img src="../how-to-screen-crypto-on-coindcx/images/09-telegram-integration.webp" alt="Telegram Integration card in BitLogic Settings with the Connect Telegram button" width="540" height="1200" loading="lazy">
+                <figcaption>Telegram delivery is a Pro feature.</figcaption>
+            </figure>
+            <p><a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Build your first alert rule free on Google Play</a>.</p>
+
+            <h2>What You Can Put in a Rule</h2>
+            <p>"Alerts on your own rules" only means something if the rules can say what you mean. Here is what the builder gives you.</p>
+
+            <h3>The building blocks</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Category</th><th>Count</th><th>Examples</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trend &amp; overlap</td><td>19</td><td>EMA, SMA, VWAP, MACD, Bollinger Bands, Supertrend, Ichimoku</td></tr>
+                        <tr><td>Momentum &amp; oscillators</td><td>23</td><td>RSI, Stochastic RSI, MFI, ADX, CCI, Williams %R, Squeeze</td></tr>
+                        <tr><td>Volatility</td><td>6</td><td>ATR, Keltner Channels, Donchian Channels</td></tr>
+                        <tr><td>Volume</td><td>8</td><td>OBV, Chaikin Money Flow, VWMA, Volume SMA</td></tr>
+                        <tr><td>Price action</td><td>8</td><td>Open, High, Low, Close, Volume and their averages</td></tr>
+                        <tr><td>Candlestick patterns</td><td>64</td><td>Hammer, Engulfing, Morning Star, Pin Bar, Inside Bar</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>That is 56 technical indicators and 64 candlestick patterns, plus price-action conditions, each with its own settings.</p>
+
+            <h3>The comparisons</h3>
+            <ul>
+                <li>Is Greater Than, Is Less Than, Is Equal To, Between</li>
+                <li>Crosses Above, Crosses Below</li>
+                <li>Increased by %, Decreased by %</li>
+                <li>For candlestick patterns: Is Detected, Is Bullish, Is Bearish, Does Not Exist</li>
+            </ul>
+
+            <h3>What makes the rules precise</h3>
+            <ul>
+                <li><strong>Compare against anything.</strong> The right side of a condition can be a number, another indicator, or a calculation. "Close is greater than EMA(200)" and "Volume is greater than Volume SMA(20) × 2" are each a single condition.</li>
+                <li><strong>AND / OR logic.</strong> Chain conditions so that all must hold, or so that any one will do.</li>
+                <li><strong>Mixed timeframes.</strong> Every indicator carries its own timeframe, so a 15-minute trigger can require a 4-hour trend filter inside the same rule.</li>
+                <li><strong>Closed candles, if you want them.</strong> Each indicator reads either the live candle or the last closed one. Reading the last closed candle means you never get an alert for a move that vanished before the candle finished.</li>
+            </ul>
+
+            <h2>Three Custom Crypto Alerts You Could Build Today</h2>
+            <p>These show what the builder can express. They are examples, not trade recommendations.</p>
+
+            <h3>1. Oversold, but still in an uptrend</h3>
+            <pre class="rule-block"><code>IF   RSI(14)  [1h, Last Closed]  Is Less Than     30
+AND  Close    [4h]               Is Greater Than  EMA(200) [4h]</code></pre>
+            <p>A bare "RSI below 30" fires constantly during a downtrend. The 4-hour EMA filter only lets it through when the bigger trend still points up. It is the same idea behind our <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/index.html">RSI Reversal Bounce strategy</a>.</p>
+
+            <h3>2. A moving-average cross with real volume behind it</h3>
+            <pre class="rule-block"><code>IF   EMA(20)  [1h]  Crosses Above    EMA(50) [1h]
+AND  Volume   [1h]  Is Greater Than  Volume SMA(20) [1h] × 2</code></pre>
+            <p>A cross on thin volume is often noise. Requiring double the average volume filters out most of it.</p>
+
+            <h3>3. A reversal candle at a stretched extreme</h3>
+            <pre class="rule-block"><code>IF   Hammer   [4h, Last Closed]  Is Bullish
+AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
+            <p>Hammers are everywhere. A hammer when momentum is already stretched is the one worth a look.</p>
+            <p>Each of these watches every pair on the exchange as one alert: the job that would take hundreds of single-symbol alerts on a chart-first platform.</p>
+
+            <h2>Market-Wide Alerts Without Writing a Rule</h2>
+            <p>Some events are hard to express as an indicator rule, so BitLogic also has five ready-made feeds, each with a single threshold:</p>
+            <ul>
+                <li><strong>Liquidations:</strong> large forced closes on Binance (<a href="../crypto-liquidation-alerts-explained/index.html">how liquidation alerts work</a>)</li>
+                <li><strong>Volume spikes</strong></li>
+                <li><strong>Price anomalies</strong></li>
+                <li><strong>Funding rates</strong> (<a href="../funding-rate-alerts-explained/index.html">how funding rate alerts work</a>)</li>
+                <li><strong>Open interest</strong></li>
+            </ul>
+            <figure class="blog-shot">
+                <img src="../funding-rate-alerts-explained/images/02-alert-feeds.webp" alt="BitLogic Smart Alerts feeds for volume spikes, price anomalies, funding rates and open interest" width="540" height="590" loading="lazy">
+                <figcaption>Ready-made market feeds in Smart Alerts, each with its own threshold.</figcaption>
+            </figure>
+
+            <h2>What Is Free in BitLogic (and What Pro Adds)</h2>
+            <p>"Free" only matters if the free plan does the job. Here is where the line sits, next to TradingView's free plan for alerting:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>TradingView Basic (free)</th><th>BitLogic free</th><th>BitLogic Pro</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Price</td><td>₹0</td><td>₹0</td><td>₹480/month or ₹4,800/year, 14-day free trial</td></tr>
+                        <tr><td>Alerts on indicators</td><td>None</td><td>Yes: full no-code rule builder</td><td>Yes</td></tr>
+                        <tr><td>One alert watches</td><td>One symbol</td><td>Every pair on the exchange</td><td>Every pair on the exchange</td></tr>
+                        <tr><td>Background alerts</td><td>3 price alerts</td><td>Up to 5 live strategies + 5 market feeds</td><td>Up to 5 live strategies + 5 market feeds</td></tr>
+                        <tr><td>Scans</td><td>Not applicable</td><td>Guests: 3 per 24 hours; a free account raises the limit</td><td>Unlimited</td></tr>
+                        <tr><td>Telegram delivery</td><td>No</td><td>No (push notifications only)</td><td>Yes</td></tr>
+                        <tr><td>Ads</td><td>Yes</td><td>Yes</td><td>Ad-free</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>In short: the rule builder, whole-exchange scanning, live monitoring and push alerts are all free. Pro is for Telegram delivery, unlimited scans, no ads and priority support, and you do not need it to follow anything in this guide.</p>
+
+            <h2>TradingView vs BitLogic for Alerts and Screening</h2>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>TradingView</th><th>BitLogic</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Built around</td><td>Charts and analysis</td><td>Rules and alerts</td></tr>
+                        <tr><td>One alert covers</td><td>One symbol (watchlist alerts from Premium)</td><td>Every pair on the exchange</td></tr>
+                        <tr><td>Free alerts</td><td>3 price alerts (no technical alerts)</td><td>5 live strategies + 5 market feeds</td></tr>
+                        <tr><td>Custom logic</td><td>Pine Script (code)</td><td>No-code builder: AND/OR, mixed timeframes, maths</td></tr>
+                        <tr><td>Telegram delivery</td><td>Via webhooks on paid plans</td><td>Built in (Pro)</td></tr>
+                        <tr><td>Needs exchange API keys</td><td>No</td><td>No</td></tr>
+                        <tr><td>Charting</td><td>Best in class</td><td>None</td></tr>
+                        <tr><td>Platforms</td><td>Web, desktop, iOS, Android</td><td>Android, Windows, basic web screener</td></tr>
+                        <tr><td>Paid plans</td><td>₹995 to ₹17,333/month</td><td>₹480/month or ₹4,800/year</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>TradingView figures are Indian pricing on annual billing, September 2026. BitLogic guests get 3 scans per 24 hours; a free account raises that limit.</p>
+
+            <h2>When TradingView Is Still the Better Choice</h2>
+            <p>An honest comparison includes the case for the other side. Stick with TradingView if:</p>
+            <ul>
+                <li><strong>You analyze visually.</strong> Drawing tools, multi-chart layouts and deep chart work are TradingView's home ground. BitLogic shows you matches, not a canvas.</li>
+                <li><strong>You write Pine Script.</strong> If you already code your own studies, you have flexibility no fixed indicator library can match.</li>
+                <li><strong>You need an iPhone app.</strong> BitLogic is on Android and Windows, with a basic web screener; there is no iOS app yet.</li>
+                <li><strong>You trade stocks or forex too.</strong> BitLogic is crypto only.</li>
+            </ul>
+            <p>Plenty of traders use both: BitLogic to find the setup, TradingView to judge it. That split plays to each tool's strength. For bot execution as well, see the full <a href="../bitlogic-vs-tradingview-vs-3commas/index.html">BitLogic vs TradingView vs 3Commas comparison</a>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">What is a good free TradingView alternative for crypto alerts?</h3>
+            <p>It depends what you use TradingView for. If you mainly need alerts rather than charts, a rules-based crypto screener with alerts fits better. BitLogic's free tier includes the full rule builder, whole-exchange scans, live monitoring of up to five strategies and five market-wide alert feeds. Guests get 3 scans per 24 hours, and a free account raises that limit.</p>
+
+            <h3 class="faq-q">Is BitLogic really free?</h3>
+            <p>Yes. The rule builder, whole-exchange scans, live monitoring of up to five strategies, the five market feeds and push notifications are free. The free app is supported by ads. Pro (₹480/month or ₹4,800/year, with a 14-day free trial) adds Telegram delivery, unlimited scans, an ad-free experience and priority support.</p>
+
+            <h3 class="faq-q">Can I get crypto alerts on Telegram without TradingView webhooks?</h3>
+            <p>Yes. BitLogic Pro sends alerts straight to Telegram. Tap Connect Telegram, press Start in the bot, and alerts begin arriving. No webhook server or third-party relay is needed.</p>
+
+            <h3 class="faq-q">Do I need to know Pine Script to build custom crypto alerts?</h3>
+            <p>No. Rules are built by choosing an indicator, a comparison and a value from menus. You can still combine conditions with AND/OR, mix timeframes and compare one indicator against another.</p>
+
+            <h3 class="faq-q">Does BitLogic need my exchange API keys?</h3>
+            <p>No. It reads public market data only and never places trades, so there is no key to share or leak.</p>
+
+            <h3 class="faq-q">Can I use BitLogic and TradingView together?</h3>
+            <p>Yes, and it is a sensible pairing. Let BitLogic watch the whole exchange and alert you, then open TradingView to study the chart before you decide.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>TradingView is where you look at the market. BitLogic is how the market tells you when to look.</p>
+            <p>If your alert list is outgrowing your plan, or you want one rule to cover every pair on the exchange, you need a rules tool rather than a bigger dashboard. For traders who work from their phone, that makes BitLogic a practical free TradingView alternative for crypto alerts. Write the rule once, for free, and let it do the watching.</p>
+            <p><a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Download BitLogic free on Google Play</a>, build your first rule free in a couple of minutes, and only start the 14-day Pro trial if you want your alerts in Telegram.</p>
+            <p class="post-disclaimer">Educational content only, not financial advice. Example rules show what the builder can express, not setups to trade. TradingView is a trademark of its owner and is referenced here for comparison only.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#00e676"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#ffeb3b"/><path d="M325.3 277.5L368.4 234.4l-43.1-43.1L104.6 13.2c-5.4-5.4-11.8-8.5-18.4-9.2L325.3 277.5z" fill="#ff3d00"/><path d="M325.3 234.4L104.6 498.7c-6.6-5.4-13-12.7-18.4-18.1L325.3 234.4z" fill="#00b0ff"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">GET IT ON</span>
+                        <span class="btn-large">Google Play</span>
+                    </div>
+                </a>
+                <a href="../../crypto-screener/" class="ghost-btn">Try the free web screener →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../bitlogic-vs-tradingview-vs-3commas/index.html" class="related-card">
+                        <h4>BitLogic vs TradingView vs 3Commas</h4>
+                        <p>Three tools, three jobs. Features, prices, trade-offs.</p>
+                        <div class="read-more">Read the Comparison &rarr;</div>
+                    </a>
+                    <a href="../how-to-screen-crypto-on-coindcx/index.html" class="related-card">
+                        <h4>How to Screen Crypto on CoinDCX</h4>
+                        <p>Build a strategy, scan every pair, and get alerts.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../crypto-liquidation-alerts-explained/index.html" class="related-card">
+                        <h4>Crypto Liquidation Alerts Explained</h4>
+                        <p>Read long vs short liquidations and set a sane threshold.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges listed above. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="../free-tradingview-alternative-crypto-alerts/index.html">Free TradingView Alternative for Crypto Alerts</a>
+                        <a href="../bitlogic-vs-tradingview-vs-3commas/index.html">BitLogic vs TradingView vs 3Commas</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/index.html">Screen Crypto on CoinDCX</a>
+                        <a href="../crypto-liquidation-alerts-explained/index.html">Crypto Liquidation Alerts Explained</a>
+                        <a href="../funding-rate-alerts-explained/index.html">Funding Rate Alerts Explained</a>
+                        <a href="../prebuilt-triple-ema-cross-momentum-screener/index.html">Triple EMA Strategy</a>
+                        <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/index.html">RSI Reversal Bounce</a>
+                        <a href="../prebuilt-macd-zero-cross-momentum-screener/index.html">MACD Zero Cross</a>
+                        <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/index.html">Bollinger Band Squeeze</a>
+                        <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/index.html">SuperTrend Flip</a>
+                        <a href="../prebuilt-stochrsi-cross-momentum-screener/index.html">StochRSI Cross</a>
+                        <a href="../prebuilt-vwap-pullback-bounce-screener/index.html">VWAP Pullback</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

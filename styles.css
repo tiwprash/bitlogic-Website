@@ -1702,3 +1702,22 @@ footer {
 .feature-card p a:hover {
     text-decoration: underline;
 }
+
+/* Rule examples in blog posts */
+.blog-post pre.rule-block {
+    margin: 0 0 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface-1);
+    border: 1px solid var(--border-color-strong);
+    border-left: 3px solid var(--emerald);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+}
+
+.blog-post pre.rule-block code {
+    font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    white-space: pre;
+}
