@@ -2,169 +2,175 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bitlogic.info/about.html</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/data-deletion.html</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/privacy.html</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/terms.html</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/binance-crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/bitlogic-vs-tradingview-vs-3commas/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/bitstamp-screener-alerts/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/bybit-futures-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/blog/coinbase-custom-alerts/</loc>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/crypto-liquidation-alerts-explained/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/funding-rate-alerts-explained/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/kraken-crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/krypto-screener-mit-alarmen/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/kucoin-altcoin-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/okx-crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-bollinger-band-squeeze-breakout-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-macd-zero-cross-momentum-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-rsi-reversal-bounce-crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-stochrsi-cross-momentum-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-supertrend-flip-rsi-crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-triple-ema-cross-momentum-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/prebuilt-vwap-pullback-bounce-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/upbit-screener-korean-market/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/valr-crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/crypto-screener/</loc>
-    <lastmod>2026-09-26T13:56:59+00:00</lastmod>
+    <lastmod>2026-09-26T14:30:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
