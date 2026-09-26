@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Krypto-Screener mit Alarmen: Setups auf MiCA-Börsen finden</title>
+    <meta name="description" content="Kursalarme reichen nicht? Ein Krypto-Screener prüft Hunderte Paare auf Kraken, Bitstamp und OKX nach deinen Regeln und meldet Treffer aufs Handy.">
+    <link rel="canonical" href="https://bitlogic.info/blog/krypto-screener-mit-alarmen/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="Krypto-Screener mit Alarmen: So findest du Setups auf MiCA-lizenzierten Börsen">
+    <meta property="og:description" content="Kursalarme reichen nicht? Ein Krypto-Screener prüft Hunderte Paare auf Kraken, Bitstamp und OKX nach deinen Regeln und meldet Treffer aufs Handy.">
+    <meta property="og:url" content="https://bitlogic.info/blog/krypto-screener-mit-alarmen/">
+    <meta property="og:image" content="https://bitlogic.info/blog/kraken-crypto-screener/images/05-kraken-results.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Krypto-Screener mit Alarmen: Setups auf MiCA-Börsen finden">
+    <meta name="twitter:description" content="Kursalarme reichen nicht? Ein Krypto-Screener prüft Hunderte Paare auf Kraken, Bitstamp und OKX nach deinen Regeln und meldet Treffer aufs Handy.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/kraken-crypto-screener/images/05-kraken-results.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Krypto-Screener mit Alarmen: So findest du Setups auf MiCA-lizenzierten Börsen",
+      "description": "Was ein Krypto-Screener mit Alarmen leistet, welche Börsen 2026 in Deutschland eine MiCA-Lizenz haben und wie du mit BitLogic eigene Regeln über Hunderte Paare prüfst.",
+      "image": "https://bitlogic.info/blog/kraken-crypto-screener/images/05-kraken-results.webp",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/krypto-screener-mit-alarmen/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        {
+          "@type": "Organization",
+          "name": "Kraken"
+        },
+        {
+          "@type": "Organization",
+          "name": "Bitstamp"
+        },
+        {
+          "@type": "Organization",
+          "name": "OKX"
+        }
+      ],
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist der beste Krypto-Screener mit Alarmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt davon ab, was du brauchst. Wenn du eigene Regeln über eine ganze Börse prüfen und Alarme aufs Handy oder per Telegram bekommen willst, deckt BitLogic das ab: bis zu 400 Paare pro Scan, Live Monitoring im Hintergrund, Telegram mit Pro. Die App-Oberfläche ist allerdings Englisch, und es gibt sie für Android und Windows, nicht für das iPhone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Krypto-Börsen haben eine MiCA-Lizenz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unter den Börsen, die BitLogic unterstützt, haben Kraken (Irland), Bitstamp (Luxemburg) und OKX (Malta) eine MiCA-Lizenz, ebenso Bybit EU (Österreich) über bybit.eu. Das vollständige Register führt die ESMA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Binance in Deutschland noch nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seit dem 1. Juli 2026 bietet Binance EU-Kunden keine neuen Aufträge, Einzahlungen oder Anmeldungen mehr an, weil keine MiCA-Lizenz vorlag. Auszahlungen bleiben möglich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Braucht BitLogic meinen API-Schlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. BitLogic liest nur öffentliche Marktdaten und platziert keine Orders. Es gibt also keinen Schlüssel, der in falsche Hände geraten könnte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es BitLogic auf Deutsch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Noch nicht. Die App-Oberfläche ist Englisch. Die Bedienung besteht aber vor allem aus Auswahlmenüs wie „RSI“, „Is Less Than“ und „30“, die du ohne viel Englisch nutzen kannst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktionieren die Alarme auch mit Telegram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, mit BitLogic Pro. Du verbindest Telegram mit einem Tipp und drückst Start im Bot. Danach kommt jeder Treffer aus Live Monitoring auch als Telegram-Nachricht."
+          }
+        }
+      ],
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://bitlogic.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://bitlogic.info/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Krypto-Screener mit Alarmen",
+          "item": "https://bitlogic.info/blog/krypto-screener-mit-alarmen/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../index.html" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">Über uns</a>
+                    <a href="../../index.html#features">Funktionen</a>
+                    <a href="../../index.html#indicators">Indikatoren</a>
+                    <a href="../../index.html#exchanges">Börsen</a>
+                    <a href="../../blog/index.html">Blog</a>
+                    <a href="../../crypto-screener/">Krypto-Screener</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Kostenlos laden ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android-App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows-App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Start</a></li>
+                    <li class="breadcrumb-item"><a href="../index.html">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Krypto-Screener mit Alarmen</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Guide (DE)</span>
+                <span>Von <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Veröffentlicht <time datetime="2026-09-26">26. Sept. 2026</time></span>
+                <span>Aktualisiert <time datetime="2026-09-26">26. Sept. 2026</time></span>
+            </div>
+
+            <h1>Krypto-Screener mit Alarmen: So findest du Setups auf MiCA-lizenzierten Börsen</h1>
+
+            <div class="post-callout"><strong>Kostenlos starten:</strong> <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">BitLogic bei Google Play laden</a>, die <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows-App</a> nutzen oder zuerst den <a href="../../crypto-screener/">kostenlosen Web-Screener</a> ausprobieren. Keine Kreditkarte nötig.</div>
+            <p><strong>Kurz gesagt:</strong> Ein Kursalarm beobachtet einen Coin und einen Preis. Ein Krypto-Screener mit Alarmen beobachtet deine Regel, zum Beispiel „RSI unter 30 und Kurs über dem 200er-EMA“, und das über Hunderte Handelspaare gleichzeitig. BitLogic hat am 26. September 2026 die 400 meistgehandelten Kraken-Paare in 104 Sekunden geprüft und 8 Treffer gemeldet. Kraken ist in der EU nach MiCA lizenziert.</p>
+            <p>BitLogic ist eine No-Code-App für Krypto-Screening und Alarme für Android und Windows, dazu gibt es einen kostenlosen Web-Screener. Die App prüft jedes Handelspaar einer Börse gegen Regeln, die du selbst baust, und meldet Treffer per Push-Benachrichtigung oder, mit Pro, per Telegram.</p>
+            <p class="post-disclaimer">Funktionen, Regulierung und Testergebnisse geprüft am 26. September 2026.</p>
+
+            <h2>Kursalarm oder Screener: Was ist der Unterschied?</h2>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>Kursalarm (Börsen-App)</th><th>Krypto-Screener mit Alarmen</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Beobachtet</td><td>Einen Coin</td><td>Bis zu 400 Paare gleichzeitig</td></tr>
+                        <tr><td>Auslöser</td><td>Preis erreicht</td><td>Deine Regel: Indikatoren, Preis, Volumen</td></tr>
+                        <tr><td>RSI, EMA, MACD, Bollinger</td><td>Nein</td><td>Ja</td></tr>
+                        <tr><td>Long- und Short-Signale</td><td>Nein</td><td>Ja</td></tr>
+                        <tr><td>Zustellung</td><td>App der Börse</td><td>Push-Benachrichtigung, mit Pro auch Telegram</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Ein Kursalarm beantwortet die Frage „Ist BTC bei 100.000 Dollar?“. Ein Screener beantwortet „Welcher Coin hat gerade mein Setup?“, und er stellt die Frage automatisch alle paar Minuten neu.</p>
+            <h2>MiCA 2026: Welche Börsen darfst du in Deutschland nutzen?</h2>
+            <p>Seit dem Ende der MiCA-Übergangsfristen (spätestens am 1. Juli 2026) dürfen Krypto-Börsen EU-Kunden nur noch mit einer MiCA-Lizenz bedienen. Für die Börsen, die BitLogic unterstützt, heißt das:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Börse</th><th>Status für Kunden in Deutschland</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kraken</td><td>✓ MiCA-Lizenz (Central Bank of Ireland)</td></tr>
+                        <tr><td>Bitstamp</td><td>✓ MiCA-Lizenz (CSSF Luxemburg); gehört zu Robinhood</td></tr>
+                        <tr><td>OKX</td><td>✓ MiCA-Lizenz (Malta)</td></tr>
+                        <tr><td>Bybit</td><td>⚠ Die globale Plattform bedient seit dem 1. Juli 2026 keine EWR-Kunden mehr; EU-Kunden nutzen bybit.eu (MiCA-Lizenz, FMA Österreich)</td></tr>
+                        <tr><td>KuCoin</td><td>⚠ KuCoin EU hat eine MiCA-Lizenz (Österreich), wurde 2026 aber von der Aufsicht eingeschränkt. Prüfe den aktuellen Status vor der Anmeldung</td></tr>
+                        <tr><td>Binance</td><td>✗ Seit dem 1. Juli 2026 keine Dienste mehr für EU-Kunden (keine MiCA-Lizenz); Auszahlungen bleiben möglich</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Unsere Empfehlung: Screene die Börse, auf der du auch handelst. Für die meisten in Deutschland sind das Kraken, Bitstamp oder OKX. Das vollständige Verzeichnis der zugelassenen Anbieter führt die <a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica" target="_blank" rel="noopener">ESMA (MiCA-Register)</a>.</p>
+            <h2>Worauf es bei einem Krypto-Screener ankommt</h2>
+            <p>Wer nach dem „besten Krypto-Screener mit Alarmen“ sucht, sollte diese sechs Punkte prüfen:</p>
+            <ol>
+                <li><strong>Eigene Regeln statt nur Preise.</strong> Kannst du Indikatoren kombinieren, also mehrere Bedingungen, die alle erfüllt sein müssen?</li>
+                <li><strong>Die ganze Börse, nicht nur die Watchlist.</strong> Setups entstehen oft bei Coins, die du gar nicht beobachtest.</li>
+                <li><strong>Alarme im Hintergrund.</strong> Der Screener muss auch prüfen, wenn die App geschlossen ist.</li>
+                <li><strong>Zustellung dort, wo du liest.</strong> Push-Benachrichtigungen gehen unter. Telegram liest man.</li>
+                <li><strong>Kein API-Schlüssel.</strong> Ein Screener muss nicht handeln können, also braucht er auch keinen Zugriff auf dein Konto.</li>
+                <li><strong>Lizenzierte Börsen.</strong> Signale nützen nur, wenn du auf der Börse legal handeln darfst.</li>
+            </ol>
+            <p>So schneidet BitLogic ab, ehrlich bewertet:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Kriterium</th><th>BitLogic</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Eigene Regeln</td><td>✓ 56 technische Indikatoren, 64 Candlestick-Muster, dazu Preis- und Volumenbedingungen</td></tr>
+                        <tr><td>Ganze Börse</td><td>✓ Bis zu 400 der meistgehandelten Paare pro Scan</td></tr>
+                        <tr><td>Alarme im Hintergrund</td><td>✓ Live Monitoring, bis zu 5 Strategien gleichzeitig</td></tr>
+                        <tr><td>Telegram</td><td>✓ Mit Pro</td></tr>
+                        <tr><td>API-Schlüssel nötig</td><td>✓ Nein, nur öffentliche Marktdaten</td></tr>
+                        <tr><td>MiCA-Börsen</td><td>✓ Kraken, Bitstamp, OKX</td></tr>
+                        <tr><td>Sprache</td><td>⚠ Die App-Oberfläche ist Englisch</td></tr>
+                        <tr><td>Plattform</td><td>⚠ Android und Windows, dazu ein Web-Screener; keine iPhone-App</td></tr>
+                        <tr><td>Charts / Handel</td><td>✗ Keine Chart-Plattform, platziert keine Orders</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>So richtest du den Screener ein</h2>
+            <h3>Schritt 1: Börse wählen</h3>
+            <p>Wähle im Tab <strong>Strategy</strong> die Börse, zum Beispiel Kraken, und den Markt (Spot oder Futures). Setze einen Mindestumsatz. Kraken listet über 700 USD- und USDT-Paare, und viele davon werden kaum gehandelt.</p>
+            <figure class="blog-shot">
+                <img src="../kraken-crypto-screener/images/01-kraken-setup.webp" alt="BitLogic Strategy Builder mit Kraken Spot und einem Mindestumsatz-Filter von 2 Millionen" width="540" height="1205" loading="lazy">
+                <figcaption>Kraken Spot mit einem Mindestumsatz von 2 Mio. $ pro Tag.</figcaption>
+            </figure>
+            <h3>Schritt 2: Regel bauen</h3>
+            <p>Eine Regel ist eine Kette von Bedingungen, und alle müssen erfüllt sein. Dieses Beispiel sucht einen kurzfristigen Aufwärtstrend innerhalb eines langfristigen, mit steigendem Volumen:</p>
+            <figure class="blog-shot">
+                <img src="../kraken-crypto-screener/images/02-rule-builder.webp" alt="Regel-Baukasten: EMA 9 über EMA 21, EMA 21 über EMA 200, Volumen über dem 20er-Durchschnitt" width="540" height="1205" loading="lazy">
+                <figcaption>Drei Bedingungen, die alle erfüllt sein müssen.</figcaption>
+            </figure>
+            <h3>Schritt 3: Scannen</h3>
+            <p>Tippe auf <strong>Scan Market Now</strong>:</p>
+            <figure class="blog-shot">
+                <img src="../kraken-crypto-screener/images/05-kraken-results.webp" alt="Kraken-Scan in BitLogic: 8 Treffer in 104 Sekunden, jeweils mit Einstieg, Kursziel und Stop-Loss" width="540" height="1205" loading="lazy">
+                <figcaption>8 Treffer in 104 Sekunden, jeweils mit Einstieg, Kursziel und Stop-Loss.</figcaption>
+            </figure>
+            <h3>Schritt 4: Alarm einschalten</h3>
+            <p>Mit <strong>Live Monitoring</strong> prüft BitLogic deine Regel automatisch alle 1, 5, 15 oder 30 Minuten, stündlich, alle 4 Stunden oder einmal täglich, auch bei geschlossener App. Du kannst bis zu fünf Strategien gleichzeitig überwachen. Mit Pro kommen die Treffer zusätzlich per Telegram: Du tippst auf <strong>Connect Telegram</strong>, drückst Start im Bot, und das war's.</p>
+            <p><strong><a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Krypto-Screener kostenlos bei Google Play laden</a></strong>, oder auf <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows</a>.</p>
+            <h2>Echte Tests vom 26. September 2026</h2>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Börse</th><th>Markt</th><th>Regel</th><th>Paare</th><th>Dauer</th><th>Treffer</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="../kraken-crypto-screener/index.html">Kraken</a></td><td>Spot, ab 2 Mio. $ Tagesumsatz</td><td>EMA-Trend + Volumen (1h)</td><td>400</td><td>104 s</td><td>8</td></tr>
+                        <tr><td><a href="../bitstamp-screener-alerts/index.html">Bitstamp</a></td><td>Spot</td><td>EMA-Trend + Volumen (1h)</td><td>124</td><td>22 s</td><td>20</td></tr>
+                        <tr><td><a href="../okx-crypto-screener/index.html">OKX</a></td><td>Perpetuals, ab 5 Mio. $</td><td>EMA-Trend + Volumen (1h)</td><td>400</td><td>62 s</td><td>25</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Das sind Scan-Ergebnisse, keine Empfehlungen. Ein Treffer heißt nur, dass ein Paar in diesem Moment die Regel erfüllt hat.</p>
+            <p><strong>Hinweis zu Euro-Paaren:</strong> Bei Kraken scannt BitLogic die USD- und USDT-Paare. Der EUR-Kurs desselben Coins weicht leicht ab, das Signal betrifft aber denselben Coin.</p>
+            <h2>Drei Regeln für den Anfang</h2>
+            <p>Die App ist auf Englisch, deshalb stehen die Regeln hier so, wie du sie in der App auswählst.</p>
+            <h3>1. Überverkauft im Aufwärtstrend</h3>
+            <pre class="rule-block"><code>IF   RSI(14)  [1h, Last Closed]  Is Less Than     35
+AND  Close    [4h]               Is Greater Than  EMA(200) [4h]</code></pre>
+            <p>Der RSI ist kurzfristig tief, der 4-Stunden-Trend zeigt aber noch nach oben. Für gemischte Zeitebenen wählst du den Modus „Multi Timeframe“.</p>
+            <h3>2. Ausbruch mit Volumen</h3>
+            <pre class="rule-block"><code>IF   Close    [4h, Last Closed]  Crosses Above    Bollinger Band upper (20, 2)
+AND  Volume   [4h]               Is Greater Than  Volume SMA(20) × 1.5</code></pre>
+            <p>Ein Schlusskurs über dem oberen Bollinger-Band zählt nur, wenn das Volumen ihn bestätigt.</p>
+            <h3>3. Golden Cross auf Tagesbasis</h3>
+            <pre class="rule-block"><code>IF   EMA(50)  [1d, Last Closed]  Crosses Above  EMA(200) [1d]</code></pre>
+            <p>Dieses Signal kommt selten, und genau deshalb lohnt sich ein Alarm.</p>
+            <p>„Last Closed“ bedeutet, dass die zuletzt abgeschlossene Kerze gelesen wird. So bekommst du keinen Alarm für eine Bewegung, die bis zum Kerzenschluss schon wieder verschwunden ist.</p>
+            <h2>Was kostet das?</h2>
+            <ul>
+                <li><strong>Kostenlos:</strong> Regel-Baukasten, Scans der ganzen Börse, Live Monitoring und Push-Alarme</li>
+                <li><strong>Ohne Konto:</strong> 3 Scans pro 24 Stunden; ein kostenloses Konto erhöht das Limit</li>
+                <li><strong>Pro:</strong> Alarme zusätzlich per Telegram, unbegrenzte Scans, keine Werbung und bevorzugter Support; 14 Tage kostenlos testen. Der Preis wird bei Google Play in deiner Landeswährung angezeigt.</li>
+            </ul>
+
+            <h2>Häufige Fragen</h2>
+
+            <h3 class="faq-q">Was ist der beste Krypto-Screener mit Alarmen?</h3>
+            <p>Das hängt davon ab, was du brauchst. Wenn du eigene Regeln über eine ganze Börse prüfen und Alarme aufs Handy oder per Telegram bekommen willst, deckt BitLogic das ab: bis zu 400 Paare pro Scan, Live Monitoring im Hintergrund, Telegram mit Pro. Die App-Oberfläche ist allerdings Englisch, und es gibt sie für Android und Windows, nicht für das iPhone.</p>
+
+            <h3 class="faq-q">Welche Krypto-Börsen haben eine MiCA-Lizenz?</h3>
+            <p>Unter den Börsen, die BitLogic unterstützt, haben Kraken (Irland), Bitstamp (Luxemburg) und OKX (Malta) eine MiCA-Lizenz, ebenso Bybit EU (Österreich) über bybit.eu. Das vollständige Register führt die ESMA.</p>
+
+            <h3 class="faq-q">Kann ich Binance in Deutschland noch nutzen?</h3>
+            <p>Seit dem 1. Juli 2026 bietet Binance EU-Kunden keine neuen Aufträge, Einzahlungen oder Anmeldungen mehr an, weil keine MiCA-Lizenz vorlag. Auszahlungen bleiben möglich.</p>
+
+            <h3 class="faq-q">Braucht BitLogic meinen API-Schlüssel?</h3>
+            <p>Nein. BitLogic liest nur öffentliche Marktdaten und platziert keine Orders. Es gibt also keinen Schlüssel, der in falsche Hände geraten könnte.</p>
+
+            <h3 class="faq-q">Gibt es BitLogic auf Deutsch?</h3>
+            <p>Noch nicht. Die App-Oberfläche ist Englisch. Die Bedienung besteht aber vor allem aus Auswahlmenüs wie „RSI“, „Is Less Than“ und „30“, die du ohne viel Englisch nutzen kannst.</p>
+
+            <h3 class="faq-q">Funktionieren die Alarme auch mit Telegram?</h3>
+            <p>Ja, mit BitLogic Pro. Du verbindest Telegram mit einem Tipp und drückst Start im Bot. Danach kommt jeder Treffer aus Live Monitoring auch als Telegram-Nachricht.</p>
+
+            <h2>Fazit</h2>
+            <p>Ein Kursalarm wartet auf einen Preis. Ein Krypto-Screener mit Alarmen wartet auf dein Setup, auf Hunderten Paaren gleichzeitig und rund um die Uhr. Kombiniere das mit einer MiCA-lizenzierten Börse wie Kraken, Bitstamp oder OKX, und jedes Signal ist eines, auf das du auch legal handeln kannst.</p>
+            <p><a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">BitLogic kostenlos bei Google Play laden</a>.</p>
+            <p class="post-disclaimer">Keine Anlageberatung. Kryptowerte sind hochvolatil; Verluste bis zum Totalverlust sind möglich. Die Verfügbarkeit von Börsen ändert sich, prüfe deshalb die aktuellen Bedingungen deiner Börse.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#00e676"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#ffeb3b"/><path d="M325.3 277.5L368.4 234.4l-43.1-43.1L104.6 13.2c-5.4-5.4-11.8-8.5-18.4-9.2L325.3 277.5z" fill="#ff3d00"/><path d="M325.3 234.4L104.6 498.7c-6.6-5.4-13-12.7-18.4-18.1L325.3 234.4z" fill="#00b0ff"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">JETZT BEI</span>
+                        <span class="btn-large">Google Play</span>
+                    </div>
+                </a>
+                <a href="../../crypto-screener/" class="ghost-btn">Kostenlosen Web-Screener testen →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Weiterlesen</h3>
+                <div class="related-grid">
+                    <a href="../kraken-crypto-screener/index.html" class="related-card">
+                        <h4>Kraken Crypto Screener (EN)</h4>
+                        <p>Die ausführliche Kraken-Anleitung auf Englisch.</p>
+                        <div class="read-more">Weiterlesen &rarr;</div>
+                    </a>
+                    <a href="../bitstamp-screener-alerts/index.html" class="related-card">
+                        <h4>Bitstamp Screener (EN)</h4>
+                        <p>Technische Alarme auf einer regulierten Spot-Börse.</p>
+                        <div class="read-more">Weiterlesen &rarr;</div>
+                    </a>
+                    <a href="../okx-crypto-screener/index.html" class="related-card">
+                        <h4>OKX Screener (EN)</h4>
+                        <p>OKX Spot und Perpetuals mit eigenen Alarmen scannen.</p>
+                        <div class="read-more">Weiterlesen &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">No-Code-Strategie-Baukasten und Live-Markt-Screener für Krypto, auf Android, Windows und im Web.</p>
+                    <p class="disclaimer">
+                        <strong>Hinweis:</strong> BitLogic ist ein Werkzeug für technische Analyse und Markt-Screening. Es ist mit keiner der genannten Börsen verbunden oder partnerschaftlich verbunden. BitLogic bietet keine Anlageberatung und führt keine Trades für dich aus. Recherchiere immer selbst, bevor du mit Kryptowerten handelst.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Börsen-Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/index.html">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/index.html">Binance Screener</a>
+                        <a href="../bybit-futures-screener/index.html">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/index.html">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/index.html">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/index.html">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/index.html">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/index.html">VALR Screener</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/index.html">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/index.html">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Unternehmen &amp; Rechtliches</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">Über uns</a>
+                        <a href="../../privacy.html">Datenschutz (EN)</a>
+                        <a href="../../terms.html">AGB (EN)</a>
+                        <a href="../../data-deletion.html">Datenlöschung (EN)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>
