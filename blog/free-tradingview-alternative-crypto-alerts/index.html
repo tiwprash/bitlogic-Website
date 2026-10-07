@@ -22,11 +22,13 @@
     <meta property="og:title" content="The Free TradingView Alternative for Crypto Alerts: Your Rules, Not Another Dashboard">
     <meta property="og:description" content="Why alerting hits a wall on TradingView's free plan, and how to write one free rule that watches every pair on an exchange.">
     <meta property="og:url" content="https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/">
-    <meta property="og:image" content="https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/images/05-completed-condition.webp">
+    <meta property="og:image" content="https://bitlogic.info/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free TradingView Alternative for Crypto Alerts &amp; Screening">
     <meta name="twitter:description" content="A free way to write one rule that watches every pair on an exchange and alerts your phone.">
-    <meta name="twitter:image" content="https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/images/05-completed-condition.webp">
+    <meta name="twitter:image" content="https://bitlogic.info/og-image.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,8 +55,8 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is a good free TradingView alternative for crypto alerts?", "acceptedAnswer": { "@type": "Answer", "text": "It depends what you use TradingView for. If you mainly need alerts rather than charts, a rules-based crypto screener with alerts fits better. BitLogic's free tier includes the full rule builder, whole-exchange scans, live monitoring of up to five strategies and five market-wide alert feeds. Guests get 3 scans per 24 hours, and a free account raises that limit." } },
-        { "@type": "Question", "name": "Is BitLogic really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The rule builder, whole-exchange scans, live monitoring of up to five strategies, the five market feeds and push notifications are free. The free app is supported by ads. Pro (Rs 480/month or Rs 4,800/year, with a 14-day free trial) adds Telegram delivery, unlimited scans, an ad-free experience and priority support." } },
+        { "@type": "Question", "name": "What is a good free TradingView alternative for crypto alerts?", "acceptedAnswer": { "@type": "Answer", "text": "It depends what you use TradingView for. If you mainly need alerts rather than charts, a rules-based crypto screener with alerts fits better. BitLogic's free tier includes the full rule builder, whole-exchange scans, live monitoring of up to five strategies and five market-wide alert feeds. Guests get 3 scans per 24 hours, and a free account removes the limit." } },
+        { "@type": "Question", "name": "Is BitLogic really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The rule builder, whole-exchange scans, live monitoring of up to five strategies, the five market feeds and push notifications are free. The free app is supported by ads. Pro (US$4.99/month or US$49.99/year, Rs 480/4,800 in India, with a 14-day free trial) adds Telegram delivery, an ad-free experience, live monitors without an ad and priority support." } },
         { "@type": "Question", "name": "Can I get crypto alerts on Telegram without TradingView webhooks?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. BitLogic Pro sends alerts straight to Telegram. Tap Connect Telegram, press Start in the bot, and alerts begin arriving. No webhook server or third-party relay is needed." } },
         { "@type": "Question", "name": "Do I need to know Pine Script to build custom crypto alerts?", "acceptedAnswer": { "@type": "Answer", "text": "No. Rules are built by choosing an indicator, a comparison and a value from menus. You can still combine conditions with AND/OR, mix timeframes and compare one indicator against another." } },
         { "@type": "Question", "name": "Does BitLogic need my exchange API keys?", "acceptedAnswer": { "@type": "Answer", "text": "No. It reads public market data only and never places trades, so there is no key to share or leak." } },
@@ -99,7 +101,7 @@
                         <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
                         <div class="dropdown-content">
                             <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
-                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Windows App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +188,7 @@
             <p>BitLogic is a crypto screener and alert app built around the rules model. There is no wall of tickers to stare at. You write the condition once, and the app does the watching. (The steps below match our <a href="../how-to-screen-crypto-on-coindcx/index.html">step-by-step CoinDCX screening guide</a>, if you want more detail.)</p>
 
             <h3>Step 1: Pick the exchange and market</h3>
-            <p>Choose Coinbase, CoinDCX, Binance, Bybit, OKX, Kraken, KuCoin, VALR, Bitstamp or Upbit, then spot or futures.</p>
+            <p>Choose Coinbase, Kraken, Binance, Binance.US, Bybit, OKX, KuCoin, Bitstamp, Upbit, VALR or CoinDCX, then spot or futures.</p>
             <figure class="blog-shot">
                 <img src="../how-to-screen-crypto-on-coindcx/images/01-strategy-builder-coindcx.webp" alt="BitLogic Strategy Builder with CoinDCX selected as the exchange and Spot as the market" width="540" height="1200" loading="lazy">
                 <figcaption>Choosing the exchange and market in the Strategy Builder.</figcaption>
@@ -312,17 +314,17 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
                         <tr><th></th><th>TradingView Basic (free)</th><th>BitLogic free</th><th>BitLogic Pro</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Price</td><td>₹0</td><td>₹0</td><td>₹480/month or ₹4,800/year, 14-day free trial</td></tr>
+                        <tr><td>Price</td><td>₹0</td><td>₹0</td><td>US$4.99/month or US$49.99/year (₹480/₹4,800 in India), 14-day free trial</td></tr>
                         <tr><td>Alerts on indicators</td><td>None</td><td>Yes: full no-code rule builder</td><td>Yes</td></tr>
                         <tr><td>One alert watches</td><td>One symbol</td><td>Every pair on the exchange</td><td>Every pair on the exchange</td></tr>
                         <tr><td>Background alerts</td><td>3 price alerts</td><td>Up to 5 live strategies + 5 market feeds</td><td>Up to 5 live strategies + 5 market feeds</td></tr>
-                        <tr><td>Scans</td><td>Not applicable</td><td>Guests: 3 per 24 hours; a free account raises the limit</td><td>Unlimited</td></tr>
+                        <tr><td>Scans</td><td>Not applicable</td><td>Guests: 3 per 24 hours; unlimited with a free account</td><td>Unlimited</td></tr>
                         <tr><td>Telegram delivery</td><td>No</td><td>No (push notifications only)</td><td>Yes</td></tr>
                         <tr><td>Ads</td><td>Yes</td><td>Yes</td><td>Ad-free</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p>In short: the rule builder, whole-exchange scanning, live monitoring and push alerts are all free. Pro is for Telegram delivery, unlimited scans, no ads and priority support, and you do not need it to follow anything in this guide.</p>
+            <p>In short: the rule builder, whole-exchange scanning, live monitoring and push alerts are all free. Pro is for Telegram delivery, no ads, live monitors without an ad and priority support, and you do not need it to follow anything in this guide.</p>
 
             <h2>TradingView vs BitLogic for Alerts and Screening</h2>
             <div class="req-table-wrap">
@@ -339,11 +341,11 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
                         <tr><td>Needs exchange API keys</td><td>No</td><td>No</td></tr>
                         <tr><td>Charting</td><td>Best in class</td><td>None</td></tr>
                         <tr><td>Platforms</td><td>Web, desktop, iOS, Android</td><td>Android, Windows, basic web screener</td></tr>
-                        <tr><td>Paid plans</td><td>₹995 to ₹17,333/month</td><td>₹480/month or ₹4,800/year</td></tr>
+                        <tr><td>Paid plans</td><td>₹995 to ₹17,333/month</td><td>₹480/month or ₹4,800/year in India (US$4.99/US$49.99 in the US)</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p>TradingView figures are Indian pricing on annual billing, September 2026. BitLogic guests get 3 scans per 24 hours; a free account raises that limit.</p>
+            <p>TradingView figures are Indian pricing on annual billing, September 2026. BitLogic guests get 3 scans per 24 hours; a free account removes the limit.</p>
 
             <h2>When TradingView Is Still the Better Choice</h2>
             <p>An honest comparison includes the case for the other side. Stick with TradingView if:</p>
@@ -358,10 +360,10 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
             <h2>FAQ</h2>
 
             <h3 class="faq-q">What is a good free TradingView alternative for crypto alerts?</h3>
-            <p>It depends what you use TradingView for. If you mainly need alerts rather than charts, a rules-based crypto screener with alerts fits better. BitLogic's free tier includes the full rule builder, whole-exchange scans, live monitoring of up to five strategies and five market-wide alert feeds. Guests get 3 scans per 24 hours, and a free account raises that limit.</p>
+            <p>It depends what you use TradingView for. If you mainly need alerts rather than charts, a rules-based crypto screener with alerts fits better. BitLogic's free tier includes the full rule builder, whole-exchange scans, live monitoring of up to five strategies and five market-wide alert feeds. Guests get 3 scans per 24 hours, and a free account removes the limit.</p>
 
             <h3 class="faq-q">Is BitLogic really free?</h3>
-            <p>Yes. The rule builder, whole-exchange scans, live monitoring of up to five strategies, the five market feeds and push notifications are free. The free app is supported by ads. Pro (₹480/month or ₹4,800/year, with a 14-day free trial) adds Telegram delivery, unlimited scans, an ad-free experience and priority support.</p>
+            <p>Yes. The rule builder, whole-exchange scans, live monitoring of up to five strategies, the five market feeds and push notifications are free. The free app is supported by ads. Pro (US$4.99/month or US$49.99/year, ₹480/₹4,800 in India, with a 14-day free trial) adds Telegram delivery, an ad-free experience, live monitors without an ad and priority support.</p>
 
             <h3 class="faq-q">Can I get crypto alerts on Telegram without TradingView webhooks?</h3>
             <p>Yes. BitLogic Pro sends alerts straight to Telegram. Tap Connect Telegram, press Start in the bot, and alerts begin arriving. No webhook server or third-party relay is needed.</p>
@@ -452,6 +454,7 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
                         <a href="../../privacy.html">Privacy Policy</a>
                         <a href="../../terms.html">Terms &amp; Conditions</a>
                         <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
                     </div>
                 </div>
             </div>

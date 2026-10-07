@@ -14,8 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#06080f">
     <title>Privacy Policy - BitLogic</title>
-    <meta name="description" content="The privacy policy covering BitLogic and all apps, games, and services we publish: what data we collect, how we use it, the third parties we work with, and your rights.">
+    <meta name="description" content="BitLogic privacy policy: what data our apps collect, how we use it, the services we share it with, and your rights in the US, UK, EU, Canada and Australia.">
     <link rel="canonical" href="https://bitlogic.info/privacy.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:title" content="Privacy Policy - BitLogic">
+    <meta property="og:description" content="BitLogic privacy policy: what data our apps collect, how we use it, the services we share it with, and your rights in the US, UK, EU, Canada and Australia.">
+    <meta property="og:url" content="https://bitlogic.info/privacy.html">
+    <meta property="og:image" content="https://bitlogic.info/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bitlogic.info/og-image.jpg">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -50,12 +60,13 @@
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms &amp; Conditions</a>
                     <a href="data-deletion.html">Data Deletion</a>
+                        <a href="support.html">Support</a>
 
                     <div class="nav-download-dropdown">
                         <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
                         <div class="dropdown-content">
                             <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
-                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener">Windows App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +78,7 @@
         <div class="legal-page">
             <h1>Privacy Policy</h1>
 
-            <p><strong>Last Updated:</strong> August 30, 2026</p>
+            <p><strong>Last Updated:</strong> October 7, 2026</p>
 
             <h2>Introduction</h2>
             <p>BitLogic ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy applies to BitLogic and to every mobile app, desktop app, game, and website that we currently publish or may publish in the future (collectively, the "Services"). It explains what information we collect across the Services, how we use it, who we share it with, and the choices and rights you have.</p>
@@ -96,6 +107,22 @@
 
             <h3>App-Specific Data</h3>
             <p>Some Services may collect additional data specific to their function. For example, BitLogic's crypto screener may access public cryptocurrency market data, but it does not collect or store your personal wallet information, private keys, or exchange account credentials. Where a future app or game collects additional categories of data, we will disclose that in the app itself or in an app-specific privacy notice.</p>
+
+            <h2>BitLogic Crypto Alert Screener: What the App Uses</h2>
+            <p>This section lists, for the BitLogic crypto screener app on iPhone, iPad, Android and Windows, the services it uses and the data each one receives.</p>
+            <ul>
+                <li><strong>Sign-in (optional):</strong> you can use the app as a guest, or sign in with Apple, Google or email. We receive your name (if you share it), your email address and a user ID. With Sign in with Apple, Apple may give us a private relay email address or no email at all; you can add an email later in the app.</li>
+                <li><strong>Supabase (account database):</strong> stores your account and the data you create in the app: saved strategies, live monitors, alert settings and your recent alert history. It is hosted in the cloud.</li>
+                <li><strong>BitLogic alert servers:</strong> run your saved live monitors and market alert feeds, and send the resulting push notifications.</li>
+                <li><strong>Push notifications:</strong> Firebase Cloud Messaging, together with the Apple Push Notification service on iPhone and iPad. We store your device's push token with your settings so alerts can reach you.</li>
+                <li><strong>Purchases:</strong> subscriptions are processed by the App Store, Google Play or the Microsoft Store and managed through RevenueCat. We receive the purchase and subscription status only, never your card number.</li>
+                <li><strong>Telegram (BitLogic Pro):</strong> if you connect Telegram, we store your Telegram chat ID to deliver alerts there. You can disconnect at any time.</li>
+                <li><strong>Firebase Analytics and Crashlytics:</strong> crash reports and app-usage events (for example the type of scan, the exchange and the strategy name), plus device model, operating system and app version. We use these to fix bugs and improve the app.</li>
+                <li><strong>Approximate location:</strong> when you sign in, the app looks up your approximate city and country from your IP address (through ipapi.co or freeipapi.com) and saves it to your profile. We never collect precise GPS location.</li>
+                <li><strong>Advertising (free users):</strong> Google AdMob, with mediation partners such as Meta Audience Network and Unity Ads, shows ads in the free app and may use your device's advertising identifier. On iPhone and iPad you are asked through Apple's App Tracking Transparency prompt; where the law requires it (for example in the EU and UK), Google's consent form lets you choose. BitLogic Pro removes ads.</li>
+                <li><strong>Cloudflare:</strong> caches historical price data. No personal data is involved.</li>
+                <li><strong>Market data:</strong> the app reads public market data from crypto exchanges. It never asks for exchange API keys, wallet keys or exchange logins, holds no funds and places no trades.</li>
+            </ul>
 
             <h2>How We Use Your Information</h2>
             <p>We use the information we collect to:</p>
@@ -136,7 +163,15 @@
             <p>We implement reasonable technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
 
             <h2>Data Retention</h2>
-            <p>We retain information only as long as necessary to provide the Services, comply with our legal obligations, resolve disputes, and enforce our agreements.</p>
+            <p>We retain information only as long as necessary to provide the Services, comply with our legal obligations, resolve disputes, and enforce our agreements. For BitLogic in particular:</p>
+            <ul>
+                <li>Account data, saved strategies, monitors and alert settings are kept while your account exists and are deleted when you delete your account.</li>
+                <li>Alert history shown in the app covers recent alerts only and older entries are removed automatically.</li>
+                <li>Analytics and crash data are kept for the retention periods configured in Firebase and then deleted automatically.</li>
+                <li>Purchase records are kept by the app stores and RevenueCat as required for billing, tax and legal purposes.</li>
+                <li>Deleted data may remain in backups for a limited period before it is overwritten.</li>
+            </ul>
+            <p>To delete your account yourself, open the app and go to <strong>Settings &gt; Delete Account</strong>. This removes your account and the data stored on our servers for it. Deleting your account does not cancel a subscription: cancel it in your App Store, Google Play or Microsoft Store account. See <a href="data-deletion.html">Data Deletion</a> for other options.</p>
 
             <h2>Your Rights</h2>
             <p>Depending on your location, you may have rights regarding your personal information, including the right to:</p>
@@ -148,7 +183,13 @@
                 <li>Request a portable copy of your data</li>
                 <li>Withdraw consent, where processing is based on consent (e.g., ad personalization)</li>
             </ul>
-            <p>To exercise any of these rights, contact us using the details below.</p>
+            <p>To exercise any of these rights, contact us using the details below. Depending on where you live:</p>
+            <ul>
+                <li><strong>European Union, including Germany (GDPR) and the United Kingdom (UK GDPR):</strong> you have the rights listed above and may complain to your local data protection authority (in the UK, the Information Commissioner's Office).</li>
+                <li><strong>United States, including California (CCPA/CPRA):</strong> you may ask what personal information we collect, ask us to delete it, and opt out of its "sale" or "sharing". We do not sell your personal information. You will not be treated differently for using these rights.</li>
+                <li><strong>Canada (PIPEDA):</strong> you may access and correct your personal information and withdraw consent, and you may complain to the Office of the Privacy Commissioner of Canada.</li>
+                <li><strong>Australia (Privacy Act 1988):</strong> you may access and correct your personal information, and you may complain to the Office of the Australian Information Commissioner.</li>
+            </ul>
 
             <h2>Children's Privacy</h2>
             <p>Our Services are generally not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13 (or the relevant minimum age in your jurisdiction). If a particular app or game is intended for a general or younger audience, that app's store listing and any in-app notice will describe the additional protections in place for that app, consistent with applicable laws such as COPPA. If you believe a child has provided us with personal information, please contact us so we can remove it.</p>
@@ -164,10 +205,11 @@
 
             <h2>Contact Information</h2>
             <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:Support@bitlogic.info">Support@bitlogic.info</a></p>
+            <p><strong>Email:</strong> <a href="mailto:support@bitlogic.info">support@bitlogic.info</a></p>
+            <p><strong>Support page:</strong> <a href="support.html">bitlogic.info/support.html</a></p>
             <p><strong>Website:</strong> <a href="https://bitlogic.info">bitlogic.info</a></p>
 
-            <p class="last-updated">This Privacy Policy was last updated on August 30, 2026.</p>
+            <p class="last-updated">This Privacy Policy was last updated on October 7, 2026.</p>
         </div>
     </main>
 

@@ -1,0 +1,51 @@
+# BitLogic
+
+> BitLogic is a no-code crypto screener and alert app for Android and Windows, with a free web screener. It scans hundreds of coins on 11 exchanges against rules the user builds and sends matches as push notifications or Telegram messages. It does not place trades, hold funds or ask for exchange API keys, and it gives no financial advice.
+
+Facts verified 7 October 2026 against BitLogic 1.0.38. Prices vary by country and are shown in the app and the store listing.
+
+## Key facts
+- Exchanges (11): Coinbase, Kraken, Binance, Binance.US, Bybit, OKX, KuCoin, Bitstamp, Upbit, VALR, CoinDCX
+- Up to 400 trading pairs per scan; timeframes from 1 minute up to 1 week (depends on the exchange)
+- 60+ technical indicators and 60+ candlestick patterns, AND/OR logic, long and short rules
+- Free alert feeds on Binance Futures data: liquidations, funding rates, open interest, volume spikes, price moves
+- Live monitoring: up to 5 monitors, alerts arrive with the app closed
+- Free: scanning, alert feeds, strategy builder. Guests get 3 scans per 24 hours; a free account removes the limit
+- BitLogic Pro: Telegram alerts, no ads, live monitors without an ad, priority support; US$4.99/month or US$49.99/year (2 months free); 14-day free trial
+
+## Core pages
+- [What is BitLogic](https://bitlogic.info/what-is-bitlogic/): one-page factual description, limits and FAQ
+- [Home and features](https://bitlogic.info/): alerts, strategy builder, indicators, exchanges
+- [Web crypto screener](https://bitlogic.info/crypto-screener/): free in the browser, no signup
+- [Support](https://bitlogic.info/support.html): contact, subscriptions, notification fixes
+- [Privacy Policy](https://bitlogic.info/privacy.html)
+- [Terms](https://bitlogic.info/terms.html)
+- [Data deletion](https://bitlogic.info/data-deletion.html)
+
+## Downloads
+- [Google Play (Android)](https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro)
+- [Microsoft Store (Windows)](https://apps.microsoft.com/detail/9PGBXSLTP4DS)
+
+## Exchange guides
+- [Coinbase custom alerts](https://bitlogic.info/blog/coinbase-custom-alerts/): US, UK, Canada, Australia, Germany
+- [Kraken crypto screener](https://bitlogic.info/blog/kraken-crypto-screener/): US, UK, Canada, Australia, Germany
+- [Bitstamp screener](https://bitlogic.info/blog/bitstamp-screener-alerts/): US, UK, EU
+- [OKX screener](https://bitlogic.info/blog/okx-crypto-screener/): UK, Australia, EU
+- [Bybit futures screener](https://bitlogic.info/blog/bybit-futures-screener/): Australia, UK spot, EU
+- [Binance screener](https://bitlogic.info/blog/binance-crypto-screener/): Australia spot, global
+- [Binance.US screener](https://bitlogic.info/blog/binance-us-screener/): US
+- [KuCoin altcoin screener](https://bitlogic.info/blog/kucoin-altcoin-screener/): Australia
+- [Upbit screener](https://bitlogic.info/blog/upbit-screener-korean-market/)
+- [VALR screener](https://bitlogic.info/blog/valr-crypto-screener/)
+- [CoinDCX screening guide](https://bitlogic.info/blog/how-to-screen-crypto-on-coindcx/)
+- [Krypto-Screener mit Alarmen (German)](https://bitlogic.info/blog/krypto-screener-mit-alarmen/)
+
+## Guides
+- [Crypto liquidation alerts explained](https://bitlogic.info/blog/crypto-liquidation-alerts-explained/)
+- [Funding rate alerts explained](https://bitlogic.info/blog/funding-rate-alerts-explained/)
+- [Free TradingView alternative for crypto alerts](https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/)
+- [BitLogic vs TradingView vs 3Commas](https://bitlogic.info/blog/bitlogic-vs-tradingview-vs-3commas/)
+
+## Optional
+- [About](https://bitlogic.info/about.html)
+- [Blog](https://bitlogic.info/blog/)

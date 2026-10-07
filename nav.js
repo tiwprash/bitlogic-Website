@@ -35,6 +35,9 @@ document.addEventListener('click', function (e) {
     } else if (href.indexOf('apps.microsoft.com') !== -1) {
         params.store = 'microsoft_store';
         window.gtag('event', 'download_click', params);
+    } else if (href.indexOf('apps.apple.com') !== -1) {
+        params.store = 'app_store';
+        window.gtag('event', 'download_click', params);
     } else if (/(^|\/)crypto-screener\/?(#.*)?$/.test(href.split('?')[0])) {
         window.gtag('event', 'web_screener_launch', params);
     }

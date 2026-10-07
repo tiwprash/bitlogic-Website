@@ -1092,6 +1092,7 @@ footer {
     max-width: 760px;
     background: transparent;
     margin: 0 auto;
+    overflow-wrap: break-word;
 }
 
 .blog-post h1 {
