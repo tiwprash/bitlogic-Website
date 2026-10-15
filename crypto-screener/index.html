@@ -254,6 +254,68 @@
         </section>
     </main>
 
+    <!-- App promo popup (shown once every 3 days) -->
+    <dialog id="app-promo" class="app-promo" aria-labelledby="app-promo-title">
+        <button type="button" class="app-promo-close" data-close aria-label="Close">&times;</button>
+        <span class="app-promo-badge">Free app</span>
+        <h2 id="app-promo-title">Get the full BitLogic app</h2>
+        <p class="app-promo-lead">This web screener is the basic version. The BitLogic app for Android phones and Windows does much more:</p>
+        <ul class="app-promo-list">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Live monitoring:</strong> up to 5 strategies checked in the background, with alerts even when the app is closed</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Push and Telegram alerts</strong> the moment a coin matches your setup (Telegram with Pro)</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Six free alert types:</strong> liquidations, funding rates, open interest, volume spikes, price moves and your own strategies</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>11 exchanges</strong>, including Coinbase and Binance.US, and timeframes up to 1 week</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>10 ready-made strategies</strong> you can load and adjust</span></li>
+        </ul>
+        <div class="app-promo-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener" class="download-btn primary-download">
+                <svg viewBox="0 0 512 512" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M325.3 234.3L104.6 13.2C98.4 6.9 90.5 3.5 81.3 3.5c-9.5 0-17.7 3.6-24 10.1C51.1 20 48 28.5 48 39.3v433.4c0 10.9 3.1 19.3 9.3 25.7 6.3 6.4 14.5 10.1 24 10.1 9.1 0 17-3.4 23.3-9.7l220.7-221.2c6.2-6.2 9.6-14.7 9.6-21.7s-3.4-15.4-9.6-21.6z" fill="#05130d"/><path d="M473.4 207.2l-105-60.5L325.3 190l43.1 43.1-43.1 43.1 43.1 43.1 105-60.5c11.5-6.6 17.5-16.7 17.5-26.6s-6-20-17.5-26.6z" fill="#05130d"/></svg>
+                <div class="btn-text">
+                    <span class="btn-small">ANDROID</span>
+                    <span class="btn-large">Google Play</span>
+                </div>
+            </a>
+            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener" class="download-btn">
+                <svg viewBox="0 0 512 512" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="#00a4ef"/></svg>
+                <div class="btn-text">
+                    <span class="btn-small">WINDOWS</span>
+                    <span class="btn-large">Microsoft Store</span>
+                </div>
+            </a>
+        </div>
+        <p class="app-promo-foot">Free to download. <button type="button" class="app-promo-link" data-close>Keep using the web screener</button></p>
+    </dialog>
+    <script>
+    (function () {
+        var d = document.getElementById('app-promo');
+        if (!d || typeof d.showModal !== 'function') return;
+        var KEY = 'bl_app_promo_closed', DAYS = 3, DELAY = 15000;
+        function recentlyClosed() {
+            try { var t = +localStorage.getItem(KEY); return t && (Date.now() - t) < DAYS * 864e5; } catch (e) { return false; }
+        }
+        function close() {
+            if (d.open) d.close();
+        }
+        d.addEventListener('close', function () {
+            try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+        });
+        d.addEventListener('click', function (e) {
+            if (e.target.closest && e.target.closest('[data-close]')) return close();
+            if (e.target === d) {
+                var r = d.getBoundingClientRect();
+                if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) close();
+            }
+        });
+        d.querySelectorAll('a[href^="http"]').forEach(function (a) { a.addEventListener('click', close); });
+        if (recentlyClosed()) return;
+        setTimeout(function () {
+            if (document.visibilityState === 'hidden' || d.open) return;
+            d.showModal();
+            if (typeof window.gtag === 'function') window.gtag('event', 'app_promo_shown', { page_path: location.pathname });
+        }, DELAY);
+    })();
+    </script>
+
     <footer>
         <div class="container">
             <div class="footer-content">
