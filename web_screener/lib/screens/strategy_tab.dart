@@ -121,6 +121,10 @@ class _StrategyTabState extends State<StrategyTab> {
             ),
             itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
               const PopupMenuItem<String>(
+                value: 'ios',
+                child: Text('iOS App (App Store)', style: TextStyle(color: Colors.white)),
+              ),
+              const PopupMenuItem<String>(
                 value: 'android',
                 child: Text('Android App', style: TextStyle(color: Colors.white)),
               ),
@@ -130,10 +134,12 @@ class _StrategyTabState extends State<StrategyTab> {
               ),
             ],
             onSelected: (String result) {
-              if (result == 'android') {
+              if (result == 'ios') {
+                html.window.open('https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342', '_blank');
+              } else if (result == 'android') {
                 html.window.open('https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro', '_blank');
               } else if (result == 'windows') {
-                html.window.open('https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare', '_blank');
+                html.window.open('https://apps.microsoft.com/detail/9PGBXSLTP4DS', '_blank');
               }
             },
           ),

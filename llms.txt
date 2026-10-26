@@ -1,6 +1,6 @@
 # BitLogic
 
-> BitLogic is a no-code crypto screener and alert app for Android and Windows, with a free web screener. It scans hundreds of coins on 11 exchanges against rules the user builds and sends matches as push notifications or Telegram messages. It does not place trades, hold funds or ask for exchange API keys, and it gives no financial advice.
+> BitLogic is a no-code crypto screener and alert app for iOS, Android and Windows, with a free web screener. It scans hundreds of coins on 11 exchanges against rules the user builds and sends matches as push notifications or Telegram messages. It does not place trades, hold funds or ask for exchange API keys, and it gives no financial advice.
 
 Facts verified 7 October 2026 against BitLogic 1.0.38. Prices vary by country and are shown in the app and the store listing.
 
@@ -23,6 +23,7 @@ Facts verified 7 October 2026 against BitLogic 1.0.38. Prices vary by country an
 - [Data deletion](https://bitlogic.info/data-deletion.html)
 
 ## Downloads
+- [Apple App Store (iOS)](https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342)
 - [Google Play (Android)](https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro)
 - [Microsoft Store (Windows)](https://apps.microsoft.com/detail/9PGBXSLTP4DS)
 

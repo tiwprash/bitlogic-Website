@@ -22,6 +22,7 @@ def process_file(filepath):
                     <div class="nav-download-dropdown">
                         <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
                         <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank">iOS App</a>
                             <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank">Android App</a>
                             <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS?hl=en-us&gl=IN&ocid=pdpshare" target="_blank">Windows App</a>
                         </div>

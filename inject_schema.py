@@ -10,7 +10,7 @@ faq_html = """
                 <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">Frequently Asked Questions</h2>
                 <div class="faq-item" style="margin-bottom: 1.5rem;">
                     <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary);">Is BitLogic free to use?</h3>
-                    <p style="color: var(--text-secondary);">Yes, you can download and use the basic features of the BitLogic crypto screener for free on Android and Windows.</p>
+                    <p style="color: var(--text-secondary);">Yes, you can download and use the basic features of the BitLogic crypto screener for free on iOS, Android and Windows.</p>
                 </div>
                 <div class="faq-item" style="margin-bottom: 1.5rem;">
                     <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-primary);">Do I need to know how to code to use BitLogic?</h3>
@@ -29,7 +29,7 @@ software_schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "BitLogic",
-  "operatingSystem": "Android, Windows",
+  "operatingSystem": "iOS, Android, Windows",
   "applicationCategory": "FinanceApplication",
   "offers": {
     "@type": "Offer",
@@ -48,7 +48,7 @@ faq_schema = {
       "name": "Is BitLogic free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can download and use the basic features of the BitLogic crypto screener for free on Android and Windows."
+        "text": "Yes, you can download and use the basic features of the BitLogic crypto screener for free on iOS, Android and Windows."
       }
     },
     {
