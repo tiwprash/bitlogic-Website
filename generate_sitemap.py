@@ -14,6 +14,10 @@ for root, dirs, files in os.walk(base_dir):
             continue
             
         if file.endswith('.html'):
+            # Skip pages that ask search engines not to index them
+            with open(os.path.join(root, file), encoding='utf-8', errors='ignore') as fh:
+                if 'content="noindex' in fh.read(4000):
+                    continue
             # Get relative path
             rel_path = os.path.relpath(os.path.join(root, file), base_dir).replace('\\', '/')
             if rel_path == "index.html":

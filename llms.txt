@@ -42,6 +42,7 @@ Facts verified 7 October 2026 against BitLogic 1.0.38. Prices vary by country an
 - [Krypto-Screener mit Alarmen (German)](https://bitlogic.info/blog/krypto-screener-mit-alarmen/)
 
 ## Guides
+- [Crypto alerts for US traders](https://bitlogic.info/blog/crypto-alerts-for-us-traders/): how Binance Futures alerts and Binance.US scanning work from the US
 - [Crypto liquidation alerts explained](https://bitlogic.info/blog/crypto-liquidation-alerts-explained/)
 - [Funding rate alerts explained](https://bitlogic.info/blog/funding-rate-alerts-explained/)
 - [Free TradingView alternative for crypto alerts](https://bitlogic.info/blog/free-tradingview-alternative-crypto-alerts/)
