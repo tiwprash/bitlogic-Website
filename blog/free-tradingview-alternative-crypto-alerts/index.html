@@ -81,7 +81,7 @@
         <nav>
             <div class="nav-container">
                 <div class="logo">
-                    <a href="../../index.html" style="display: flex; align-items: center; gap: 0.65rem;">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
                         <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
                         <span class="logo-text">BitLogic</span>
                     </a>
@@ -91,10 +91,10 @@
                 </button>
                 <div class="nav-links">
                     <a href="../../about.html">About</a>
-                    <a href="../../index.html#features">Features</a>
-                    <a href="../../index.html#indicators">Indicators</a>
-                    <a href="../../index.html#exchanges">Exchanges</a>
-                    <a href="../../blog/index.html">Blog</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
                     <a href="../../crypto-screener/">Crypto Screener</a>
 
                     <div class="nav-download-dropdown">
@@ -114,8 +114,8 @@
         <article class="blog-post">
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="../index.html">Blog</a></li>
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Free TradingView Alternative</li>
                 </ol>
             </nav>
@@ -186,7 +186,7 @@
             <p>Look at the last row, though. A rules-based tool is only as good as the rule you give it. If the builder cannot say exactly what you mean, you swap missed setups for spam. So the rule builder is the part worth judging.</p>
 
             <h2>Alerts on Your Own Rules: How BitLogic Works</h2>
-            <p>BitLogic is a crypto screener and alert app built around the rules model. There is no wall of tickers to stare at. You write the condition once, and the app does the watching. (The steps below match our <a href="../how-to-screen-crypto-on-coindcx/index.html">step-by-step CoinDCX screening guide</a>, if you want more detail.)</p>
+            <p>BitLogic is a crypto screener and alert app built around the rules model. There is no wall of tickers to stare at. You write the condition once, and the app does the watching. (The steps below match our <a href="../how-to-screen-crypto-on-coindcx/">step-by-step CoinDCX screening guide</a>, if you want more detail.)</p>
 
             <h3>Step 1: Pick the exchange and market</h3>
             <p>Choose Coinbase, Kraken, Binance, Binance.US, Bybit, OKX, KuCoin, Bitstamp, Upbit, VALR or CoinDCX, then spot or futures.</p>
@@ -280,7 +280,7 @@
             <h3>1. Oversold, but still in an uptrend</h3>
             <pre class="rule-block"><code>IF   RSI(14)  [1h, Last Closed]  Is Less Than     30
 AND  Close    [4h]               Is Greater Than  EMA(200) [4h]</code></pre>
-            <p>A bare "RSI below 30" fires constantly during a downtrend. The 4-hour EMA filter only lets it through when the bigger trend still points up. It is the same idea behind our <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/index.html">RSI Reversal Bounce strategy</a>.</p>
+            <p>A bare "RSI below 30" fires constantly during a downtrend. The 4-hour EMA filter only lets it through when the bigger trend still points up. It is the same idea behind our <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/">RSI Reversal Bounce strategy</a>.</p>
 
             <h3>2. A moving-average cross with real volume behind it</h3>
             <pre class="rule-block"><code>IF   EMA(20)  [1h]  Crosses Above    EMA(50) [1h]
@@ -296,10 +296,10 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
             <h2>Market-Wide Alerts Without Writing a Rule</h2>
             <p>Some events are hard to express as an indicator rule, so BitLogic also has five ready-made feeds, each with a single threshold:</p>
             <ul>
-                <li><strong>Liquidations:</strong> large forced closes on Binance (<a href="../crypto-liquidation-alerts-explained/index.html">how liquidation alerts work</a>)</li>
+                <li><strong>Liquidations:</strong> large forced closes on Binance (<a href="../crypto-liquidation-alerts-explained/">how liquidation alerts work</a>)</li>
                 <li><strong>Volume spikes</strong></li>
                 <li><strong>Price anomalies</strong></li>
-                <li><strong>Funding rates</strong> (<a href="../funding-rate-alerts-explained/index.html">how funding rate alerts work</a>)</li>
+                <li><strong>Funding rates</strong> (<a href="../funding-rate-alerts-explained/">how funding rate alerts work</a>)</li>
                 <li><strong>Open interest</strong></li>
             </ul>
             <figure class="blog-shot">
@@ -356,7 +356,7 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
                 <li><strong>You need traditional financial markets.</strong> TradingView covers stocks, forex, indices and commodities in addition to crypto; BitLogic is focused 100% on cryptocurrency.</li>
                 <li><strong>You trade stocks or forex too.</strong> BitLogic is crypto only.</li>
             </ul>
-            <p>Plenty of traders use both: BitLogic to find the setup, TradingView to judge it. That split plays to each tool's strength. For bot execution as well, see the full <a href="../bitlogic-vs-tradingview-vs-3commas/index.html">BitLogic vs TradingView vs 3Commas comparison</a>.</p>
+            <p>Plenty of traders use both: BitLogic to find the setup, TradingView to judge it. That split plays to each tool's strength. For bot execution as well, see the full <a href="../bitlogic-vs-tradingview-vs-3commas/">BitLogic vs TradingView vs 3Commas comparison</a>.</p>
 
             <h2>FAQ</h2>
 
@@ -405,17 +405,17 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
             <div class="related-strategies">
                 <h3>Keep Reading</h3>
                 <div class="related-grid">
-                    <a href="../bitlogic-vs-tradingview-vs-3commas/index.html" class="related-card">
+                    <a href="../bitlogic-vs-tradingview-vs-3commas/" class="related-card">
                         <h4>BitLogic vs TradingView vs 3Commas</h4>
                         <p>Three tools, three jobs. Features, prices, trade-offs.</p>
                         <div class="read-more">Read the Comparison &rarr;</div>
                     </a>
-                    <a href="../how-to-screen-crypto-on-coindcx/index.html" class="related-card">
+                    <a href="../how-to-screen-crypto-on-coindcx/" class="related-card">
                         <h4>How to Screen Crypto on CoinDCX</h4>
                         <p>Build a strategy, scan every pair, and get alerts.</p>
                         <div class="read-more">Read the Guide &rarr;</div>
                     </a>
-                    <a href="../crypto-liquidation-alerts-explained/index.html" class="related-card">
+                    <a href="../crypto-liquidation-alerts-explained/" class="related-card">
                         <h4>Crypto Liquidation Alerts Explained</h4>
                         <p>Read long vs short liquidations and set a sane threshold.</p>
                         <div class="read-more">Read the Guide &rarr;</div>
@@ -441,18 +441,18 @@ AND  RSI(14)  [4h]               Is Less Than  35</code></pre>
                 <div class="footer-links-group">
                     <h4>Resources</h4>
                     <div class="footer-links">
-                        <a href="../free-tradingview-alternative-crypto-alerts/index.html">Free TradingView Alternative for Crypto Alerts</a>
-                        <a href="../bitlogic-vs-tradingview-vs-3commas/index.html">BitLogic vs TradingView vs 3Commas</a>
-                        <a href="../how-to-screen-crypto-on-coindcx/index.html">Screen Crypto on CoinDCX</a>
-                        <a href="../crypto-liquidation-alerts-explained/index.html">Crypto Liquidation Alerts Explained</a>
-                        <a href="../funding-rate-alerts-explained/index.html">Funding Rate Alerts Explained</a>
-                        <a href="../prebuilt-triple-ema-cross-momentum-screener/index.html">Triple EMA Strategy</a>
-                        <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/index.html">RSI Reversal Bounce</a>
-                        <a href="../prebuilt-macd-zero-cross-momentum-screener/index.html">MACD Zero Cross</a>
-                        <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/index.html">Bollinger Band Squeeze</a>
-                        <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/index.html">SuperTrend Flip</a>
-                        <a href="../prebuilt-stochrsi-cross-momentum-screener/index.html">StochRSI Cross</a>
-                        <a href="../prebuilt-vwap-pullback-bounce-screener/index.html">VWAP Pullback</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative for Crypto Alerts</a>
+                        <a href="../bitlogic-vs-tradingview-vs-3commas/">BitLogic vs TradingView vs 3Commas</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../crypto-liquidation-alerts-explained/">Crypto Liquidation Alerts Explained</a>
+                        <a href="../funding-rate-alerts-explained/">Funding Rate Alerts Explained</a>
+                        <a href="../prebuilt-triple-ema-cross-momentum-screener/">Triple EMA Strategy</a>
+                        <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/">RSI Reversal Bounce</a>
+                        <a href="../prebuilt-macd-zero-cross-momentum-screener/">MACD Zero Cross</a>
+                        <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger Band Squeeze</a>
+                        <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/">SuperTrend Flip</a>
+                        <a href="../prebuilt-stochrsi-cross-momentum-screener/">StochRSI Cross</a>
+                        <a href="../prebuilt-vwap-pullback-bounce-screener/">VWAP Pullback</a>
                     </div>
                 </div>
                 <div class="footer-links-group">

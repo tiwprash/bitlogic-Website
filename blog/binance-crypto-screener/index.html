@@ -151,7 +151,7 @@
         <nav>
             <div class="nav-container">
                 <div class="logo">
-                    <a href="../../index.html" style="display: flex; align-items: center; gap: 0.65rem;">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
                         <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
                         <span class="logo-text">BitLogic</span>
                     </a>
@@ -161,10 +161,10 @@
                 </button>
                 <div class="nav-links">
                     <a href="../../about.html">About</a>
-                    <a href="../../index.html#features">Features</a>
-                    <a href="../../index.html#indicators">Indicators</a>
-                    <a href="../../index.html#exchanges">Exchanges</a>
-                    <a href="../../blog/index.html">Blog</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
                     <a href="../../crypto-screener/">Crypto Screener</a>
 
                     <div class="nav-download-dropdown">
@@ -184,8 +184,8 @@
         <article class="blog-post">
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="../index.html">Blog</a></li>
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Binance Screener</li>
                 </ol>
             </nav>
@@ -219,7 +219,7 @@
                     </tbody>
                 </table>
             </div>
-            <p><strong>A technical note for US readers:</strong> Binance blocks its public market-data API for US IP addresses, so BitLogic can't load Binance data from the US. Pick <a href="../binance-us-screener/index.html"><strong>Binance.US</strong></a> in BitLogic instead (spot only, in the states Binance.US serves), or screen <a href="../coinbase-custom-alerts/index.html">Coinbase</a>, <a href="../kraken-crypto-screener/index.html">Kraken</a> or <a href="../bitstamp-screener-alerts/index.html">Bitstamp</a> instead.</p>
+            <p><strong>A technical note for US readers:</strong> Binance blocks its public market-data API for US IP addresses, so BitLogic can't load Binance data from the US. Pick <a href="../binance-us-screener/"><strong>Binance.US</strong></a> in BitLogic instead (spot only, in the states Binance.US serves), or screen <a href="../coinbase-custom-alerts/">Coinbase</a>, <a href="../kraken-crypto-screener/">Kraken</a> or <a href="../bitstamp-screener-alerts/">Bitstamp</a> instead.</p>
             <p>Sources: <a href="https://www.binance.com/en-AU/blog/all/winding-down-of-binance-australia-derivatives-on-21-april-2023-5937431074265361443" target="_blank" rel="noopener">Binance Australia derivatives wind-down</a>; <a href="https://www.coindesk.com/policy/2026/06/26/binance-tells-eu-users-it-will-no-longer-provide-services-after-failing-to-secure-mica-license" target="_blank" rel="noopener">CoinDesk on the EU suspension</a>.</p>
             <h2>Why Screen Binance at All?</h2>
             <p>Even traders who don't hold an account there watch Binance. It is where most altcoin volume trades, so moves often show up on Binance first. For Australian traders it is also one of the most-used spot exchanges in the country.</p>
@@ -287,7 +287,7 @@
             <h3>2. Oversold, but only in an uptrend</h3>
             <pre class="rule-block"><code>IF   RSI(14)  [1h, Last Closed]  Is Less Than     35
 AND  Close    [4h]               Is Greater Than  EMA(200) [4h]</code></pre>
-            <p>Plain oversold signals fire constantly in downtrends. The 4-hour trend filter removes most of them. Use Multi-Timeframe mode to mix 1-hour and 4-hour candles. The idea is the same as our <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/index.html">RSI Reversal Bounce strategy</a>.</p>
+            <p>Plain oversold signals fire constantly in downtrends. The 4-hour trend filter removes most of them. Use Multi-Timeframe mode to mix 1-hour and 4-hour candles. The idea is the same as our <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/">RSI Reversal Bounce strategy</a>.</p>
             <h3>3. Volume breakout</h3>
             <pre class="rule-block"><code>IF   Close    [1h, Last Closed]  Crosses Above    Bollinger Band upper (20, 2)
 AND  Volume   [1h]               Is Greater Than  Volume SMA(20) × 2</code></pre>
@@ -306,7 +306,7 @@ AND  Volume   [1h]               Is Greater Than  Volume SMA(20) × 2</code></pr
             </div>
             <p>Binance offers the widest range of any exchange BitLogic supports, including 8-hour and 3-day candles.</p>
             <h2>Binance Liquidation Alerts</h2>
-            <p>Binance is also the exchange behind BitLogic's liquidation feed, which tells you when large leveraged positions are force-closed. Pair it with funding rate alerts to see when longs or shorts have become crowded: <a href="../crypto-liquidation-alerts-explained/index.html">how liquidation alerts work</a> and <a href="../funding-rate-alerts-explained/index.html">how funding rate alerts work</a>.</p>
+            <p>Binance is also the exchange behind BitLogic's liquidation feed, which tells you when large leveraged positions are force-closed. Pair it with funding rate alerts to see when longs or shorts have become crowded: <a href="../crypto-liquidation-alerts-explained/">how liquidation alerts work</a> and <a href="../funding-rate-alerts-explained/">how funding rate alerts work</a>.</p>
 
             <h2>FAQ</h2>
 
@@ -351,17 +351,17 @@ AND  Volume   [1h]               Is Greater Than  Volume SMA(20) × 2</code></pr
             <div class="related-strategies">
                 <h3>Keep Reading</h3>
                 <div class="related-grid">
-                    <a href="../coinbase-custom-alerts/index.html" class="related-card">
+                    <a href="../coinbase-custom-alerts/" class="related-card">
                         <h4>Coinbase Custom Alerts</h4>
                         <p>RSI, EMA and volume alerts across Coinbase, licensed in all five of our markets.</p>
                         <div class="read-more">Read the Guide &rarr;</div>
                     </a>
-                    <a href="../kraken-crypto-screener/index.html" class="related-card">
+                    <a href="../kraken-crypto-screener/" class="related-card">
                         <h4>Kraken Crypto Screener</h4>
                         <p>Scan every Kraken pair for setups. Licensed in the US, UK, CA, AU and EU.</p>
                         <div class="read-more">Read the Guide &rarr;</div>
                     </a>
-                    <a href="../crypto-liquidation-alerts-explained/index.html" class="related-card">
+                    <a href="../crypto-liquidation-alerts-explained/" class="related-card">
                         <h4>Crypto Liquidation Alerts Explained</h4>
                         <p>Read long vs short liquidations and set a sane threshold.</p>
                         <div class="read-more">Read the Guide &rarr;</div>
@@ -387,17 +387,17 @@ AND  Volume   [1h]               Is Greater Than  Volume SMA(20) × 2</code></pr
                 <div class="footer-links-group">
                     <h4>Exchange Guides</h4>
                     <div class="footer-links">
-                        <a href="../coinbase-custom-alerts/index.html">Coinbase Custom Alerts</a>
-                        <a href="../kraken-crypto-screener/index.html">Kraken Crypto Screener</a>
-                        <a href="../bybit-futures-screener/index.html">Bybit Futures Screener</a>
-                        <a href="../okx-crypto-screener/index.html">OKX Screener</a>
-                        <a href="../bitstamp-screener-alerts/index.html">Bitstamp Screener</a>
-                        <a href="../kucoin-altcoin-screener/index.html">KuCoin Altcoin Screener</a>
-                        <a href="../upbit-screener-korean-market/index.html">Upbit Screener</a>
-                        <a href="../valr-crypto-screener/index.html">VALR Screener</a>
-                        <a href="../krypto-screener-mit-alarmen/index.html">Krypto-Screener mit Alarmen (DE)</a>
-                        <a href="../how-to-screen-crypto-on-coindcx/index.html">Screen Crypto on CoinDCX</a>
-                        <a href="../free-tradingview-alternative-crypto-alerts/index.html">Free TradingView Alternative</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
                     </div>
                 </div>
                 <div class="footer-links-group">
