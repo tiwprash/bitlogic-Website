@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://bitlogic.info/sitemap.xml
+Sitemap: https://bitlogic.info/sitemap-pages.xml
