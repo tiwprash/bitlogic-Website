@@ -79,7 +79,7 @@
         <div class="legal-page">
             <h1>Privacy Policy</h1>
 
-            <p><strong>Last Updated:</strong> October 7, 2026</p>
+            <p><strong>Last Updated:</strong> November 25, 2026</p>
 
             <h2>Introduction</h2>
             <p>BitLogic ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy applies to BitLogic and to every mobile app, desktop app, game, and website that we currently publish or may publish in the future (collectively, the "Services"). It explains what information we collect across the Services, how we use it, who we share it with, and the choices and rights you have.</p>
@@ -104,7 +104,7 @@
             </ul>
 
             <h3>Purchase Information</h3>
-            <p>If a Service offers in-app purchases or subscriptions, the purchase itself is processed by the relevant app store (Google Play, the Apple App Store, or the Microsoft Store). We may receive limited transaction information (such as the product purchased and purchase status) to unlock the content you paid for and to provide support, but we do not collect or store your card number or other full payment credentials — those are handled entirely by the app store or payment processor.</p>
+            <p>If a Service offers in-app purchases or subscriptions, the purchase itself is processed by the relevant app store (Google Play, the Apple App Store, or the Microsoft Store) or, for purchases made on the web (BitLogic on Windows and BitLogic Backtester), by our payment provider Dodo Payments, which acts as the merchant of record. We may receive limited transaction information (such as the product purchased, the amount, the currency, the date and purchase status) to unlock the content you paid for and to provide support, but we do not collect or store your card number or other full payment credentials — those are handled entirely by the app store or payment processor.</p>
 
             <h3>App-Specific Data</h3>
             <p>Some Services may collect additional data specific to their function. For example, BitLogic's crypto screener may access public cryptocurrency market data, but it does not collect or store your personal wallet information, private keys, or exchange account credentials. Where a future app or game collects additional categories of data, we will disclose that in the app itself or in an app-specific privacy notice.</p>
@@ -125,6 +125,19 @@
                 <li><strong>Market data:</strong> the app reads public market data from crypto exchanges. It never asks for exchange API keys, wallet keys or exchange logins, holds no funds and places no trades.</li>
             </ul>
 
+            <h2>BitLogic Backtester: What the App Uses</h2>
+            <p>This section covers BitLogic Backtester, our strategy backtesting app for Windows PCs. It uses the same BitLogic account as the BitLogic crypto screener app.</p>
+            <ul>
+                <li><strong>Sign-in:</strong> you can look around as a guest, or sign in or create an account with Google or with an email address and password. We receive your email address, your name if your Google account shares it, and a user ID. Running backtests, optimizing, paper trading and buying a plan need an account. A new account must confirm its email address before its free runs can be used.</li>
+                <li><strong>Supabase (account database):</strong> stores your account and, for the Backtester, which app you signed up from, when you first and last used the Backtester, the app version and the operating system (for example "windows"), your plan and its end date, and a record of each free run you used (whether it was a backtest or an optimization, and when).</li>
+                <li><strong>Free-run protection:</strong> to stop the free runs being claimed again and again with new accounts on one PC, the app creates a random ID when it is installed and sends only a one-way hash of it with each free run. The hash cannot be turned back into the ID and says nothing about your PC or about you.</li>
+                <li><strong>Purchases:</strong> plans (Week pass, Monthly, Annual) are sold through a secure web checkout run by Dodo Payments, which collects your payment details and handles billing, receipts, cancellations and refunds. We receive the payment ID, the plan, the amount, the currency and the date, linked to your account, and never your card number. To see whether a paid BitLogic Pro bought in an app store includes the Backtester, our server checks your subscription status with RevenueCat using your user ID.</li>
+                <li><strong>Stays on your PC:</strong> your strategies, backtest and optimization results, paper-trading sessions and downloaded price history are stored only on your PC. They are not uploaded to us.</li>
+                <li><strong>Market data:</strong> the app downloads public price history and live prices from market-data services (for example Binance for crypto) directly from your PC. These requests contain only the market and time period asked for; like any internet request they reveal your IP address to that service. The Backtester never asks for exchange API keys, wallet keys or brokerage logins, holds no funds and places no real trades: paper trading uses virtual money.</li>
+                <li><strong>No ads, no analytics:</strong> the Backtester shows no ads and contains no analytics, advertising or crash-reporting software.</li>
+                <li><strong>Support:</strong> for help with the Backtester, write to <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</li>
+            </ul>
+
             <h2>How We Use Your Information</h2>
             <p>We use the information we collect to:</p>
             <ul>
@@ -142,7 +155,7 @@
             <ul>
                 <li><strong>Analytics &amp; crash reporting:</strong> providers that help us understand app usage and diagnose crashes (for example, Google Analytics/Firebase-type services).</li>
                 <li><strong>Advertising networks:</strong> providers that serve ads inside free apps and may use device/advertising identifiers to show relevant ads and measure their performance (for example, Google AdMob-type networks).</li>
-                <li><strong>Payment &amp; in-app purchase processors:</strong> the app stores and billing systems (Google Play Billing, Apple's In-App Purchase system, Microsoft Store) that process purchases and subscriptions.</li>
+                <li><strong>Payment &amp; in-app purchase processors:</strong> the app stores and billing systems (Google Play Billing, Apple's In-App Purchase system, Microsoft Store) and, for web purchases, Dodo Payments, which process purchases and subscriptions.</li>
                 <li><strong>Cloud hosting &amp; infrastructure:</strong> providers that host our websites, backends, and data.</li>
             </ul>
             <p>These third parties only receive the information necessary for them to perform their function, and they are bound by their own privacy policies and (where applicable) data processing agreements with us. The exact set of third-party providers can vary by app; where required, the app's store listing (e.g., Google Play's Data Safety section) will list the specific providers and data types for that app.</p>
@@ -169,10 +182,11 @@
                 <li>Account data, saved strategies, monitors and alert settings are kept while your account exists and are deleted when you delete your account.</li>
                 <li>Alert history shown in the app covers recent alerts only and older entries are removed automatically.</li>
                 <li>Analytics and crash data are kept for the retention periods configured in Firebase and then deleted automatically.</li>
-                <li>Purchase records are kept by the app stores and RevenueCat as required for billing, tax and legal purposes.</li>
+                <li>Purchase records are kept by the app stores, RevenueCat and Dodo Payments as required for billing, tax and legal purposes. Our own record of a Backtester payment is kept for accounting, without your account link once your account is deleted.</li>
+                <li>BitLogic Backtester's usage details and free-run records are kept while your account exists and are deleted with it.</li>
                 <li>Deleted data may remain in backups for a limited period before it is overwritten.</li>
             </ul>
-            <p>To delete your account yourself, open the app and go to <strong>Settings &gt; Delete Account</strong>. This removes your account and the data stored on our servers for it. Deleting your account does not cancel a subscription: cancel it in your App Store, Google Play or Microsoft Store account. See <a href="data-deletion.html">Data Deletion</a> for other options.</p>
+            <p>To delete your account yourself, open BitLogic or BitLogic Backtester and go to <strong>Settings &gt; Delete Account</strong>. This removes your account and the data stored on our servers for it, in both apps (they share one account). Deleting your account does not cancel a subscription: cancel it in your App Store, Google Play or Microsoft Store account, or, for a plan bought on the web, under <strong>Settings &gt; Manage Subscription</strong>. See <a href="data-deletion.html">Data Deletion</a> for other options.</p>
 
             <h2>Your Rights</h2>
             <p>Depending on your location, you may have rights regarding your personal information, including the right to:</p>
@@ -206,11 +220,11 @@
 
             <h2>Contact Information</h2>
             <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:support@bitlogic.info">support@bitlogic.info</a></p>
+            <p><strong>Email:</strong> <a href="mailto:support@bitlogic.info">support@bitlogic.info</a> (BitLogic Backtester: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>)</p>
             <p><strong>Support page:</strong> <a href="support.html">bitlogic.info/support.html</a></p>
             <p><strong>Website:</strong> <a href="https://bitlogic.info">bitlogic.info</a></p>
 
-            <p class="last-updated">This Privacy Policy was last updated on October 7, 2026.</p>
+            <p class="last-updated">This Privacy Policy was last updated on November 25, 2026.</p>
         </div>
     </main>
 
