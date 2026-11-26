@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bitlogic.info/backtester/</loc>
+    <lastmod>2026-11-26T12:58:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bitlogic.info/blog/</loc>
     <lastmod>2026-11-25T02:38:25+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,7 +176,7 @@
   </url>
   <url>
     <loc>https://bitlogic.info/data-deletion.html</loc>
-    <lastmod>2026-11-25T02:38:25+05:30</lastmod>
+    <lastmod>2026-11-25T17:44:25+05:30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -194,7 +200,7 @@
   </url>
   <url>
     <loc>https://bitlogic.info/privacy.html</loc>
-    <lastmod>2026-11-25T02:38:25+05:30</lastmod>
+    <lastmod>2026-11-25T17:44:25+05:30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

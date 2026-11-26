@@ -28,6 +28,8 @@ document.addEventListener('click', function (e) {
 
     var href = a.getAttribute('href') || '';
     var params = { link_url: a.href, page_path: location.pathname };
+    // Which app the store link is for (the Backtester has its own Store listing)
+    params.app = href.toUpperCase().indexOf('9NMV7F8CNQCQ') !== -1 ? 'backtester' : 'screener';
 
     if (href.indexOf('play.google.com') !== -1) {
         params.store = 'google_play';

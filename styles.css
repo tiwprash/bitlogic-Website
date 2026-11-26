@@ -1809,3 +1809,80 @@ footer {
     .app-promo-actions .download-btn svg { width: 22px; height: 22px; }
     .app-promo-actions .btn-large { font-size: 0.95rem; }
 }
+
+/* ---------- BitLogic Backtester page ---------- */
+.bt-hero .bt-icon {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 1rem;
+    border-radius: 22px;
+    box-shadow: var(--shadow-md);
+}
+.bt-badge {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    background: var(--accent-gradient-soft);
+    color: var(--emerald);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.bt-actions { justify-content: center; }
+.bt-coming { font-size: 0.95rem !important; }
+.bt-shot { margin: 0; }
+.bt-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color-strong);
+    box-shadow: var(--shadow-lg);
+}
+.bt-shot figcaption {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+}
+.bt-shot-hero { max-width: 1100px; margin: 0 auto; }
+.bt-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 2.5rem;
+    align-items: center;
+    margin: 0 0 4rem;
+}
+.bt-feature:nth-of-type(even) .bt-feature-text { order: 2; }
+.bt-feature h3 { font-family: var(--font-display); font-size: 1.45rem; margin: 0 0 1rem; }
+.bt-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+.bt-list li { display: flex; gap: 10px; align-items: flex-start; color: var(--text-secondary); }
+.bt-list li svg { flex: 0 0 auto; margin-top: 3px; color: var(--emerald); }
+.bt-facts th { width: 32%; vertical-align: top; }
+.bt-note { margin-top: 1rem; text-align: center; color: var(--text-secondary); }
+.bt-home {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+.bt-home h2 { margin: 0.6rem 0 0.8rem; }
+.bt-home p { color: var(--text-secondary); }
+.bt-home .bt-list { margin: 1rem 0 1.5rem; }
+@media (max-width: 860px) {
+    .bt-feature, .bt-home { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+    .bt-feature:nth-of-type(even) .bt-feature-text { order: 0; }
+    .bt-facts th { width: 40%; }
+}
+
+/* ---------- Header menu on mid-size screens (more links than fit at default spacing) ---------- */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .nav-links { gap: 1rem; }
+    .nav-links a:not(.nav-cta-btn) { font-size: 0.86rem; white-space: nowrap; }
+    .nav-cta-btn { white-space: nowrap; }
+}
+@media (min-width: 769px) and (max-width: 940px) {
+    .nav-links { gap: 0.75rem; }
+    .nav-links > a[href$="about.html"] { display: none; }
+}

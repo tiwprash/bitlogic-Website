@@ -13,6 +13,9 @@ Facts verified 7 October 2026 against BitLogic 1.0.38. Prices vary by country an
 - Free: scanning, alert feeds, strategy builder. Guests get 3 scans per 24 hours; a free account removes the limit
 - BitLogic Pro: Telegram alerts, no ads, live monitors without an ad, priority support; US$4.99/month or US$49.99/year (2 months free); 14-day free trial
 
+## Other BitLogic apps
+- [BitLogic Backtester](https://bitlogic.info/backtester/): no-code backtesting for crypto and stocks with 60+ indicators, walk-forward optimizer, multi-market tests and paper trading. Windows now (Microsoft Store: https://apps.microsoft.com/detail/9NMV7F8CNQCQ); Mac, iPhone, iPad and Android coming soon. Free account: 3 backtests and 1 optimization; Week pass US$3.50; Monthly US$4.99 or Annual US$49.99 including BitLogic Pro.
+
 ## Core pages
 - [What is BitLogic](https://bitlogic.info/what-is-bitlogic/): one-page factual description, limits and FAQ
 - [Home and features](https://bitlogic.info/): alerts, strategy builder, indicators, exchanges
