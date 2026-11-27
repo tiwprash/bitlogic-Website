@@ -1886,3 +1886,12 @@ footer {
     .nav-links { gap: 0.75rem; }
     .nav-links > a[href$="about.html"] { display: none; }
 }
+
+/* Divider between the screener downloads and other BitLogic apps in the download menu */
+.dropdown-content .dropdown-divider {
+    display: block;
+    height: 1px;
+    margin: 4px 10px;
+    background: var(--border-color-strong);
+}
+.dropdown-content a { white-space: nowrap; }
