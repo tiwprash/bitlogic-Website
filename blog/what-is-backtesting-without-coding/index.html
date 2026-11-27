@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>What Is Backtesting? Backtest Stocks &amp; Crypto Without Coding</title>
+    <meta name="description" content="Backtesting for stock and crypto traders: how to backtest a strategy on Apple, NVIDIA or Bitcoin without coding in 6 steps, the metrics that matter, and the best free tools.">
+    <link rel="canonical" href="https://bitlogic.info/blog/what-is-backtesting-without-coding/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="What Is Backtesting? How to Backtest Stock and Crypto Strategies Without Coding">
+    <meta property="og:description" content="Backtesting for stock and crypto traders: how to backtest a strategy on Apple, NVIDIA or Bitcoin without coding in 6 steps, the metrics that matter, and the best free tools.">
+    <meta property="og:url" content="https://bitlogic.info/blog/what-is-backtesting-without-coding/">
+    <meta property="og:image" content="https://bitlogic.info/blog/what-is-backtesting-without-coding/images/og-backtesting-without-coding.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Backtesting? Backtest Stocks &amp; Crypto Without Coding">
+    <meta name="twitter:description" content="Backtesting for stock and crypto traders: how to backtest a strategy on Apple, NVIDIA or Bitcoin without coding in 6 steps, the metrics that matter, and the best free tools.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/what-is-backtesting-without-coding/images/og-backtesting-without-coding.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "What Is Backtesting? How to Backtest Stock and Crypto Trading Strategies Without Coding",
+      "description": "Backtesting for stock and crypto traders: how to backtest a strategy on Apple, NVIDIA or Bitcoin without coding in 6 steps, the metrics that matter, and the best free tools.",
+      "image": [
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/og-backtesting-without-coding.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/no-code-backtest-strategy-builder.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/turtle-breakout-bitcoin-backtest-results.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/what-is-backtesting-without-coding/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        { "@type": "Thing", "name": "Backtesting" },
+        { "@type": "Thing", "name": "Stock trading" },
+        { "@type": "Thing", "name": "Cryptocurrency trading" },
+        { "@type": "Thing", "name": "Algorithmic trading" },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to backtest a stock or crypto trading strategy without coding",
+      "description": "Test a crypto or stock trading strategy on years of historical data using a no-code backtester, then validate it before risking money.",
+      "totalTime": "PT10M",
+      "tool": [
+        { "@type": "HowToTool", "name": "BitLogic Backtester (Windows)" }
+      ],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Pick a market, timeframe and test period", "text": "Choose stocks or crypto, a symbol such as AAPL, NVDA or BTCUSDT, a candle size such as 1D, and a test period of several years that includes bull, bear and sideways markets.", "url": "https://bitlogic.info/blog/what-is-backtesting-without-coding/#step-1" },
+        { "@type": "HowToStep", "position": 2, "name": "Write the entry rule", "text": "Add a buy rule from indicator menus, for example: close is greater than the 20-period Donchian upper band of the previous candle.", "url": "https://bitlogic.info/blog/what-is-backtesting-without-coding/#step-2" },
+        { "@type": "HowToStep", "position": 3, "name": "Write the exit rule and risk management", "text": "Add a close rule, and optionally a stop loss, take profit or trailing stop.", "url": "https://bitlogic.info/blog/what-is-backtesting-without-coding/#step-3" },
+        { "@type": "HowToStep", "position": 4, "name": "Include realistic costs", "text": "Set your broker's or exchange's fees and slippage, plus funding for crypto futures, so results match real trading.", "url": "https://bitlogic.info/blog/what-is-backtesting-without-coding/#step-4" },
+        { "@type": "HowToStep", "position": 5, "name": "Run the backtest and read the report", "text": "Compare the strategy with buy and hold, and check the maximum drawdown, profit factor, Sharpe ratio and number of trades.", "url": "https://bitlogic.info/blog/what-is-backtesting-without-coding/#step-5" },
+        { "@type": "HowToStep", "position": 6, "name": "Check it is not luck, then validate", "text": "Test the same rules on many markets, use walk-forward optimization, then paper trade on live prices before risking money.", "url": "https://bitlogic.info/blog/what-is-backtesting-without-coding/#step-6" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is backtesting in simple words?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Backtesting is checking how a set of trading rules would have performed on past prices, before you use them with real money. You apply exact entry and exit rules to historical candles and measure the return, drawdown, win rate, profit factor and number of trades, after fees." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I backtest a trading strategy without coding?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A no-code backtester such as BitLogic Backtester lets you build rules from indicator menus with AND and OR logic and run them on years of stock and crypto data. No Python, Pine Script or MQL is needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I backtest a stock trading strategy?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pick the stock (for example AAPL, NVDA, Reliance or Toyota), choose daily candles and a test period of 5 years or more, build the entry and exit rules from indicators, set your broker's commission and slippage, run the test and compare the result with simply buying and holding the stock. Then test the same rules on several other stocks." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is backtesting stocks different from backtesting crypto?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The method is the same, but the markets differ. Stocks trade only during exchange hours, so there are fewer candles per year and prices can gap overnight; crypto trades 24/7. Costs differ too: brokers charge commissions and spreads, crypto exchanges charge maker and taker fees, and crypto futures add funding payments. Stocks also often have much longer price histories than coins." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free backtesting tool?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Free options include Python libraries such as Backtrader and vectorbt (coding needed), the MetaTrader 5 Strategy Tester, TradingView's Strategy Tester on its free plan with limits, QuantConnect's free tier (coding needed), and BitLogic Backtester, which gives every free account 3 no-code backtests and 1 optimization on Windows." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which backtesting software is best?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on your skills. Programmers often choose Python libraries or QuantConnect, forex traders often use MetaTrader, and chart-first traders who write Pine Script use TradingView. Traders who want to test crypto and stock ideas without code, with fees, slippage, walk-forward testing and a luck check built in, can use BitLogic Backtester." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I backtest crypto and stocks in the same app?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. BitLogic Backtester supports stocks from the US, India, the UK, Germany, Hong Kong, Canada, Australia and Japan, and crypto spot and futures, on timeframes from 1 minute to 1 week." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many trades does a backtest need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Fewer than 20 trades is too few to tell skill from luck. Aim for 100 or more, or test the same rules on several markets to collect more trades." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a profitable backtest guarantee future profit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A backtest only shows how rules behaved in the past. Overfitting, too few trades, ignored costs and changing markets can all make a good backtest fail live. Validate with out-of-sample tests and paper trading first." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a backtest take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Seconds. Years of daily data run almost instantly. Downloading minute-level data for long periods takes longer the first time." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitlogic.info/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bitlogic.info/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "What Is Backtesting?", "item": "https://bitlogic.info/blog/what-is-backtesting-without-coding/" }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">What Is Backtesting?</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>9 min read</span>
+            </div>
+
+            <h1>What Is Backtesting? How to Backtest Stock and Crypto Trading Strategies Without Coding</h1>
+
+            <div class="post-callout"><strong>Backtest free, no code:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">get BitLogic Backtester on the Microsoft Store</a> (Windows). Stocks and crypto in one app. Every free account includes 3 backtests and 1 optimization. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> Backtesting is testing a trading strategy on past market data. You write exact rules for when to buy and sell, replay them over historical candles, and measure what would have happened: profit, losses, drawdown and number of trades. It works the same way for a stock like Apple or NVIDIA as for Bitcoin, and you do not need to code. A no-code backtester such as <a href="../../backtester/">BitLogic Backtester</a> lets you build rules from indicator menus and test them on years of stock and crypto data in seconds.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. Screenshots show real backtests run in BitLogic Backtester in November 2026. This article is for education only and is not financial advice. Past results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Backtesting</strong> runs a strategy's exact rules on historical prices to see how it would have performed, before you risk real money.</li>
+                <li>You <strong>do not need to code</strong>. A no-code backtester lets you build rules such as "buy when RSI(14) crosses above 30" from menus.</li>
+                <li>The <strong>same process works for stocks and crypto</strong>. What changes is trading hours, costs and how much history you have.</li>
+                <li>A trustworthy backtest includes <strong>fees and slippage</strong>, compares against <strong>buy and hold</strong>, and has <strong>enough trades</strong> to rule out luck.</li>
+                <li><strong>Free backtesting tools exist</strong>: Backtrader, vectorbt, MetaTrader 5, TradingView (with limits), QuantConnect (free tier) and BitLogic Backtester (3 free backtests and 1 free optimization).</li>
+                <li>For no-code backtesting of <strong>both stocks (8 countries) and crypto</strong> on Windows, BitLogic Backtester is built for exactly this job.</li>
+            </ul>
+
+            <h2>What Is Backtesting?</h2>
+            <p>Backtesting is testing a trading strategy on past market data, whether you trade stocks, crypto or both. Think of it as a flight simulator for a trading idea. Instead of discovering in the live market that "buy when the price breaks the 20-day high" loses money in sideways markets, you find out in a few seconds, on several years of data, without risking anything.</p>
+            <p>Every backtest has the same four parts:</p>
+            <ol>
+                <li><strong>Market and data:</strong> the symbol (for example AAPL, NVDA or BTCUSDT), the candle size (1 minute to 1 week) and the test period.</li>
+                <li><strong>Entry rules:</strong> the exact conditions to open a trade, for example "close is above the 200-day EMA and RSI(14) is below 30".</li>
+                <li><strong>Exit rules:</strong> when to close the trade: an opposite signal, a stop loss, a take profit or a trailing stop.</li>
+                <li><strong>Costs and sizing:</strong> broker commissions or exchange fees, slippage, position size and, for crypto futures, funding payments.</li>
+            </ol>
+
+            <h3>Why Backtest a Trading Strategy?</h3>
+            <ul>
+                <li><strong>Kill bad ideas cheaply.</strong> Most trading ideas do not beat simply holding the asset. A backtest tells you in seconds, not after months of losses.</li>
+                <li><strong>Know the pain in advance.</strong> A strategy that made 300% may have dropped 55% along the way. Knowing the worst drawdown tells you whether you could actually stick with it.</li>
+                <li><strong>Make rules objective.</strong> Writing exact rules removes "I'll know it when I see it" trading.</li>
+                <li><strong>Compare and improve.</strong> Test two versions of an idea side by side, or tune a setting such as a moving-average length.</li>
+            </ul>
+
+            <h3>Backtesting vs Paper Trading vs Live Trading</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Method</th><th>What it uses</th><th>Speed</th><th>Best for</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Backtesting</td><td>Historical data</td><td>Seconds for years of data</td><td>Filtering ideas and measuring risk</td></tr>
+                        <tr><td>Paper trading (forward testing)</td><td>Live prices, virtual money</td><td>Real time</td><td>Confirming a strategy works on new data</td></tr>
+                        <tr><td>Live trading</td><td>Live prices, real money</td><td>Real time</td><td>Only after both steps above</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Backtesting Stocks vs Crypto: What's Different?</h2>
+            <p>The method is identical: rules, data, costs, report. The markets are not, and a good backtest accounts for the differences.</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>Stocks</th><th>Crypto</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trading hours</td><td>Exchange hours only; prices can gap between sessions</td><td>24 hours a day, 7 days a week</td></tr>
+                        <tr><td>Candles per year</td><td>About 250 daily candles</td><td>365 daily candles</td></tr>
+                        <tr><td>Costs to include</td><td>Broker commission, spread and slippage</td><td>Maker/taker fees and slippage, plus funding on futures</td></tr>
+                        <tr><td>Price history</td><td>Often decades for large companies</td><td>Only since the coin was listed</td></tr>
+                        <tr><td>Typical volatility</td><td>Lower; trends can run for years</td><td>Higher; 50%+ drawdowns are common</td></tr>
+                        <tr><td>Buy-and-hold benchmark</td><td>Holding the stock (strong for winners like NVIDIA)</td><td>Holding the coin (strong in bull markets)</td></tr>
+                        <tr><td>Survivorship bias</td><td>Delisted and bankrupt companies are easy to forget</td><td>Dead coins are easy to forget</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>In practice: stock traders should use enough years of data to collect trades, since a daily stock strategy trades less often, and should compare honestly against holding the stock. Crypto traders should expect deep drawdowns and model fees carefully, because crypto strategies often trade more. Testing one set of rules on both, as below, quickly shows which market an idea actually suits.</p>
+
+            <h2>How Do I Backtest a Stock or Crypto Strategy Without Coding?</h2>
+            <p><strong>Short answer:</strong> use a no-code backtester. Pick a market, build entry and exit rules from indicator menus (RSI, MACD, EMA, Bollinger Bands, Supertrend and more), press Run and read the report. In BitLogic Backtester this takes about two minutes and needs no Python, Pine Script or MQL.</p>
+            <p>Here is the full process, step by step, using a classic trend-following strategy, the <strong>Turtle Breakout</strong>, first on Bitcoin and then on NVIDIA stock. The steps are the same for any stock or coin.</p>
+
+            <h3 id="step-1">Step 1: Choose the Market, Timeframe and Test Period</h3>
+            <p>Open BitLogic Backtester and start a new strategy, or pick one of the 16 ready-made templates (Turtle Breakout, Golden Cross, Supertrend Follower and more). Choose <strong>Stocks</strong> or <strong>Crypto</strong>, type the company name, ticker or coin, and pick a candle size. For a first test, use daily candles (1D) and a long period such as 5 years, so the test covers bull, bear and sideways markets.</p>
+            <figure class="blog-shot wide">
+                <img src="images/no-code-backtest-strategy-builder.webp" alt="BitLogic Backtester no-code strategy builder showing a Turtle Breakout strategy on BTCUSDT daily candles, with buy rules built from the Donchian channel" width="1280" height="720" loading="lazy">
+                <figcaption>The no-code strategy builder. Left: market, symbol, candle size and test period. Right: the rules in plain English and the rule builder.</figcaption>
+            </figure>
+            <p>For stocks, search by company name or ticker across the US (NASDAQ and NYSE), India (NSE and BSE), the UK, Germany, Hong Kong, Canada, Australia and Japan. Prices stay in each market's own currency. For crypto, pick spot or futures pairs such as BTCUSDT or ETHUSDT.</p>
+            <figure class="blog-shot wide">
+                <img src="images/backtest-stocks-symbol-picker.webp" alt="BitLogic Backtester symbol picker listing US stocks such as Apple, Microsoft, NVIDIA and Tesla, with search for Indian, UK and Japanese stocks" width="1280" height="720" loading="lazy">
+                <figcaption>Stocks and crypto in one app: pick AAPL, NVDA, Reliance, Toyota or BTCUSDT from the same screen.</figcaption>
+            </figure>
+
+            <h3 id="step-2">Step 2: Write the Entry Rule</h3>
+            <p>Under <strong>Buy rules</strong>, press Add and build the condition from menus. For the Turtle Breakout the rule is:</p>
+            <pre class="rule-block"><code>BUY WHEN  Close [this candle]  Is Greater Than  Donchian Upper (20) [1 candle ago]</code></pre>
+            <p>In plain words: buy when the price breaks above its highest high of the last 20 days. You can combine as many conditions as you like with <strong>AND</strong> and <strong>OR</strong>, choose from 60+ indicators and candlestick patterns, and even mix timeframes, for example a 4-hour entry only when the daily trend is up.</p>
+
+            <h3 id="step-3">Step 3: Write the Exit Rule and Risk Management</h3>
+            <p>Under <strong>Close long when</strong>, add the exit:</p>
+            <pre class="rule-block"><code>CLOSE WHEN  Close [this candle]  Is Less Than  Donchian Lower (10) [1 candle ago]</code></pre>
+            <p>Optionally add a stop loss, take profit or trailing stop in the Risk &amp; Profit Exits panel, by percent, price or ATR. The app repeats your strategy "in plain English" at the top so you can check it says what you mean.</p>
+
+            <h3 id="step-4">Step 4: Include Realistic Costs</h3>
+            <p>Set the fee and slippage for your broker or exchange: a stock broker's commission and spread, or a crypto exchange's maker/taker fee. This is the step most beginners skip, and it is a big reason "amazing" strategies fail live: a strategy that trades often can turn from profitable to losing once fees are counted. For crypto futures, BitLogic Backtester also includes funding payments.</p>
+
+            <h3 id="step-5">Step 5: Run the Backtest and Read the Report</h3>
+            <p>Press <strong>Run Backtest</strong>. The report opens with a verdict in plain English, then your strategy against buy and hold, the equity curve and the key numbers.</p>
+            <figure class="blog-shot wide">
+                <img src="images/turtle-breakout-bitcoin-backtest-results.webp" alt="BitLogic Backtester results for Turtle Breakout on Bitcoin: +805.5% vs +704.1% buy and hold, CAGR 37.1%, max drawdown -54.2%, Sharpe 1.00, profit factor 1.67, win rate 46%, 35 trades" width="1280" height="720" loading="lazy">
+                <figcaption>Turtle Breakout on BTCUSDT, daily, Nov 2019 to Nov 2026. It beat buy and hold (+805.5% vs +704.1%), but with a 54% drawdown and only 35 trades. The app labels it "Promising, with caveats" and warns the result could still be luck.</figcaption>
+            </figure>
+            <p>The numbers that matter most:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Metric</th><th>What it tells you</th><th>Rough guide</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Return vs buy &amp; hold</td><td>Whether trading beat simply holding</td><td>If it doesn't beat holding, it isn't worth the effort</td></tr>
+                        <tr><td>Max drawdown</td><td>The worst fall from a peak</td><td>Could you live through it with real money?</td></tr>
+                        <tr><td>Profit factor</td><td>Gross profit ÷ gross loss</td><td>Above 1.3 is decent, above 1.75 is strong</td></tr>
+                        <tr><td>Win rate</td><td>Share of winning trades</td><td>Trend strategies often win under 50% and still profit</td></tr>
+                        <tr><td>Sharpe ratio</td><td>Return per unit of volatility</td><td>Above 1 is good</td></tr>
+                        <tr><td>Number of trades</td><td>Whether the result could be luck</td><td>Under 20 is too few; 100+ is much better</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>The Charts tab adds the equity curve against buy and hold, the drawdown chart and a month-by-month returns table, and the Monte Carlo tab shuffles the trades to show how bad a run of luck could get.</p>
+            <figure class="blog-shot wide">
+                <img src="images/backtest-equity-curve-trades.webp" alt="BitLogic Backtester charts tab with the equity curve against buy and hold, the drawdown chart and a monthly returns table for Turtle Breakout on Bitcoin" width="1280" height="720" loading="lazy">
+                <figcaption>See the full picture, not just the profit: equity curve vs buy and hold, drawdown and monthly returns.</figcaption>
+            </figure>
+
+            <h3 id="step-6">Step 6: Check It Isn't Luck, Then Validate</h3>
+            <p>One good backtest on one symbol proves little. Before trusting a strategy:</p>
+            <ol>
+                <li><strong>Test on many markets.</strong> "Test on many" runs the same rules on up to 10 stocks or coins side by side. A real edge usually works on several of them.</li>
+                <li><strong>Compare with buy and hold honestly.</strong> The same Turtle rules that beat holding Bitcoin made +481% on NVIDIA stock, but lost badly to simply holding NVIDIA (+2,954%). BitLogic Backtester says so plainly. A strategy that suits crypto may not suit stocks, and the reverse.</li>
+                <li><strong>Optimize with walk-forward testing.</strong> The optimizer searches thousands of settings, then checks the best ones on data they never saw, so you don't just curve-fit the past.</li>
+                <li><strong>Paper trade on live prices.</strong> Run the strategy in real time with virtual money before using real money.</li>
+            </ol>
+            <figure class="blog-shot wide">
+                <img src="images/nvidia-backtest-vs-buy-and-hold.webp" alt="BitLogic Backtester verdict 'Underperformed buy and hold' for Turtle Breakout on NVDA: strategy +481.1% vs buy and hold +2954.0%" width="1280" height="720" loading="lazy">
+                <figcaption>The same strategy on NVIDIA stock made money, but far less than buying and holding, so the verdict is "Underperformed buy &amp; hold". This check stops you trading a strategy that is worse than doing nothing.</figcaption>
+            </figure>
+            <figure class="blog-shot wide">
+                <img src="images/backtest-on-many-markets.webp" alt="BitLogic Backtester Test on many: Turtle Breakout made money on 9 of 10 crypto symbols across 334 trades" width="1280" height="720" loading="lazy">
+                <figcaption>Test on many: the same Turtle Breakout on 10 coins made money on 9 of 10 and beat holding on 7 of 10, across 334 trades. That is a much better sign than one good chart.</figcaption>
+            </figure>
+            <figure class="blog-shot wide">
+                <img src="images/walk-forward-optimization.webp" alt="BitLogic Backtester walk-forward optimization results: passed the reality check, settings made money on unseen data in 3 of 4 rounds, +21.2% average" width="1280" height="720" loading="lazy">
+                <figcaption>Walk-forward optimization: settings picked on earlier data kept making money on later, unseen data in 3 of 4 rounds.</figcaption>
+            </figure>
+            <figure class="blog-shot wide">
+                <img src="images/paper-trading-live-prices.webp" alt="BitLogic Backtester paper trading screen running a strategy live on 200 coins with virtual money, showing P&amp;L, win rate, fees and slippage" width="1280" height="720" loading="lazy">
+                <figcaption>Paper trading runs the strategy on live prices with virtual money, with fees, slippage and funding tracked.</figcaption>
+            </figure>
+
+            <div class="post-callout"><strong>Try it free:</strong> BitLogic Backtester for Windows. No code. Stocks from 8 countries plus crypto spot and futures, on timeframes from 1 minute to 1 week, with fees, slippage, Monte Carlo, walk-forward optimization and paper trading. Your first 3 backtests and 1 optimization are free. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>Which Backtesting Tool Is Best, and Are There Free Ones?</h2>
+            <p><strong>Short answer:</strong> it depends on whether you code. Programmers do well with free Python libraries (Backtrader, vectorbt) or QuantConnect. MetaTrader 5 suits forex. TradingView suits chart-based traders who can write Pine Script. If you want to backtest stocks and crypto <em>without coding</em>, with costs, luck checks and walk-forward testing built in, BitLogic Backtester is designed for that, and you can start free.</p>
+
+            <h3>Backtesting Tools Compared</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Tool</th><th>Coding needed?</th><th>Markets</th><th>Free option</th><th>Best for</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>BitLogic Backtester</strong></td><td>No</td><td>Stocks in 8 countries, crypto spot and futures</td><td>3 backtests + 1 optimization free</td><td>No-code traders who want realistic results and plain-English verdicts</td></tr>
+                        <tr><td>TradingView Strategy Tester</td><td>Pine Script for custom strategies</td><td>Most markets</td><td>Free plan, with limits</td><td>Chart-first traders comfortable with Pine Script</td></tr>
+                        <tr><td>MetaTrader 5 Strategy Tester</td><td>MQL5 for custom strategies</td><td>Mainly forex and CFDs, via a broker</td><td>Free with the platform</td><td>Forex traders using Expert Advisors</td></tr>
+                        <tr><td>QuantConnect</td><td>Yes (Python or C#)</td><td>Stocks, futures, forex, crypto</td><td>Free tier</td><td>Programmers building systematic strategies</td></tr>
+                        <tr><td>Backtrader / vectorbt</td><td>Yes (Python)</td><td>Any data you supply</td><td>Free, open source</td><td>Developers who want full control</td></tr>
+                        <tr><td>AmiBroker</td><td>AFL scripting</td><td>Any data you supply</td><td>Trial</td><td>Experienced system traders</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="post-disclaimer">Features and plans of other tools change. Check each provider's website for current details. BitLogic is not affiliated with any of them.</p>
+
+            <h3>What to Look For in a Backtesting Tool</h3>
+            <ul>
+                <li><strong>Realistic costs:</strong> fees, slippage and, for crypto futures, funding. Without them, results are inflated.</li>
+                <li><strong>No look-ahead bias:</strong> signals must use only candles that had closed at the time.</li>
+                <li><strong>A buy-and-hold benchmark:</strong> beating zero is easy in a bull market; beating holding is the real test.</li>
+                <li><strong>Sample-size and luck checks:</strong> a warning when there are too few trades, plus Monte Carlo analysis.</li>
+                <li><strong>Out-of-sample validation:</strong> walk-forward optimization to avoid curve-fitting.</li>
+                <li><strong>Multi-market testing:</strong> the same rules on many symbols at once.</li>
+                <li><strong>Stocks and crypto in one place:</strong> years of built-in history for both, so you don't have to find and clean data yourself.</li>
+            </ul>
+            <p>BitLogic Backtester covers every item on this list, without code.</p>
+
+            <h3>Are Free Backtesting Tools Good Enough?</h3>
+            <p>For learning, yes. Free Python libraries are powerful, but you must write code, find clean data and model costs yourself. Free plans of charting platforms usually limit history or features. BitLogic Backtester's free start (3 backtests and 1 optimization with a free BitLogic account) lets you test real ideas with the full engine. After that, a <strong>Week pass (US$3.50, one-time)</strong> unlocks everything for 7 days, and the <strong>Monthly (US$4.99) or Annual (US$49.99)</strong> plans also include <strong>BitLogic Pro</strong> for the crypto screener app. See <a href="../../backtester/#pricing">plans and pricing</a>.</p>
+
+            <h2>Find Ideas With BitLogic, Test Them With BitLogic Backtester</h2>
+            <p><a href="../../">BitLogic</a> is our no-code crypto screener and alert app for iPhone and iPad, Android and Windows, plus a <a href="../../crypto-screener/">free web screener</a>. It scans the market for setups such as RSI extremes, breakouts and trend changes, and alerts you when they happen. The two apps fit together:</p>
+            <ol>
+                <li><strong>Spot</strong> a pattern you keep seeing in BitLogic's screener and alerts, or start from one of our <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/">prebuilt strategy setups</a>.</li>
+                <li><strong>Test</strong> it in BitLogic Backtester on years of data, across many coins.</li>
+                <li><strong>Paper trade</strong> the version that survives, then use BitLogic alerts to catch the setup live.</li>
+            </ol>
+            <p>One BitLogic account works in both apps, and a paid BitLogic Pro membership includes the full Backtester at no extra cost.</p>
+
+            <h2>Common Backtesting Mistakes to Avoid</h2>
+            <ul>
+                <li><strong>Overfitting:</strong> tuning settings until the past looks perfect. Use walk-forward testing.</li>
+                <li><strong>Ignoring costs:</strong> strategies that trade often are hit hardest by fees and slippage.</li>
+                <li><strong>Too few trades:</strong> 10 trades say almost nothing. Aim for 100 or more, or test on several markets.</li>
+                <li><strong>Testing one bull market only:</strong> include a bear market and a sideways period.</li>
+                <li><strong>Survivorship bias:</strong> testing only stocks and coins that still exist and did well, and forgetting delisted companies and dead coins.</li>
+                <li><strong>Ignoring market hours:</strong> intraday stock strategies only trade during the session, and overnight gaps can jump past a stop loss.</li>
+                <li><strong>Not comparing with buy and hold:</strong> a strategy can make money and still be worse than holding.</li>
+            </ul>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">What is backtesting in simple words?</h3>
+            <p>Backtesting is checking how a set of trading rules would have performed on past prices, before you use them with real money. You apply exact entry and exit rules to historical candles and measure the return, drawdown, win rate, profit factor and number of trades, after fees.</p>
+
+            <h3 class="faq-q">Can I backtest a trading strategy without coding?</h3>
+            <p>Yes. A no-code backtester such as BitLogic Backtester lets you build rules from indicator menus with AND and OR logic and run them on years of stock and crypto data. No Python, Pine Script or MQL is needed.</p>
+
+            <h3 class="faq-q">How do I backtest a stock trading strategy?</h3>
+            <p>Pick the stock (for example AAPL, NVDA, Reliance or Toyota), choose daily candles and a test period of 5 years or more, build the entry and exit rules from indicators, set your broker's commission and slippage, run the test and compare the result with simply buying and holding the stock. Then test the same rules on several other stocks.</p>
+
+            <h3 class="faq-q">Is backtesting stocks different from backtesting crypto?</h3>
+            <p>The method is the same, but the markets differ. Stocks trade only during exchange hours, so there are fewer candles per year and prices can gap overnight; crypto trades 24/7. Costs differ too: brokers charge commissions and spreads, crypto exchanges charge maker and taker fees, and crypto futures add funding payments. Stocks also often have much longer price histories than coins.</p>
+
+            <h3 class="faq-q">Is there a free backtesting tool?</h3>
+            <p>Yes. Free options include Python libraries such as Backtrader and vectorbt (coding needed), the MetaTrader 5 Strategy Tester, TradingView's Strategy Tester on its free plan with limits, QuantConnect's free tier (coding needed), and BitLogic Backtester, which gives every free account 3 no-code backtests and 1 optimization on Windows.</p>
+
+            <h3 class="faq-q">Which backtesting software is best?</h3>
+            <p>It depends on your skills. Programmers often choose Python libraries or QuantConnect, forex traders often use MetaTrader, and chart-first traders who write Pine Script use TradingView. Traders who want to test crypto and stock ideas without code, with fees, slippage, walk-forward testing and a luck check built in, can use BitLogic Backtester.</p>
+
+            <h3 class="faq-q">Can I backtest crypto and stocks in the same app?</h3>
+            <p>Yes. BitLogic Backtester supports stocks from the US, India, the UK, Germany, Hong Kong, Canada, Australia and Japan, and crypto spot and futures, on timeframes from 1 minute to 1 week.</p>
+
+            <h3 class="faq-q">How many trades does a backtest need?</h3>
+            <p>Fewer than 20 trades is too few to tell skill from luck. Aim for 100 or more, or test the same rules on several markets to collect more trades.</p>
+
+            <h3 class="faq-q">Does a profitable backtest guarantee future profit?</h3>
+            <p>No. A backtest only shows how rules behaved in the past. Overfitting, too few trades, ignored costs and changing markets can all make a good backtest fail live. Validate with out-of-sample tests and paper trading first.</p>
+
+            <h3 class="faq-q">How long does a backtest take?</h3>
+            <p>Seconds. Years of daily data run almost instantly. Downloading minute-level data for long periods takes longer the first time.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>Backtesting is the cheapest way to find out whether a trading idea is worth your money, whether you trade stocks, crypto or both. Write exact rules, include costs, compare with buy and hold, demand enough trades, and validate on unseen data and live paper trading before going live. With a no-code tool, none of that needs programming.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../../backtester/">BitLogic Backtester</a> | <a href="../../what-is-bitlogic/">What is BitLogic</a> | <a href="../prebuilt-triple-ema-cross-momentum-screener/">Triple EMA cross strategy</a> | <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger squeeze breakout</a> | <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView alternative</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/" class="related-card">
+                        <h4>Supertrend Flip + RSI</h4>
+                        <p>A trend-following setup you can scan for today and backtest first.</p>
+                        <div class="read-more">Read the Strategy &rarr;</div>
+                    </a>
+                    <a href="../prebuilt-macd-zero-cross-momentum-screener/" class="related-card">
+                        <h4>MACD Zero Cross Momentum</h4>
+                        <p>Catch momentum shifts when MACD crosses zero.</p>
+                        <div class="read-more">Read the Strategy &rarr;</div>
+                    </a>
+                    <a href="../free-tradingview-alternative-crypto-alerts/" class="related-card">
+                        <h4>Free TradingView Alternative</h4>
+                        <p>Indicator alerts across whole exchanges, without a paid plan.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

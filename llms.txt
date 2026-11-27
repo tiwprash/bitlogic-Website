@@ -45,6 +45,7 @@ Facts verified 7 October 2026 against BitLogic 1.0.38. Prices vary by country an
 - [Krypto-Screener mit Alarmen (German)](https://bitlogic.info/blog/krypto-screener-mit-alarmen/)
 
 ## Guides
+- [What is backtesting? Backtest stocks and crypto without coding](https://bitlogic.info/blog/what-is-backtesting-without-coding/): backtesting explained for stock and crypto traders, how the two markets differ, 6-step no-code walkthrough with BitLogic Backtester (Bitcoin and NVIDIA examples), key metrics, common mistakes and free backtesting tools compared
 - [Crypto alerts for US traders](https://bitlogic.info/blog/crypto-alerts-for-us-traders/): how Binance Futures alerts and Binance.US scanning work from the US
 - [Crypto liquidation alerts explained](https://bitlogic.info/blog/crypto-liquidation-alerts-explained/)
 - [Funding rate alerts explained](https://bitlogic.info/blog/funding-rate-alerts-explained/)

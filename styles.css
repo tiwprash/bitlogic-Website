@@ -1895,3 +1895,8 @@ footer {
     background: var(--border-color-strong);
 }
 .dropdown-content a { white-space: nowrap; }
+
+/* Landscape (desktop) screenshots in blog posts */
+.blog-post figure.blog-shot.wide {
+    max-width: 100%;
+}
