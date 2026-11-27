@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>How Much Data &amp; How Many Trades to Backtest Stocks and Crypto</title>
+    <meta name="description" content="How many years of data to backtest a stock or crypto strategy, by timeframe, and how many trades make a backtest statistically meaningful. Simple rules, tables, real examples.">
+    <link rel="canonical" href="https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="How Much Historical Data and How Many Trades Do You Need to Backtest Stocks and Crypto?">
+    <meta property="og:description" content="How many years of data to backtest a stock or crypto strategy, by timeframe, and how many trades make a backtest statistically meaningful. Simple rules, tables, real examples.">
+    <meta property="og:url" content="https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/">
+    <meta property="og:image" content="https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/og-backtest-sample-size.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Much Data &amp; How Many Trades to Backtest Stocks and Crypto">
+    <meta name="twitter:description" content="How many years of data to backtest a stock or crypto strategy, by timeframe, and how many trades make a backtest statistically meaningful. Simple rules, tables, real examples.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/og-backtest-sample-size.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How Much Historical Data and How Many Trades Do You Need to Backtest Stocks and Crypto?",
+      "description": "How many years of data to backtest a stock or crypto strategy, by timeframe, and how many trades make a backtest statistically meaningful. Simple rules, tables, real examples.",
+      "image": [
+        "https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/og-backtest-sample-size.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/backtest-on-many-markets.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/walk-forward-optimization.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        { "@type": "Thing", "name": "Backtesting" },
+        { "@type": "Thing", "name": "Sample size" },
+        { "@type": "Thing", "name": "Stock trading" },
+        { "@type": "Thing", "name": "Cryptocurrency trading" },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much historical data do I need for backtesting?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enough to cover several market regimes (a bull market, a bear market and a sideways period) and to produce at least 100 trades. As a guide: daily strategies need 5 to 10 years or more, 1-hour to 4-hour strategies 2 to 3 years, and intraday strategies on 1 to 15-minute candles at least several months. Years of data needed is roughly the number of trades you need divided by the trades the strategy makes per year." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many years of data should I use to backtest stocks?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For daily stock strategies, 10 years or more is practical, because large companies have decades of daily history and a market has only about 250 trading days a year. That covers at least one bear market and one long uptrend. Intraday stock history is usually shorter, so 1-hour candles over about 2 years are a good compromise for shorter-term ideas." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much data do I need to backtest crypto?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For daily crypto strategies, use the coin's whole history if possible; for Bitcoin, 2019 to 2026 includes a bull market, a crash and sideways periods. Crypto trades 24/7 and has deep intraday history, so 1-hour to 4-hour strategies can use 2 to 3 years and minute-level strategies several months to a year." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many trades do I need for a meaningful backtest?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Treat fewer than 20 trades as inconclusive, 30 as a bare minimum, 100 or more as reasonably reliable, and 200 to 500 or more for high-frequency strategies or small edges. The real test is whether the average trade is clearly above zero: a t-statistic above about 2 suggests the edge is unlikely to be luck." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 30 trades enough for a backtest?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Only as a bare minimum. With 30 trades, a measured 50% win rate has a 95% margin of error of about plus or minus 18 percentage points, so the true win rate could be anywhere from about 32% to 68%. Aim for 100 or more." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 100 trades enough?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For most swing and trend strategies on stocks or crypto, 100 trades is a reasonable sample, especially if the luck check passes. For scalping or strategies with a small edge per trade, aim for 300 to 500 or more." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my strategy trades rarely?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Test the same rules on many stocks or coins to pool trades, use a longer period, or use a lower timeframe with the same logic. In BitLogic Backtester, Test on many runs one strategy on up to 10 stocks or coins at once." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use too much historical data?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. Markets change, and very old data can reflect conditions that no longer exist. Keep a long history for validation, and use walk-forward testing so settings are chosen on one period and tested on the period after it." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know a backtest isn't luck?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Check the trade count, the t-statistic of trade returns (above about 2), results on other markets, walk-forward results and Monte Carlo ranges. BitLogic Backtester shows all of these in plain English." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitlogic.info/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bitlogic.info/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "How Much Data and How Many Trades for Backtesting", "item": "https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/" }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">How Much Data and Trades for Backtesting</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>8 min read</span>
+            </div>
+
+            <h1>How Much Historical Data and How Many Trades Do You Need to Backtest Stocks and Crypto?</h1>
+
+            <div class="post-callout"><strong>Check your own strategy free:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows) flags "too few to trust" results and runs a luck test on every stock and crypto backtest. 3 backtests and 1 optimization free. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> use enough historical data to cover a bull market, a bear market and a sideways market, and to produce at least <strong>100 trades</strong>. For a daily strategy that usually means 5 to 10+ years (10+ is easy for stocks); for 1-hour to 4-hour strategies, 2 to 3 years; for 1 to 15-minute strategies, several months or more. Fewer than 20 trades is inconclusive, 30 is a bare minimum, and 100+ is reasonably reliable, whether you trade Apple, NVIDIA or Bitcoin.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. Examples are real backtests run in BitLogic Backtester in November 2026. This article is for education only and is not financial advice. Past results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Data:</strong> include a <strong>bull market, a bear market and a sideways market</strong>, and enough history to produce <strong>100+ trades</strong>.</li>
+                <li><strong>By timeframe:</strong> daily strategies 5 to 10+ years; 1h to 4h strategies 2 to 3 years; 1m to 15m strategies several months or more.</li>
+                <li><strong>Stocks vs crypto:</strong> stocks have decades of daily data but shorter intraday history and about 250 trading days a year; crypto trades 365 days a year with deep intraday history but a shorter overall past.</li>
+                <li><strong>Trades:</strong> under 20 is inconclusive, 30 is a bare minimum, <strong>100+ is reasonably reliable</strong>, 200 to 500+ for small edges and scalping.</li>
+                <li><strong>Quick formula:</strong> years of data needed ≈ trades needed ÷ trades per year.</li>
+                <li><strong>Not enough trades?</strong> Test the same rules on many stocks or coins at once to pool trades.</li>
+            </ul>
+
+            <h2>How Much Historical Data Do I Need for Backtesting?</h2>
+            <p><strong>Short answer:</strong> enough data to (1) cover several different market conditions and (2) generate at least 100 trades. For a daily-candle strategy that usually means 5 to 10 years or more; for a 1-hour to 4-hour strategy, 2 to 3 years; for an intraday strategy on 1 to 15-minute candles, at least several months. The more often a strategy trades, the less calendar time it needs.</p>
+
+            <h3>Rule 1: Cover More Than One Market Regime</h3>
+            <p>A strategy tested only in a bull market learns one lesson: buying works. To know how it behaves when conditions change, your test period should include:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Regime</th><th>Stocks (US examples)</th><th>Crypto examples</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Strong uptrend</td><td>2023 to 2024</td><td>2020 to 2021</td></tr>
+                        <tr><td>Bear market or crash</td><td>2008, March 2020, 2022</td><td>2018, 2022</td></tr>
+                        <tr><td>Sideways, choppy market</td><td>Range-bound years between trends</td><td>Long ranges after big moves</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Sideways periods matter most for trend strategies, because that is where they usually lose money. For Bitcoin, the 7 years from late 2019 to late 2026 include all three regimes. For stocks, daily data going back 10 to 20 years adds older crises such as 2008. If you trade stocks outside the US, check your own market's history for the same three conditions.</p>
+
+            <h3>Rule 2: Get Enough Trades</h3>
+            <p>Calendar time matters less than the number of trades. Use this formula:</p>
+            <pre class="rule-block"><code>Years ≈ trades needed ÷ trades/year</code></pre>
+            <p><strong>Example:</strong> a strategy that trades 25 times a year needs about 4 years for 100 trades. One that trades 5 times a year would need 20 years, so test it on several markets instead.</p>
+            <p>Remember that a stock market is open about 250 days a year, while crypto trades all 365. The same daily rule will usually trade less often on a stock than on a coin, so stock strategies often need more calendar years, or more symbols, to reach the same trade count.</p>
+
+            <h3>Recommended Data by Trading Style</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Trading style</th><th>Typical candles</th><th>Suggested history</th><th>Why</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Scalping / day trading</td><td>1m to 15m</td><td>3 to 12 months (more for crypto)</td><td>Many trades per week, but conditions change fast; include a volatile and a quiet month</td></tr>
+                        <tr><td>Intraday swing</td><td>30m to 1h</td><td>1 to 2 years</td><td>Dozens of trades per year</td></tr>
+                        <tr><td>Swing trading</td><td>4h to 1D</td><td>3 to 5 years</td><td>Needs a full bull and bear cycle</td></tr>
+                        <tr><td>Position / trend following</td><td>1D to 1W</td><td>7 to 10+ years, and many symbols</td><td>Few trades per year per market</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>How Much Data Is Available for Stocks and Crypto?</h3>
+            <p>BitLogic Backtester includes history for stocks from the US, India, the UK, Germany, Hong Kong, Canada, Australia and Japan, and for crypto spot and futures:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Market</th><th>Daily and weekly candles</th><th>Intraday candles</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Stocks</td><td>Decades</td><td>1m: last 30 days · 5m to 30m: last 60 days · 1h: last 2 years</td></tr>
+                        <tr><td>Crypto</td><td>Since the coin was listed (BTCUSDT since 2017)</td><td>Years of history, down to 1-minute candles</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>What this means for stock traders:</strong> test short-term ideas on 1-hour candles (2 years of data) and longer-term ideas on daily candles (decades). A 5-minute stock strategy has only 60 days of history, which is rarely enough on its own, so treat it as a first look and confirm it on many stocks. <strong>For crypto traders:</strong> deep intraday history means you can test even 1-minute strategies over long periods, but newer coins have short histories, so a daily strategy on a young coin may not have a bear market in its data at all.</p>
+
+            <h3>Don't Forget Indicator Warm-Up</h3>
+            <p>A 200-day moving average needs 200 days of data before it produces its first value. If your test starts on 1 January, the indicator must be calculated from earlier data, or your first months of signals are wrong. <strong>BitLogic Backtester loads the extra history before your start date automatically</strong>, and warns you if not enough history exists to warm up a slow indicator, which matters most for recently listed stocks and coins.</p>
+
+            <h3>Can You Use Too Much Data?</h3>
+            <p>Yes, in one sense: markets evolve, and a rule tuned on 2012 data may not suit 2026. The answer is not to use less data but to validate properly. <strong>Walk-forward testing</strong> chooses settings on one period and tests them on the next, unseen period, round after round.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/walk-forward-optimization.webp" alt="BitLogic Backtester walk-forward optimization results: passed the reality check, settings made money on unseen data in 3 of 4 rounds, +21.2% average on unseen data" width="1280" height="720" loading="lazy">
+                <figcaption>Walk-forward optimization in BitLogic Backtester. Settings picked on earlier data made money on later, unseen data in 3 of 4 rounds. The app judges the strategy by the unseen periods, not the tuned ones.</figcaption>
+            </figure>
+
+            <h2>How Many Trades Make a Backtest Meaningful?</h2>
+            <p><strong>Short answer:</strong> fewer than 20 trades is inconclusive, 30 is the bare minimum, 100 or more is reasonably reliable, and 200 to 500+ is better for strategies with small edges or high trading frequency. What matters is whether the average trade is clearly positive: if the t-statistic of trade returns is above about 2, the edge is unlikely to be pure luck. This is the same for stocks and crypto.</p>
+
+            <h3>Why Sample Size Matters: the Margin of Error</h3>
+            <p>Every backtest measures a strategy on a sample of trades, and small samples are noisy. This table shows how precisely you can know a strategy's real win rate when the backtest shows 50% wins:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Number of trades</th><th>95% margin of error on win rate</th><th>True win rate could be</th><th>Verdict</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>20</td><td>± 22 points</td><td>28% to 72%</td><td>Inconclusive</td></tr>
+                        <tr><td>30</td><td>± 18 points</td><td>32% to 68%</td><td>Bare minimum</td></tr>
+                        <tr><td>50</td><td>± 14 points</td><td>36% to 64%</td><td>Weak evidence</td></tr>
+                        <tr><td>100</td><td>± 10 points</td><td>40% to 60%</td><td>Reasonable</td></tr>
+                        <tr><td>200</td><td>± 7 points</td><td>43% to 57%</td><td>Good</td></tr>
+                        <tr><td>500</td><td>± 4 points</td><td>46% to 54%</td><td>Strong</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="post-disclaimer">Margin of error = 1.96 × √(p × (1 − p) ÷ n), with p = 0.5. To halve the uncertainty you need four times as many trades.</p>
+
+            <h3>It's Not Only the Count: the Size of the Edge Matters</h3>
+            <p>A huge edge can be convincing with fewer trades, and a tiny edge needs hundreds. The standard check is the <strong>t-statistic</strong> of the per-trade returns:</p>
+            <pre class="rule-block"><code>t = average ÷ (std dev ÷ √trades)</code></pre>
+            <p>Here "average" and "std dev" are the mean and standard deviation of the per-trade returns. A t above about 2 means the average trade is very unlikely to be above zero by chance alone (roughly 95% confidence).</p>
+            <p>BitLogic Backtester runs this significance test on every backtest (a p-value under 5%), together with a probabilistic Sharpe ratio check of at least 95%, and shows the answer as a simple label: <strong>"Could still be luck"</strong> or <strong>"Unlikely to be luck"</strong>. Here is the same strategy (Turtle Breakout, daily candles, 2019 to 2026) on a coin and a stock, with about the same number of trades:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Market</th><th>Trades</th><th>Profit factor</th><th>Luck check</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Bitcoin (crypto)</td><td>35</td><td>1.67</td><td>Could still be luck</td></tr>
+                        <tr><td>NVIDIA (stock)</td><td>32</td><td>1.62</td><td>Unlikely to be luck</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Similar trade counts, different answers: the Bitcoin trades were far more scattered, so the same number of trades proved less. Crypto's bigger swings usually mean a crypto strategy needs more trades than a stock strategy to prove the same edge. And the NVIDIA strategy still lost to simply holding NVIDIA, which is a separate check.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/turtle-breakout-bitcoin-backtest-results.webp" alt="BitLogic Backtester summary for Turtle Breakout on Bitcoin with 35 trades, profit factor 1.67 and a 'could still be luck' warning" width="1280" height="720" loading="lazy">
+                <figcaption>35 trades over 7 years on Bitcoin. Good numbers, but the app labels the result "Promising, with caveats" and warns it could still be luck. Under 20 trades, the trade count itself is marked "too few to trust".</figcaption>
+            </figure>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/nvidia-backtest-vs-buy-and-hold.webp" alt="BitLogic Backtester verdict for Turtle Breakout on NVIDIA stock: strategy +481.1% vs buy and hold +2954.0%, underperformed buy and hold" width="1280" height="720" loading="lazy">
+                <figcaption>The same rules on NVIDIA stock passed the luck check, but still underperformed simply holding the stock. Passing one test is not passing them all.</figcaption>
+            </figure>
+
+            <h3>Trade-Count Guide by Strategy Type</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Strategy type</th><th>Typical edge per trade</th><th>Trades to aim for</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trend following (few, big winners)</td><td>Large but irregular</td><td>50 to 100+, across many markets</td></tr>
+                        <tr><td>Swing / mean reversion</td><td>Medium</td><td>100 to 200</td></tr>
+                        <tr><td>Day trading / scalping</td><td>Small, eaten by fees</td><td>300 to 500+, with fees and slippage on</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>What If My Strategy Doesn't Make Enough Trades?</h2>
+            <ol>
+                <li><strong>Test on many markets.</strong> If the rules are sound, they should work on similar assets: a basket of large-cap stocks, or a group of major coins. In BitLogic Backtester, <em>Test on many</em> runs one strategy on up to 10 stocks or coins and adds up the trades. The Turtle Breakout went from 35 trades on Bitcoin to <strong>334 trades across 10 coins</strong>, and made money on 9 of them.</li>
+                <li><strong>Extend the test period</strong> as far as the data allows. For daily stock strategies that can mean decades.</li>
+                <li><strong>Use a lower timeframe</strong> with the same logic (for example 4h instead of 1D for crypto, or 1h instead of 1D for stocks), then check the daily version agrees.</li>
+                <li><strong>Don't loosen rules just to get trades.</strong> More trades from a worse rule only proves the worse rule.</li>
+            </ol>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/backtest-on-many-markets.webp" alt="BitLogic Backtester Test on many: Turtle Breakout on 10 crypto symbols, made money on 9 of 10, beat holding on 7 of 10, 334 trades in total" width="1280" height="720" loading="lazy">
+                <figcaption>Pooling trades across 10 markets: 334 trades in total, profitable on 9 of 10 symbols. A much stronger sample than one chart. The same works with a list of stocks.</figcaption>
+            </figure>
+
+            <h3>Use Monte Carlo to See the Range of Outcomes</h3>
+            <p>Even with enough trades, the order they came in was luck. A Monte Carlo simulation reshuffles your trades thousands of times to show a realistic range of returns and drawdowns. BitLogic Backtester includes a Monte Carlo tab in every report, so you can see the worst drawdown you should prepare for, not just the one history happened to produce.</p>
+
+            <div class="post-callout"><strong>Run this checklist in minutes, free:</strong> BitLogic Backtester for Windows does every step below without code, for stocks and crypto: trade-count warnings, luck test, Monte Carlo, walk-forward optimization, Test on many and paper trading. Your first 3 backtests and 1 optimization are free. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>A Simple Checklist Before You Trust a Backtest</h2>
+            <ul>
+                <li>The test period includes a bull, a bear and a sideways market.</li>
+                <li>At least 100 trades (or 30+ per market across many markets).</li>
+                <li>The luck check says "unlikely to be luck" (t-statistic about 2 or higher).</li>
+                <li>Fees and slippage are included: broker costs for stocks, exchange fees (and funding on futures) for crypto.</li>
+                <li>It beats buy and hold, or has a much smaller drawdown.</li>
+                <li>It holds up in walk-forward testing on unseen data.</li>
+                <li>It works in paper trading on live prices.</li>
+            </ul>
+
+            <h2>Where BitLogic Fits In</h2>
+            <p><a href="../../">BitLogic</a>, our crypto screener for iPhone and iPad, Android and Windows, scans the market and sends alerts when setups appear, such as RSI extremes, breakouts and trend changes. Use BitLogic to find ideas, and <a href="../../backtester/">BitLogic Backtester</a> to check that they produce enough trades, with a real edge, over enough data, on stocks or crypto, before you trade them. One account works in both, and a paid BitLogic Pro membership includes the full Backtester.</p>
+            <p>New to backtesting? Start with <a href="../what-is-backtesting-without-coding/">What is backtesting? How to backtest stocks and crypto without coding</a>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">How much historical data do I need for backtesting?</h3>
+            <p>Enough to cover several market regimes (a bull market, a bear market and a sideways period) and to produce at least 100 trades. As a guide: daily strategies need 5 to 10 years or more, 1-hour to 4-hour strategies 2 to 3 years, and intraday strategies on 1 to 15-minute candles at least several months. Years of data needed is roughly the number of trades you need divided by the trades the strategy makes per year.</p>
+
+            <h3 class="faq-q">How many years of data should I use to backtest stocks?</h3>
+            <p>For daily stock strategies, 10 years or more is practical, because large companies have decades of daily history and a market has only about 250 trading days a year. That covers at least one bear market and one long uptrend. Intraday stock history is usually shorter, so 1-hour candles over about 2 years are a good compromise for shorter-term ideas.</p>
+
+            <h3 class="faq-q">How much data do I need to backtest crypto?</h3>
+            <p>For daily crypto strategies, use the coin's whole history if possible; for Bitcoin, 2019 to 2026 includes a bull market, a crash and sideways periods. Crypto trades 24/7 and has deep intraday history, so 1-hour to 4-hour strategies can use 2 to 3 years and minute-level strategies several months to a year.</p>
+
+            <h3 class="faq-q">How many trades do I need for a meaningful backtest?</h3>
+            <p>Treat fewer than 20 trades as inconclusive, 30 as a bare minimum, 100 or more as reasonably reliable, and 200 to 500 or more for high-frequency strategies or small edges. The real test is whether the average trade is clearly above zero: a t-statistic above about 2 suggests the edge is unlikely to be luck.</p>
+
+            <h3 class="faq-q">Is 30 trades enough for a backtest?</h3>
+            <p>Only as a bare minimum. With 30 trades, a measured 50% win rate has a 95% margin of error of about plus or minus 18 percentage points, so the true win rate could be anywhere from about 32% to 68%. Aim for 100 or more.</p>
+
+            <h3 class="faq-q">Is 100 trades enough?</h3>
+            <p>For most swing and trend strategies on stocks or crypto, 100 trades is a reasonable sample, especially if the luck check passes. For scalping or strategies with a small edge per trade, aim for 300 to 500 or more.</p>
+
+            <h3 class="faq-q">What if my strategy trades rarely?</h3>
+            <p>Test the same rules on many stocks or coins to pool trades, use a longer period, or use a lower timeframe with the same logic. In BitLogic Backtester, Test on many runs one strategy on up to 10 stocks or coins at once.</p>
+
+            <h3 class="faq-q">Can I use too much historical data?</h3>
+            <p>Sometimes. Markets change, and very old data can reflect conditions that no longer exist. Keep a long history for validation, and use walk-forward testing so settings are chosen on one period and tested on the period after it.</p>
+
+            <h3 class="faq-q">How do I know a backtest isn't luck?</h3>
+            <p>Check the trade count, the t-statistic of trade returns (above about 2), results on other markets, walk-forward results and Monte Carlo ranges. BitLogic Backtester shows all of these in plain English.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>For stocks and crypto alike, the trade count matters more than the calendar. Use enough history to see a bull, a bear and a sideways market, aim for 100+ trades, pool trades across several markets when a strategy trades rarely, and check that the edge is unlikely to be luck before you put money behind it.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../what-is-backtesting-without-coding/">What is backtesting?</a> | <a href="../../backtester/">BitLogic Backtester</a> | <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/">Supertrend flip + RSI strategy</a> | <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/">RSI reversal bounce strategy</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../what-is-backtesting-without-coding/" class="related-card">
+                        <h4>What Is Backtesting?</h4>
+                        <p>Backtest stocks and crypto without coding, in 6 steps.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../prebuilt-triple-ema-cross-momentum-screener/" class="related-card">
+                        <h4>Triple EMA Cross Momentum</h4>
+                        <p>A trend setup worth testing across many markets first.</p>
+                        <div class="read-more">Read the Strategy &rarr;</div>
+                    </a>
+                    <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/" class="related-card">
+                        <h4>Bollinger Squeeze Breakout</h4>
+                        <p>Volatility contraction, then expansion: rules and risk.</p>
+                        <div class="read-more">Read the Strategy &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

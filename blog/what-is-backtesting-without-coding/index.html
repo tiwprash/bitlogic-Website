@@ -339,7 +339,7 @@
                         <tr><td>Profit factor</td><td>Gross profit ÷ gross loss</td><td>Above 1.3 is decent, above 1.75 is strong</td></tr>
                         <tr><td>Win rate</td><td>Share of winning trades</td><td>Trend strategies often win under 50% and still profit</td></tr>
                         <tr><td>Sharpe ratio</td><td>Return per unit of volatility</td><td>Above 1 is good</td></tr>
-                        <tr><td>Number of trades</td><td>Whether the result could be luck</td><td>Under 20 is too few; 100+ is much better</td></tr>
+                        <tr><td>Number of trades</td><td>Whether the result could be luck</td><td>Under 20 is too few; 100+ is much better (see <a href="../how-much-data-and-trades-for-backtesting/">how many trades you need</a>)</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -425,7 +425,7 @@
             <ul>
                 <li><strong>Overfitting:</strong> tuning settings until the past looks perfect. Use walk-forward testing.</li>
                 <li><strong>Ignoring costs:</strong> strategies that trade often are hit hardest by fees and slippage.</li>
-                <li><strong>Too few trades:</strong> 10 trades say almost nothing. Aim for 100 or more, or test on several markets.</li>
+                <li><strong>Too few trades:</strong> 10 trades say almost nothing. Aim for 100 or more, or test on several markets. See <a href="../how-much-data-and-trades-for-backtesting/">how much data and how many trades you need</a>.</li>
                 <li><strong>Testing one bull market only:</strong> include a bear market and a sideways period.</li>
                 <li><strong>Survivorship bias:</strong> testing only stocks and coins that still exist and did well, and forgetting delisted companies and dead coins.</li>
                 <li><strong>Ignoring market hours:</strong> intraday stock strategies only trade during the session, and overnight gaps can jump past a stop loss.</li>
@@ -467,7 +467,7 @@
             <h2>The Bottom Line</h2>
             <p>Backtesting is the cheapest way to find out whether a trading idea is worth your money, whether you trade stocks, crypto or both. Write exact rules, include costs, compare with buy and hold, demand enough trades, and validate on unseen data and live paper trading before going live. With a no-code tool, none of that needs programming.</p>
             <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
-            <p><strong>Related guides:</strong> <a href="../../backtester/">BitLogic Backtester</a> | <a href="../../what-is-bitlogic/">What is BitLogic</a> | <a href="../prebuilt-triple-ema-cross-momentum-screener/">Triple EMA cross strategy</a> | <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger squeeze breakout</a> | <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView alternative</a></p>
+            <p><strong>Related guides:</strong> <a href="../../backtester/">BitLogic Backtester</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades for backtesting</a> | <a href="../../what-is-bitlogic/">What is BitLogic</a> | <a href="../prebuilt-triple-ema-cross-momentum-screener/">Triple EMA cross strategy</a> | <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger squeeze breakout</a> | <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView alternative</a></p>
             <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
 
             <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
@@ -489,10 +489,10 @@
                         <p>A trend-following setup you can scan for today and backtest first.</p>
                         <div class="read-more">Read the Strategy &rarr;</div>
                     </a>
-                    <a href="../prebuilt-macd-zero-cross-momentum-screener/" class="related-card">
-                        <h4>MACD Zero Cross Momentum</h4>
-                        <p>Catch momentum shifts when MACD crosses zero.</p>
-                        <div class="read-more">Read the Strategy &rarr;</div>
+                    <a href="../how-much-data-and-trades-for-backtesting/" class="related-card">
+                        <h4>How Much Data and Trades?</h4>
+                        <p>Years of data and trade counts for a backtest you can trust.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
                     </a>
                     <a href="../free-tradingview-alternative-crypto-alerts/" class="related-card">
                         <h4>Free TradingView Alternative</h4>
