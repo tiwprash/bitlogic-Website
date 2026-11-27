@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Walk-Forward &amp; Out-of-Sample Testing Explained (No Code)</title>
+    <meta name="description" content="What walk-forward and out-of-sample testing are, how they stop overfitting, and how to run a walk-forward optimization on stock and crypto strategies without code.">
+    <link rel="canonical" href="https://bitlogic.info/blog/walk-forward-out-of-sample-testing/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Walk-Forward and Out-of-Sample Testing Explained, With a No-Code Example (Stocks and Crypto)">
+    <meta property="og:description" content="What walk-forward and out-of-sample testing are, how they stop overfitting, and how to run a walk-forward optimization on stock and crypto strategies without code.">
+    <meta property="og:url" content="https://bitlogic.info/blog/walk-forward-out-of-sample-testing/">
+    <meta property="og:image" content="https://bitlogic.info/blog/walk-forward-out-of-sample-testing/og-walk-forward-testing.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Walk-Forward &amp; Out-of-Sample Testing Explained (No Code)">
+    <meta name="twitter:description" content="What walk-forward and out-of-sample testing are, how they stop overfitting, and how to run a walk-forward optimization on stock and crypto strategies without code.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/walk-forward-out-of-sample-testing/og-walk-forward-testing.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Walk-Forward Testing and Out-of-Sample Testing Explained, With a No-Code Example for Stocks and Crypto",
+      "description": "What walk-forward and out-of-sample testing are, how they stop overfitting, and how to run a walk-forward optimization on stock and crypto strategies without code.",
+      "image": [
+        "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/og-walk-forward-testing.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/walk-forward-optimization.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/backtest-on-many-markets.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Walk-forward optimization"
+        },
+        {
+          "@type": "Thing",
+          "name": "Out-of-sample testing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Overfitting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Backtesting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Stock trading"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cryptocurrency trading"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to run a walk-forward optimization without code",
+      "description": "Six steps to run a walk-forward optimization on a stock or crypto strategy in BitLogic Backtester.",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "BitLogic Backtester (Windows)"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Open a strategy with adjustable numbers",
+          "text": "Pick a strategy with settings to tune, such as an RSI length, a moving-average period or a stop-loss percentage.",
+          "url": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/#wf-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Choose the settings and ranges to test",
+          "text": "Press Optimize, tick two or three settings and give each a range, for example EMA length 10 to 50 in steps of 5.",
+          "url": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/#wf-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Choose the search method",
+          "text": "Test every combination for the most thorough search, or use a smart search that samples widely and then looks closer around the best.",
+          "url": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/#wf-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Set the rounds and the split",
+          "text": "For example 4 rounds with 70% practice and 30% test in each round, checking that test periods contain enough trades.",
+          "url": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/#wf-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Add symbols and a drawdown limit",
+          "text": "Optionally require the settings to work on several stocks or coins at once, and cap the drawdown so the optimizer cannot pick the riskiest settings.",
+          "url": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/#wf-5"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Judge by the out-of-sample results",
+          "text": "Read the reality check on the unseen test periods, then run a normal backtest with the chosen settings and check the Monte Carlo range.",
+          "url": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/#wf-6"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is walk-forward testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Walk-forward testing optimizes a strategy on a practice window of data, tests the chosen settings on the window right after it, then moves both windows forward and repeats. The combined results of the test windows show how the strategy, and the way you optimize it, would really have performed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is out-of-sample testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Out-of-sample testing means building or tuning a strategy on one part of the data (in-sample) and judging it on a later part it has never seen (out-of-sample). Only the out-of-sample result is an honest estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is walk-forward testing the same as out-of-sample testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Walk-forward testing is out-of-sample testing repeated over several rolling windows, which gives more independent checks than one split."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What in-sample and out-of-sample split should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A common choice is 70 to 80% in-sample and 20 to 30% out-of-sample in each round. Make sure every test period still contains enough trades to judge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many walk-forward rounds should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often 3 to 6. More rounds give more checks but shorter periods; make sure each test period still contains enough trades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between anchored and rolling walk-forward?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In rolling walk-forward the practice window keeps the same length and moves forward each round. In anchored walk-forward the practice window always starts at the beginning of the data and grows each round. Rolling adapts faster to changing markets; anchored uses more data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which settings should I use after a walk-forward test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually those chosen in the most recent round, since they are based on the latest market behaviour. BitLogic Backtester suggests these with one click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does walk-forward testing guarantee the strategy will work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, but it is far more honest than a single optimized backtest. Follow it with paper trading on live prices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I walk-forward test stock strategies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In BitLogic Backtester it works the same for stocks and crypto. Intraday stock history is shorter, so use 1-hour or daily candles for long walk-forward tests on stocks."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bitlogic.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://bitlogic.info/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Walk-Forward and Out-of-Sample Testing",
+          "item": "https://bitlogic.info/blog/walk-forward-out-of-sample-testing/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Walk-Forward and Out-of-Sample Testing</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>9 min read</span>
+            </div>
+
+            <h1>Walk-Forward Testing and Out-of-Sample Testing Explained, With a No-Code Example for Stocks and Crypto</h1>
+
+            <div class="post-callout"><strong>Optimize without curve-fitting, free:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows) runs walk-forward optimization on stocks and crypto with no code, and gives a plain-English "reality check" on unseen data. Your first optimization is free. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> <strong>out-of-sample testing</strong> means tuning a strategy on one part of your data and testing it on a later part it has never seen. <strong>Walk-forward testing</strong> repeats that in rolling rounds: optimize on a practice window, test on the window right after it, then move both forward. Judge the strategy only by the test windows. It is the most practical defence against overfitting, for a stock strategy on Apple as much as a crypto strategy on Bitcoin.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. The example is a real optimization run in BitLogic Backtester in November 2026. This article is for education only and is not financial advice. Past results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>In-sample</strong> data is used to build or tune a strategy; <strong>out-of-sample</strong> data is kept aside to test it honestly.</li>
+                <li><strong>Walk-forward testing</strong> repeats this in rolling rounds: tune on a practice period, test on the next one, move forward.</li>
+                <li>It is the most practical defence against <strong>overfitting</strong>, the main reason <a href="../why-backtest-wins-but-loses-live/">backtests fail live</a>.</li>
+                <li><strong>Judge only by the test periods.</strong> Expect them to be much weaker than the tuned periods; that gap is normal.</li>
+                <li><strong>Stocks and crypto:</strong> the method is identical, but stocks have fewer trading days and shorter intraday history, so use longer candles or more symbols.</li>
+            </ul>
+
+            <h2>What Are Walk-Forward and Out-of-Sample Testing?</h2>
+            <p><strong>Short answer:</strong> out-of-sample testing means tuning a strategy on one part of your data and testing it on a later part it has never seen. Walk-forward testing repeats that process in several rolling rounds: optimize on a practice window, test on the window right after it, then move both windows forward. The combined test results show how your strategy, and your way of optimizing it, would really have performed.</p>
+
+            <h3>Why You Need Them</h3>
+            <p>If you try 1,000 versions of a strategy and pick the best, that winner was chosen <em>because</em> it fitted the past best, partly by luck. Its backtest result is biased upward. The only fair test is data it played no part in choosing. It is like a student who memorized last year's exam answers: the real test is a new exam.</p>
+
+            <h3>In-Sample vs Out-of-Sample</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>In-sample (practice)</th><th>Out-of-sample (test)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Used for</td><td>Building and optimizing rules</td><td>Judging the result</td></tr>
+                        <tr><td>Results are</td><td>Optimistic, by design</td><td>An honest estimate</td></tr>
+                        <tr><td>Share of data</td><td>70 to 80%</td><td>20 to 30%</td></tr>
+                        <tr><td>Change rules after?</td><td>Yes</td><td>No: once you tune on it, it becomes in-sample</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>How Walk-Forward Testing Works</h3>
+            <p>Example with 7 years of daily data (November 2019 to November 2026) split into 4 back-to-back rounds, each about 15 months of practice followed by 6 months of test, roughly a 70/30 split:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Round</th><th>Practice (optimize)</th><th>Test (unseen)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Nov 2019 to Feb 2021</td><td>Feb 2021 to Aug 2021</td></tr>
+                        <tr><td>2</td><td>Aug 2021 to Nov 2022</td><td>Nov 2022 to May 2023</td></tr>
+                        <tr><td>3</td><td>May 2023 to Aug 2024</td><td>Aug 2024 to Feb 2025</td></tr>
+                        <tr><td>4</td><td>Feb 2025 to May 2026</td><td>May 2026 to Nov 2026</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>The settings that win round 4, chosen on the most recent data, are the most relevant ones to use today.</p>
+
+            <h3>Rolling vs Anchored Walk-Forward</h3>
+            <ul>
+                <li><strong>Rolling:</strong> the practice window keeps the same length and moves forward each round. It adapts faster when markets change, which suits crypto's fast-moving cycles.</li>
+                <li><strong>Anchored:</strong> the practice window always starts at the beginning of the data and grows each round. It uses more history, which suits slow daily stock strategies with decades of data.</li>
+            </ul>
+
+            <h2>Example: Walk-Forward Optimization in BitLogic Backtester</h2>
+            <p>We optimized the two Donchian channel lengths of the Turtle Breakout on Bitcoin (daily, 2019 to 2026), in 4 walk-forward rounds.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/walk-forward-optimization.webp" alt="BitLogic Backtester walk-forward optimization results: passed the reality check, +21.2% average on unseen data, made money in 3 of 4 test periods, settings somewhat stable" width="1280" height="720" loading="lazy">
+                <figcaption>Result: "Passed the reality check". Settings chosen on earlier data made money on later, unseen data in 3 of 4 rounds, averaging +21.2% per test period. In the practice periods where they were picked, the same settings averaged +125.9%.</figcaption>
+            </figure>
+            <p>How to read it:</p>
+            <ul>
+                <li><strong>Test result (+21.2%)</strong> is the honest number. The practice result (+125.9%) is inflated by selection.</li>
+                <li><strong>Made money in 3 of 4 test periods:</strong> consistent, not one lucky round.</li>
+                <li><strong>Best settings "somewhat stable"</strong> between rounds: the edge is not tied to one exact value.</li>
+                <li><strong>Round 1 "fell apart on test", round 2 "held up":</strong> the app shows each round, so you see where it struggled.</li>
+                <li><strong>Holding beat the chosen settings in 2 of 4 test periods</strong>, which the app also tells you. Beating buy and hold is a separate question from being profitable.</li>
+            </ul>
+
+            <h3>How to Run a Walk-Forward Optimization Without Code</h3>
+            <ol>
+                <li id="wf-1"><strong>Open a strategy</strong> with adjustable numbers (an RSI length, a moving-average period, a fixed <a href="../stop-loss-take-profit-best-indicators/">stop or target</a> %).</li>
+                <li id="wf-2"><strong>Press Optimize</strong> and tick the numbers to test, with a range for each (for example EMA length 10 to 50 in steps of 5).</li>
+                <li id="wf-3"><strong>Choose the search:</strong> "Test every combination" (most thorough) or "Smart search" (samples widely, then looks closer around the best).</li>
+                <li id="wf-4"><strong>Set the rounds and split:</strong> for example 4 rounds, 70% practice / 30% test. The app warns you if test periods are too short to contain enough trades.</li>
+                <li id="wf-5"><strong>Optionally add more symbols</strong> so settings must work on several stocks or coins at once, and a <strong>drawdown limit</strong> so it can't just pick the riskiest settings.</li>
+                <li id="wf-6"><strong>Judge by the reality check</strong>, then run a normal backtest with the chosen settings and look at the Monte Carlo tab.</li>
+            </ol>
+
+            <h2>Walk-Forward Testing for Stocks vs Crypto</h2>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Topic</th><th>Stocks</th><th>Crypto</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trading days</td><td>About 250 a year, so fewer candles per round</td><td>365 a year, 24/7</td></tr>
+                        <tr><td>History</td><td>Decades of daily data; intraday is short (1h about 2 years, 5m about 60 days)</td><td>Since listing, with deep intraday history</td></tr>
+                        <tr><td>Best candles</td><td>Daily or 1-hour for multi-round tests</td><td>Anything from 15 minutes to daily</td></tr>
+                        <tr><td>Getting trades</td><td>Optimize across a basket of similar stocks</td><td>Optimize across several major coins</td></tr>
+                        <tr><td>Regimes to include</td><td>A bear market such as 2008, 2020 or 2022</td><td>Crashes such as 2018 or 2022</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Because each test window must hold enough trades, rare-trading stock strategies benefit most from optimizing on several symbols at once. See <a href="../how-much-data-and-trades-for-backtesting/">how much data and how many trades you need</a>.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/backtest-on-many-markets.webp" alt="BitLogic Backtester Test on many: Turtle Breakout made money on 9 of 10 symbols across 334 trades" width="1280" height="720" loading="lazy">
+                <figcaption>Testing the same rules on 10 symbols gives far more trades per walk-forward round. It works with a list of coins or a list of stocks.</figcaption>
+            </figure>
+
+            <h3>What a Good Walk-Forward Result Looks Like</h3>
+            <ul>
+                <li><strong>Most test periods profitable</strong> after fees and slippage.</li>
+                <li><strong>Out-of-sample return a reasonable fraction of in-sample</strong>, not near zero or negative.</li>
+                <li><strong>Stable settings:</strong> similar winners from round to round.</li>
+                <li><strong>Enough trades in each test period</strong> to mean something.</li>
+                <li><strong>Works on several symbols</strong>, not one.</li>
+            </ul>
+
+            <h3>Red Flags</h3>
+            <ul>
+                <li>Great practice results, losing test results: classic overfitting.</li>
+                <li>The best settings jump wildly each round (for example EMA 12, then 47, then 18).</li>
+                <li>Only one test period made money.</li>
+            </ul>
+
+            <h3>Common Mistakes</h3>
+            <ul>
+                <li><strong>Peeking:</strong> changing rules after seeing the out-of-sample result, then testing again on the same data. Each peek turns test data into practice data.</li>
+                <li><strong>Too many rounds</strong> on too little data: test periods with 3 trades prove nothing.</li>
+                <li><strong>Optimizing everything:</strong> sweep two or three parameters, not ten.</li>
+                <li><strong>Skipping costs</strong> in the optimizer, which favours high-frequency settings that fees later destroy.</li>
+            </ul>
+
+            <h2>After Walk-Forward: Paper Trading</h2>
+            <p>Walk-forward testing uses history. The final out-of-sample test is the future: run the strategy on live prices with virtual money. BitLogic Backtester includes paper trading for stocks and crypto; read our guide to <a href="../paper-trading-vs-backtesting/">paper trading vs backtesting</a>.</p>
+
+            <div class="post-callout"><strong>Optimize without curve-fitting, free:</strong> BitLogic Backtester for Windows runs walk-forward optimization across one or many symbols and candle sizes, with drawdown limits, liquidation modelling, fees and slippage, and a plain-English reality check. Stocks and crypto, no code. Your first optimization is free. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>BitLogic: Alerts for the Settings That Survive</h2>
+            <p><a href="../../">BitLogic</a>, our crypto screener for Windows, iPhone/iPad and Android, alerts you when indicator setups appear across the market. Use <a href="../../backtester/">BitLogic Backtester</a> to find settings that hold up out of sample, and BitLogic to watch for them. One account works in both, and <strong>paying BitLogic Pro members get the full BitLogic Backtester included</strong>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">What is walk-forward testing?</h3>
+            <p>Walk-forward testing optimizes a strategy on a practice window of data, tests the chosen settings on the window right after it, then moves both windows forward and repeats. The combined results of the test windows show how the strategy, and the way you optimize it, would really have performed.</p>
+
+            <h3 class="faq-q">What is out-of-sample testing?</h3>
+            <p>Out-of-sample testing means building or tuning a strategy on one part of the data (in-sample) and judging it on a later part it has never seen (out-of-sample). Only the out-of-sample result is an honest estimate.</p>
+
+            <h3 class="faq-q">Is walk-forward testing the same as out-of-sample testing?</h3>
+            <p>Walk-forward testing is out-of-sample testing repeated over several rolling windows, which gives more independent checks than one split.</p>
+
+            <h3 class="faq-q">What in-sample and out-of-sample split should I use?</h3>
+            <p>A common choice is 70 to 80% in-sample and 20 to 30% out-of-sample in each round. Make sure every test period still contains enough trades to judge.</p>
+
+            <h3 class="faq-q">How many walk-forward rounds should I use?</h3>
+            <p>Often 3 to 6. More rounds give more checks but shorter periods; make sure each test period still contains enough trades.</p>
+
+            <h3 class="faq-q">What is the difference between anchored and rolling walk-forward?</h3>
+            <p>In rolling walk-forward the practice window keeps the same length and moves forward each round. In anchored walk-forward the practice window always starts at the beginning of the data and grows each round. Rolling adapts faster to changing markets; anchored uses more data.</p>
+
+            <h3 class="faq-q">Which settings should I use after a walk-forward test?</h3>
+            <p>Usually those chosen in the most recent round, since they are based on the latest market behaviour. BitLogic Backtester suggests these with one click.</p>
+
+            <h3 class="faq-q">Does walk-forward testing guarantee the strategy will work?</h3>
+            <p>No, but it is far more honest than a single optimized backtest. Follow it with paper trading on live prices.</p>
+
+            <h3 class="faq-q">Can I walk-forward test stock strategies?</h3>
+            <p>Yes. In BitLogic Backtester it works the same for stocks and crypto. Intraday stock history is shorter, so use 1-hour or daily candles for long walk-forward tests on stocks.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>An optimized backtest tells you how well settings fitted the past. A walk-forward test tells you how well your method of choosing settings works on the future. Keep the search small, make sure every test window holds enough trades, judge only the unseen periods, and paper trade what survives, whether it trades stocks or crypto.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../why-backtest-wins-but-loses-live/">Why a backtest wins but loses live</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades for backtesting</a> | <a href="../paper-trading-vs-backtesting/">Paper trading vs backtesting</a> | <a href="../stop-loss-take-profit-best-indicators/">Stop-loss, take-profit and indicators</a> | <a href="../../backtester/">BitLogic Backtester</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../why-backtest-wins-but-loses-live/" class="related-card">
+                        <h4>Backtest Wins, Live Loses?</h4>
+                        <p>Overfitting, look-ahead bias and missing costs, fixed.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../paper-trading-vs-backtesting/" class="related-card">
+                        <h4>Paper Trading vs Backtesting</h4>
+                        <p>Prove a strategy on live prices before real money.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../stop-loss-take-profit-best-indicators/" class="related-card">
+                        <h4>Stop-Loss and Indicators</h4>
+                        <p>ATR stops, targets and indicator combinations to test.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

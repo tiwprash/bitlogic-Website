@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Paper Trading vs Backtesting: How to Paper Trade Stocks &amp; Crypto</title>
+    <meta name="description" content="Paper trading vs backtesting explained: what paper trading is, why to backtest first, how long to paper trade, and how to paper trade stocks and crypto on live prices.">
+    <link rel="canonical" href="https://bitlogic.info/blog/paper-trading-vs-backtesting/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Paper Trading vs Backtesting: What Paper Trading Is and How to Paper Trade Stocks and Crypto">
+    <meta property="og:description" content="Paper trading vs backtesting explained: what paper trading is, why to backtest first, how long to paper trade, and how to paper trade stocks and crypto on live prices.">
+    <meta property="og:url" content="https://bitlogic.info/blog/paper-trading-vs-backtesting/">
+    <meta property="og:image" content="https://bitlogic.info/blog/paper-trading-vs-backtesting/og-paper-trading-vs-backtesting.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paper Trading vs Backtesting: How to Paper Trade Stocks &amp; Crypto">
+    <meta name="twitter:description" content="Paper trading vs backtesting explained: what paper trading is, why to backtest first, how long to paper trade, and how to paper trade stocks and crypto on live prices.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/paper-trading-vs-backtesting/og-paper-trading-vs-backtesting.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Paper Trading vs Backtesting: What Paper Trading Is, When to Do It, and How to Paper Trade Stocks and Crypto",
+      "description": "Paper trading vs backtesting explained: what paper trading is, why to backtest first, how long to paper trade, and how to paper trade stocks and crypto on live prices.",
+      "image": [
+        "https://bitlogic.info/blog/paper-trading-vs-backtesting/og-paper-trading-vs-backtesting.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/paper-trading-live-prices.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/walk-forward-optimization.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/paper-trading-vs-backtesting/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Paper trading"
+        },
+        {
+          "@type": "Thing",
+          "name": "Backtesting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Forward testing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Demo trading"
+        },
+        {
+          "@type": "Thing",
+          "name": "Stock trading"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cryptocurrency trading"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to paper trade a stock or crypto strategy",
+      "description": "Six steps from backtest to paper trading a rule-based strategy on live stock or crypto prices.",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "BitLogic Backtester (Windows)"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Backtest the strategy first",
+          "text": "Build the strategy without code and backtest it on years of data, ideally with walk-forward testing.",
+          "url": "https://bitlogic.info/blog/paper-trading-vs-backtesting/#pt-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Choose the market and symbols",
+          "text": "Pick crypto spot or futures, or stocks, and one symbol, your own list or a ready-made list such as the top 200 coins by volume.",
+          "url": "https://bitlogic.info/blog/paper-trading-vs-backtesting/#pt-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Set the virtual account",
+          "text": "Choose the starting virtual money, use a realistic size, and set how many trades can be open at once.",
+          "url": "https://bitlogic.info/blog/paper-trading-vs-backtesting/#pt-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Let it run on live prices",
+          "text": "Rules are checked as each candle closes; orders fill at the next live price, with fees, slippage and funding included.",
+          "url": "https://bitlogic.info/blog/paper-trading-vs-backtesting/#pt-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Collect enough trades",
+          "text": "Keep the session running for at least two weeks and 20 to 30 closed trades, longer for daily strategies.",
+          "url": "https://bitlogic.info/blog/paper-trading-vs-backtesting/#pt-5"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Compare with a backtest and check the results",
+          "text": "Compare the session with a backtest of the same period, and only go live, with a small size, when every check passes.",
+          "url": "https://bitlogic.info/blog/paper-trading-vs-backtesting/#pt-6"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is paper trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paper trading is simulated trading on live market prices with virtual money. Your strategy watches the real market, decides when it would buy and sell, and records the result, without placing real orders or risking real money. It is also called forward testing or demo trading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between paper trading and backtesting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Backtesting runs a strategy on historical data, so it tests years of trades in seconds. Paper trading runs it on live prices as they happen, so it is slower but tests the strategy on data that did not exist when it was built. Backtesting filters ideas; paper trading confirms the ones that survive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I backtest or paper trade first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Backtest first. A backtest shows in minutes whether an idea worked over years of bull, bear and sideways markets. Only paper trade the strategies that pass, because paper trading takes weeks or months of real time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is paper trading the same as forward testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Forward testing and paper trading both mean running a strategy on new, live data after it was built, without real money. Some traders also use forward testing for live trading with very small size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I paper trade before using real money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A backtest can be fooled by overfitting, look-ahead bias or missing costs. Paper trading runs your exact rules on new prices with realistic fills and fees, at zero risk. If a strategy fails on paper, it would almost certainly have failed with real money."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should I paper trade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Until you have at least 20 to 30 closed trades and at least two weeks of results, ideally covering more than one kind of market. Fast strategies may get there in weeks; daily strategies can need months, so paper trade them on many symbols at once."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is paper trading the same as a demo account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Similar. A demo account lets you place manual trades with virtual money. Paper trading a strategy runs your rules automatically on live prices and keeps statistics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is paper trading free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many brokers and exchanges offer free demo accounts for manual trades. Automatic paper trading of your own rule-based strategy, with fees, slippage and funding, is usually a paid feature. In BitLogic Backtester it is included in every paid plan, starting with a one-time Week pass of US$3.50."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I paper trade stocks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. BitLogic Backtester paper trades stocks from the US, the UK, Germany, Canada, Australia, India, Hong Kong and Japan on live prices. Free stock prices can arrive up to 15 minutes late depending on the exchange; the session makes the same trades, just later than the live market."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I paper trade crypto futures with leverage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. BitLogic Backtester paper trades crypto futures with leverage, including funding payments and liquidation, all with virtual money."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an exchange account or API key to paper trade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not in BitLogic Backtester. It uses public live prices and never sends real orders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does paper trading keep running if I close the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In BitLogic Backtester the session pauses while the app is closed and catches up when you reopen it: stops and targets that would have triggered are applied, and missed entries are not traded late."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are my paper trading results worse than my backtest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually overfitting, slippage, fees or a change in market conditions. Compare the paper session with a backtest of the same candles to see whether fills behaved as tested."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bitlogic.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://bitlogic.info/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paper Trading vs Backtesting",
+          "item": "https://bitlogic.info/blog/paper-trading-vs-backtesting/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Paper Trading vs Backtesting</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>12 min read</span>
+            </div>
+
+            <h1>Paper Trading vs Backtesting: What Paper Trading Is, When to Do It, and How to Paper Trade Stocks and Crypto</h1>
+
+            <div class="post-callout"><strong>Backtest and paper trade in one app:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows) backtests your strategy on years of stock and crypto data, then paper trades it on live prices with virtual money. No code, no exchange account, no API key. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> <strong>backtesting</strong> runs a trading strategy on historical data to see how it would have performed; <strong>paper trading</strong> runs the same strategy on live prices with virtual money to see how it performs now. Do both, in that order: backtest to filter ideas in minutes, then paper trade the survivors for at least <strong>two weeks and 20 to 30 closed trades</strong> before risking real money. This works the same for stocks such as Apple and NVIDIA and for crypto such as Bitcoin and Ethereum.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. Screenshots show a real paper trading session in BitLogic Backtester in November 2026. This article is for education only and is not financial advice. Paper trading uses virtual money; simulated results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Paper trading</strong> = running a strategy on <strong>live prices with virtual money</strong>. Nothing real is bought or sold.</li>
+                <li><strong>Backtesting</strong> = running it on <strong>historical data</strong>. Years of trades in seconds.</li>
+                <li><strong>Backtest first, then paper trade.</strong> Paper trading is the only test on data that didn't exist when you built the strategy.</li>
+                <li><strong>How long:</strong> at least <strong>2 weeks and 20 to 30+ closed trades</strong>; longer for slow, daily strategies.</li>
+                <li><strong>Make it realistic:</strong> include fees, slippage and (for crypto futures) funding, and fill orders after the signal, not at it.</li>
+                <li>BitLogic Backtester paper trades <strong>stocks and crypto</strong> on live prices, one symbol or up to 200 coins at once, with <strong>no exchange account or API key</strong>.</li>
+            </ul>
+
+            <h2>What Is Paper Trading?</h2>
+            <p><strong>Short answer:</strong> paper trading is simulated trading on live market prices with virtual money. Your strategy watches the real market, decides when it would buy and sell, and records the result, without placing real orders or risking real money. It is also called <strong>forward testing</strong> or <strong>demo trading</strong>.</p>
+            <p>The name comes from traders who once wrote their imaginary trades on paper. Today a paper trading app does it automatically: it follows your rules as each candle closes, simulates the fills, and keeps score, including fees.</p>
+
+            <h2>Paper Trading vs Backtesting: What's the Difference?</h2>
+            <p><strong>Short answer:</strong> backtesting looks backwards and paper trading looks forwards. A backtest replays years of historical prices in seconds to show how a strategy <em>would have</em> done. Paper trading runs the strategy in real time on new prices to show how it <em>does</em> now. Backtesting is for filtering ideas; paper trading is for confirming the few that survive.</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th></th><th>Backtesting</th><th>Paper trading</th><th>Live trading</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Data</td><td>Historical</td><td>Live, new data</td><td>Live</td></tr>
+                        <tr><td>Money</td><td>None</td><td>Virtual</td><td>Real</td></tr>
+                        <tr><td>Speed</td><td>Years in seconds</td><td>Real time</td><td>Real time</td></tr>
+                        <tr><td>Catches overfitting?</td><td>Only with walk-forward</td><td>Yes: data the strategy never saw</td><td>Yes, expensively</td></tr>
+                        <tr><td>Real fills and delays?</td><td>Estimated</td><td>Close to real</td><td>Real</td></tr>
+                        <tr><td>Tests your emotions?</td><td>No</td><td>Partly</td><td>Yes</td></tr>
+                        <tr><td>Best for</td><td>Filtering ideas</td><td>Confirming the survivors</td><td>Proven strategies, small size first</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Should You Backtest or Paper Trade First?</h3>
+            <p><strong>Backtest first.</strong> A backtest tells you in minutes whether an idea worked through bull, bear and sideways markets, on stocks over decades of daily data or on crypto since a coin was listed. Paper trading a raw idea would take months to learn the same thing. Use the backtest to throw out the 9 ideas that don't work, then paper trade the 1 that does.</p>
+
+            <h3>Do You Need Both?</h3>
+            <p>Yes. Each one catches problems the other misses:</p>
+            <ul>
+                <li><strong>Only a backtest</strong> can show how a strategy behaved in the 2022 bear market, the March 2020 crash or a long sideways year. Paper trading only sees the weeks you run it.</li>
+                <li><strong>Only paper trading</strong> tests the strategy on data that did not exist when you designed it, with real-time fills and the slippage you would actually get.</li>
+            </ul>
+            <p>A strategy that passes both, ideally with <a href="../walk-forward-out-of-sample-testing/">walk-forward testing</a> in between, has earned a small live trial.</p>
+
+            <h2>Should I Paper Trade Before Using Real Money?</h2>
+            <p><strong>Short answer:</strong> yes. A backtest can be fooled by overfitting, look-ahead bias or missing costs. Paper trading runs your exact rules on prices that did not exist when you designed them, with realistic fills and fees, at zero risk. If a strategy fails on paper, it would almost certainly have failed with real money.</p>
+
+            <h3>What Paper Trading Reveals That a Backtest Can Hide</h3>
+            <ul>
+                <li><strong>Overfitting:</strong> settings tuned to the past stop working on new data.</li>
+                <li><strong>Look-ahead mistakes:</strong> signals that seemed to fire at the perfect price arrive later in real time.</li>
+                <li><strong>Slippage:</strong> the gap between the signal price and the price you'd really get, especially on small coins and small-cap stocks.</li>
+                <li><strong>Fees eating the edge:</strong> frequent-trading strategies can lose most of their profit to fees.</li>
+                <li><strong>Funding costs</strong> on crypto perpetual futures.</li>
+                <li><strong>Practical problems:</strong> how many signals arrive at once, how long trades last, how often it trades.</li>
+                <li><strong>Whether you can follow it:</strong> watching a 10-trade losing streak in real time, even with virtual money, tells you a lot.</li>
+            </ul>
+            <p>These are the same causes behind <a href="../why-backtest-wins-but-loses-live/">a backtest that wins but loses live</a>; paper trading is where you catch them cheaply.</p>
+
+            <h3>What Paper Trading Cannot Show</h3>
+            <ul>
+                <li>The emotional weight of real money (losses feel roughly twice as heavy).</li>
+                <li>Partial fills and market impact on large orders.</li>
+                <li>Exchange or broker outages, withdrawals and account issues.</li>
+            </ul>
+            <p>So after a successful paper period, start live <strong>with a small size</strong>, and increase only if live results stay close to paper results.</p>
+
+            <h2>How Long Should I Paper Trade?</h2>
+            <p><strong>Short answer:</strong> until you have enough closed trades to judge: at least 20 to 30 trades and at least two weeks. Ideally the period should include more than one kind of market (a trend and a range). Fast strategies on 5 to 30-minute candles may get there in weeks; daily strategies can need several months, so paper trade them on many symbols at once.</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Strategy speed</th><th>Typical trades per symbol</th><th>Suggested paper period</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>5m to 30m candles</td><td>Several per week</td><td>2 to 4 weeks</td></tr>
+                        <tr><td>1h to 4h candles</td><td>A few per month</td><td>1 to 3 months, or many symbols</td></tr>
+                        <tr><td>Daily candles</td><td>A few per year</td><td>3+ months on a list of 20 to 200 symbols</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Stocks trade only in market hours, about 250 days a year, so a stock strategy collects trades more slowly than the same strategy on 24/7 crypto. Paper trading many symbols at once multiplies the number of trades, the same way <a href="../how-much-data-and-trades-for-backtesting/">testing on many markets</a> does in a backtest.</p>
+
+            <h2>How to Paper Trade a Strategy, Step by Step (Stocks or Crypto)</h2>
+            <p>Here is how it works in BitLogic Backtester, which has backtesting and paper trading in the same app.</p>
+            <ol>
+                <li id="pt-1"><strong>Backtest first.</strong> Build the strategy without code and check it on years of data (see <a href="../what-is-backtesting-without-coding/">how to backtest without coding</a>), ideally with walk-forward testing.</li>
+                <li id="pt-2"><strong>Press Paper trade and choose the market.</strong> <strong>Crypto spot or futures</strong> on live exchange prices, streamed trade by trade, or <strong>stocks</strong> from the US, the UK, Germany, Canada, Australia, India, Hong Kong and Japan. Pick one symbol, your own list, or a ready-made list such as the top 50, 100 or 200 coins by 24-hour volume, or the stocks of an index.</li>
+                <li id="pt-3"><strong>Set the virtual account.</strong> Choose the starting virtual money (from as little as 10) and how many trades can be open at once; each gets an equal share of the account.</li>
+                <li id="pt-4"><strong>Let it run.</strong> Rules are checked as each candle closes. Orders fill at the next real trade (crypto) or the next one-minute candle (stocks); stops and targets trigger on live prices. Fees, slippage and funding are included. If you close the app, the session catches up when you reopen it: stops, targets and liquidations that would have happened are applied, and missed entry signals are not traded late, just as in reality.</li>
+                <li id="pt-5"><strong>Collect enough trades:</strong> at least two weeks and 20 to 30 closed trades.</li>
+                <li id="pt-6"><strong>Review the results</strong> and the "Before going live" checklist (below). Download every trade or the full activity log as CSV.</li>
+            </ol>
+            <p class="post-disclaimer">No exchange account or API key is needed, and no real order is ever sent. Free stock prices can arrive up to 15 minutes late depending on the exchange; the session makes the same trades at the same prices, just later than the live market. Up to 10 paper sessions can run at once.</p>
+
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/paper-trading-live-prices.webp" alt="BitLogic Backtester paper trading dashboard watching the top 200 coins on 30-minute candles: 23 trades, 39% win rate, profit factor 1.50, max drawdown -17.5%, average slippage 0.065%, fees and funding included" width="1280" height="720" loading="lazy">
+                <figcaption>A live paper trading session in BitLogic Backtester, watching the top 200 coins by volume on 30-minute candles with up to 3 trades open. After 23 trades: 39% win rate, profit factor 1.50, max drawdown −17.5%, average slippage 0.065%. Fees ($1.23) and funding ($0.03) are counted.</figcaption>
+            </figure>
+            <p>Notice the 39% win rate with a profit factor of 1.50: a low win rate can still be profitable when winners are bigger than losers (see <a href="../good-win-rate-profit-factor-sharpe-drawdown/">what is a good win rate</a>). And 23 trades is only just past the minimum, so the session should keep running.</p>
+
+            <h2>When Is a Strategy Ready for Real Money? The Checklist</h2>
+            <p>BitLogic Backtester checks each paper session against the common reasons live results disappoint, and shows a "Before going live" card:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Check</th><th>Passes when</th><th>Why it matters</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Enough trades</td><td>20+ closed trades</td><td>Fewer is mostly luck</td></tr>
+                        <tr><td>Ran long enough</td><td>14+ days</td><td>Meets more than one kind of market</td></tr>
+                        <tr><td>Profitable after fees</td><td>Total profit above 0, profit factor above 1</td><td>The basic test</td></tr>
+                        <tr><td>Drawdown</td><td>Worst drop 25% or less</td><td>Real money feels twice as heavy</td></tr>
+                        <tr><td>Fills near signal</td><td>Average slippage 0.10% or less</td><td>Large slippage destroys small edges</td></tr>
+                        <tr><td>Fees vs edge</td><td>Fees at most 30% of winning trades' profit</td><td>Otherwise a small change in costs wipes it out</td></tr>
+                        <tr><td>Matches backtest</td><td>Paper and a backtest of the same candles agree</td><td>Confirms fills behave as tested</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>When every check passes, the app says the strategy is ready to <em>consider</em> live trading, and still recommends starting small.</p>
+
+            <h2>Paper Trading Apps: Your Options</h2>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Option</th><th>What you get</th><th>Limits</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Broker demo</td><td>Free virtual accounts for manual trading, for example TradingView Paper Trading, thinkorswim paperMoney, Interactive Brokers paper accounts or Webull paper trading</td><td>You place each trade by hand; no automatic strategy, often one market at a time</td></tr>
+                        <tr><td>Exchange demo</td><td>Some crypto exchanges offer futures demo or testnet accounts</td><td>Crypto only, manual or API-based, separate from your backtests</td></tr>
+                        <tr><td>Code it yourself</td><td>Full control with Python and an exchange or broker API</td><td>Needs programming, data feeds and a computer running all day</td></tr>
+                        <tr><td>BitLogic Backtester</td><td>Backtest, then paper trade the same no-code strategy automatically on stocks or crypto, up to 200 coins at once</td><td>Windows for now; Mac, iPhone, iPad and Android coming soon</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Is Paper Trading Free?</h2>
+            <p>Many brokers and exchanges offer free demo accounts for manual trading. What is harder to find is <strong>automatic paper trading of your own rule-based strategy</strong>, across many symbols, with fees, slippage and funding modelled, in the same app as your backtests. In BitLogic Backtester, paper trading is included in every paid plan: a <strong>Week pass (US$3.50, one-time)</strong> unlocks it for 7 days, and <strong>Monthly (US$4.99) or Annual (US$49.99)</strong> plans also include <strong>BitLogic Pro</strong>. Every account can first try the backtester with 3 free backtests and 1 free optimization.</p>
+
+            <h2>Common Paper Trading Mistakes</h2>
+            <ul>
+                <li><strong>Skipping the backtest</strong> and paper trading an untested idea for months.</li>
+                <li><strong>Stopping too early</strong> after a few good (or bad) trades.</li>
+                <li><strong>Using unrealistic virtual size:</strong> paper trade with the amount you would really use.</li>
+                <li><strong>Changing rules mid-session</strong>, then judging the combined result.</li>
+                <li><strong>Ignoring costs:</strong> a paper result without fees is as misleading as a backtest without fees.</li>
+                <li><strong>Skipping the comparison</strong> with a backtest of the same period.</li>
+                <li><strong>Going live with full size</strong> straight after paper trading.</li>
+            </ul>
+
+            <div class="post-callout"><strong>Paper trade your strategy on live prices:</strong> BitLogic Backtester for Windows lets you build a strategy without code, backtest it on years of data, then paper trade it on live stock or crypto (spot and futures) prices, on one symbol or up to 200 coins, with fees, slippage and funding. No exchange account or API key, no real orders. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>BitLogic + BitLogic Backtester: Idea, Backtest, Paper Trade, Alert</h2>
+            <ol>
+                <li><strong>Spot</strong> setups with <a href="../../">BitLogic</a>, our crypto screener and alert app for Windows, iPhone/iPad and Android.</li>
+                <li><strong>Backtest</strong> them in <a href="../../backtester/">BitLogic Backtester</a> on years of data.</li>
+                <li><strong>Paper trade</strong> the survivors on live prices.</li>
+                <li><strong>Get alerts</strong> in BitLogic when the setup appears, and trade it yourself when you are ready.</li>
+            </ol>
+            <p>One account works in both apps, and <strong>paying BitLogic Pro members get the full BitLogic Backtester, paper trading included, at no extra cost</strong>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">What is paper trading?</h3>
+            <p>Paper trading is simulated trading on live market prices with virtual money. Your strategy watches the real market, decides when it would buy and sell, and records the result, without placing real orders or risking real money. It is also called forward testing or demo trading.</p>
+
+            <h3 class="faq-q">What is the difference between paper trading and backtesting?</h3>
+            <p>Backtesting runs a strategy on historical data, so it tests years of trades in seconds. Paper trading runs it on live prices as they happen, so it is slower but tests the strategy on data that did not exist when it was built. Backtesting filters ideas; paper trading confirms the ones that survive.</p>
+
+            <h3 class="faq-q">Should I backtest or paper trade first?</h3>
+            <p>Backtest first. A backtest shows in minutes whether an idea worked over years of bull, bear and sideways markets. Only paper trade the strategies that pass, because paper trading takes weeks or months of real time.</p>
+
+            <h3 class="faq-q">Is paper trading the same as forward testing?</h3>
+            <p>Yes. Forward testing and paper trading both mean running a strategy on new, live data after it was built, without real money. Some traders also use forward testing for live trading with very small size.</p>
+
+            <h3 class="faq-q">Should I paper trade before using real money?</h3>
+            <p>Yes. A backtest can be fooled by overfitting, look-ahead bias or missing costs. Paper trading runs your exact rules on new prices with realistic fills and fees, at zero risk. If a strategy fails on paper, it would almost certainly have failed with real money.</p>
+
+            <h3 class="faq-q">How long should I paper trade?</h3>
+            <p>Until you have at least 20 to 30 closed trades and at least two weeks of results, ideally covering more than one kind of market. Fast strategies may get there in weeks; daily strategies can need months, so paper trade them on many symbols at once.</p>
+
+            <h3 class="faq-q">Is paper trading the same as a demo account?</h3>
+            <p>Similar. A demo account lets you place manual trades with virtual money. Paper trading a strategy runs your rules automatically on live prices and keeps statistics.</p>
+
+            <h3 class="faq-q">Is paper trading free?</h3>
+            <p>Many brokers and exchanges offer free demo accounts for manual trades. Automatic paper trading of your own rule-based strategy, with fees, slippage and funding, is usually a paid feature. In BitLogic Backtester it is included in every paid plan, starting with a one-time Week pass of US$3.50.</p>
+
+            <h3 class="faq-q">Can I paper trade stocks?</h3>
+            <p>Yes. BitLogic Backtester paper trades stocks from the US, the UK, Germany, Canada, Australia, India, Hong Kong and Japan on live prices. Free stock prices can arrive up to 15 minutes late depending on the exchange; the session makes the same trades, just later than the live market.</p>
+
+            <h3 class="faq-q">Can I paper trade crypto futures with leverage?</h3>
+            <p>Yes. BitLogic Backtester paper trades crypto futures with leverage, including funding payments and liquidation, all with virtual money.</p>
+
+            <h3 class="faq-q">Do I need an exchange account or API key to paper trade?</h3>
+            <p>Not in BitLogic Backtester. It uses public live prices and never sends real orders.</p>
+
+            <h3 class="faq-q">Does paper trading keep running if I close the app?</h3>
+            <p>In BitLogic Backtester the session pauses while the app is closed and catches up when you reopen it: stops and targets that would have triggered are applied, and missed entries are not traded late.</p>
+
+            <h3 class="faq-q">Why are my paper trading results worse than my backtest?</h3>
+            <p>Usually overfitting, slippage, fees or a change in market conditions. Compare the paper session with a backtest of the same candles to see whether fills behaved as tested.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>Backtesting and paper trading are two halves of the same test. Backtest to see how a stock or crypto strategy behaved over years of history, paper trade to see whether it still works on prices it has never seen, and only then trade it live with a small size. Skipping either step is how good-looking strategies lose real money.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../what-is-backtesting-without-coding/">What is backtesting?</a> | <a href="../walk-forward-out-of-sample-testing/">Walk-forward testing</a> | <a href="../why-backtest-wins-but-loses-live/">Why a backtest wins but loses live</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades</a> | <a href="../stop-loss-take-profit-best-indicators/">Stop-loss and take-profit</a> | <a href="../../backtester/">BitLogic Backtester</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. Paper trading uses virtual money and does not place real trades. Past and simulated results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../what-is-backtesting-without-coding/" class="related-card">
+                        <h4>What Is Backtesting?</h4>
+                        <p>Backtest stocks and crypto without coding, in 6 steps.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../walk-forward-out-of-sample-testing/" class="related-card">
+                        <h4>Walk-Forward Testing</h4>
+                        <p>The step between a backtest and paper trading.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../why-backtest-wins-but-loses-live/" class="related-card">
+                        <h4>Backtest Wins, Live Loses?</h4>
+                        <p>Overfitting, look-ahead bias and missing costs, fixed.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

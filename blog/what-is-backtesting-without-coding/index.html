@@ -316,7 +316,7 @@
             <h3 id="step-3">Step 3: Write the Exit Rule and Risk Management</h3>
             <p>Under <strong>Close long when</strong>, add the exit:</p>
             <pre class="rule-block"><code>CLOSE WHEN  Close [this candle]  Is Less Than  Donchian Lower (10) [1 candle ago]</code></pre>
-            <p>Optionally add a stop loss, take profit or trailing stop in the Risk &amp; Profit Exits panel, by percent, price or ATR. The app repeats your strategy "in plain English" at the top so you can check it says what you mean.</p>
+            <p>Optionally add a stop loss, take profit or trailing stop in the Risk &amp; Profit Exits panel, by percent, price or ATR (see <a href="../stop-loss-take-profit-best-indicators/">how to set stop-loss and take-profit</a>). The app repeats your strategy "in plain English" at the top so you can check it says what you mean.</p>
 
             <h3 id="step-4">Step 4: Include Realistic Costs</h3>
             <p>Set the fee and slippage for your broker or exchange: a stock broker's commission and spread, or a crypto exchange's maker/taker fee. This is the step most beginners skip, and it is a big reason "amazing" strategies fail live: a strategy that trades often can turn from profitable to losing once fees are counted. For crypto futures, BitLogic Backtester also includes funding payments.</p>
@@ -327,7 +327,7 @@
                 <img src="images/turtle-breakout-bitcoin-backtest-results.webp" alt="BitLogic Backtester results for Turtle Breakout on Bitcoin: +805.5% vs +704.1% buy and hold, CAGR 37.1%, max drawdown -54.2%, Sharpe 1.00, profit factor 1.67, win rate 46%, 35 trades" width="1280" height="720" loading="lazy">
                 <figcaption>Turtle Breakout on BTCUSDT, daily, Nov 2019 to Nov 2026. It beat buy and hold (+805.5% vs +704.1%), but with a 54% drawdown and only 35 trades. The app labels it "Promising, with caveats" and warns the result could still be luck.</figcaption>
             </figure>
-            <p>The numbers that matter most:</p>
+            <p>The numbers that matter most (for benchmarks, see <a href="../good-win-rate-profit-factor-sharpe-drawdown/">what is a good win rate, profit factor, Sharpe ratio and drawdown</a>):</p>
             <div class="req-table-wrap">
                 <table class="req-table">
                     <thead>
@@ -354,8 +354,8 @@
             <ol>
                 <li><strong>Test on many markets.</strong> "Test on many" runs the same rules on up to 10 stocks or coins side by side. A real edge usually works on several of them.</li>
                 <li><strong>Compare with buy and hold honestly.</strong> The same Turtle rules that beat holding Bitcoin made +481% on NVIDIA stock, but lost badly to simply holding NVIDIA (+2,954%). BitLogic Backtester says so plainly. A strategy that suits crypto may not suit stocks, and the reverse.</li>
-                <li><strong>Optimize with walk-forward testing.</strong> The optimizer searches thousands of settings, then checks the best ones on data they never saw, so you don't just curve-fit the past.</li>
-                <li><strong>Paper trade on live prices.</strong> Run the strategy in real time with virtual money before using real money.</li>
+                <li><strong>Optimize with walk-forward testing.</strong> The optimizer searches thousands of settings, then checks the best ones on data they never saw, so you don't just curve-fit the past. See <a href="../walk-forward-out-of-sample-testing/">walk-forward testing explained</a>.</li>
+                <li><strong>Paper trade on live prices.</strong> Run the strategy in real time with virtual money before using real money. See <a href="../paper-trading-vs-backtesting/">paper trading vs backtesting</a>.</li>
             </ol>
             <figure class="blog-shot wide">
                 <img src="images/nvidia-backtest-vs-buy-and-hold.webp" alt="BitLogic Backtester verdict 'Underperformed buy and hold' for Turtle Breakout on NVDA: strategy +481.1% vs buy and hold +2954.0%" width="1280" height="720" loading="lazy">
@@ -423,7 +423,7 @@
 
             <h2>Common Backtesting Mistakes to Avoid</h2>
             <ul>
-                <li><strong>Overfitting:</strong> tuning settings until the past looks perfect. Use walk-forward testing.</li>
+                <li><strong>Overfitting:</strong> tuning settings until the past looks perfect. Use walk-forward testing. See <a href="../why-backtest-wins-but-loses-live/">why a backtest wins but loses live</a>.</li>
                 <li><strong>Ignoring costs:</strong> strategies that trade often are hit hardest by fees and slippage.</li>
                 <li><strong>Too few trades:</strong> 10 trades say almost nothing. Aim for 100 or more, or test on several markets. See <a href="../how-much-data-and-trades-for-backtesting/">how much data and how many trades you need</a>.</li>
                 <li><strong>Testing one bull market only:</strong> include a bear market and a sideways period.</li>
@@ -467,7 +467,7 @@
             <h2>The Bottom Line</h2>
             <p>Backtesting is the cheapest way to find out whether a trading idea is worth your money, whether you trade stocks, crypto or both. Write exact rules, include costs, compare with buy and hold, demand enough trades, and validate on unseen data and live paper trading before going live. With a no-code tool, none of that needs programming.</p>
             <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
-            <p><strong>Related guides:</strong> <a href="../../backtester/">BitLogic Backtester</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades for backtesting</a> | <a href="../../what-is-bitlogic/">What is BitLogic</a> | <a href="../prebuilt-triple-ema-cross-momentum-screener/">Triple EMA cross strategy</a> | <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger squeeze breakout</a> | <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView alternative</a></p>
+            <p><strong>Related guides:</strong> <a href="../../backtester/">BitLogic Backtester</a> | <a href="../paper-trading-vs-backtesting/">Paper trading vs backtesting</a> | <a href="../walk-forward-out-of-sample-testing/">Walk-forward testing</a> | <a href="../stop-loss-take-profit-best-indicators/">Stop-loss and take-profit</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades for backtesting</a> | <a href="../why-backtest-wins-but-loses-live/">Why a backtest wins but loses live</a> | <a href="../good-win-rate-profit-factor-sharpe-drawdown/">Good win rate, profit factor, Sharpe and drawdown</a> | <a href="../../what-is-bitlogic/">What is BitLogic</a> | <a href="../prebuilt-triple-ema-cross-momentum-screener/">Triple EMA cross strategy</a> | <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger squeeze breakout</a> | <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView alternative</a></p>
             <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
 
             <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">

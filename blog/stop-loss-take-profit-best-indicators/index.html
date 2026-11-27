@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Stop-Loss, Take-Profit &amp; Best Indicators for Stocks and Crypto</title>
+    <meta name="description" content="How to set stop-loss and take-profit levels for stock and crypto strategies (ATR, swing levels, risk-reward, trailing stops) and which indicator combinations to backtest.">
+    <link rel="canonical" href="https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="How to Set Stop-Loss and Take-Profit, and Which Indicators Work Best (Stocks and Crypto)">
+    <meta property="og:description" content="How to set stop-loss and take-profit levels for stock and crypto strategies (ATR, swing levels, risk-reward, trailing stops) and which indicator combinations to backtest.">
+    <meta property="og:url" content="https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/">
+    <meta property="og:image" content="https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/og-stop-loss-take-profit.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stop-Loss, Take-Profit &amp; Best Indicators for Stocks and Crypto">
+    <meta name="twitter:description" content="How to set stop-loss and take-profit levels for stock and crypto strategies (ATR, swing levels, risk-reward, trailing stops) and which indicator combinations to backtest.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/og-stop-loss-take-profit.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Set Stop-Loss and Take-Profit, and Which Indicators Work Best for Stocks and Crypto",
+      "description": "How to set stop-loss and take-profit levels for stock and crypto strategies (ATR, swing levels, risk-reward, trailing stops) and which indicator combinations to backtest.",
+      "image": [
+        "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/og-stop-loss-take-profit.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/no-code-backtest-strategy-builder.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/backtest-stocks-symbol-picker.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Stop-loss"
+        },
+        {
+          "@type": "Thing",
+          "name": "Take-profit"
+        },
+        {
+          "@type": "Thing",
+          "name": "Trailing stop"
+        },
+        {
+          "@type": "Thing",
+          "name": "Average True Range"
+        },
+        {
+          "@type": "Thing",
+          "name": "Technical indicators"
+        },
+        {
+          "@type": "Thing",
+          "name": "Backtesting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Stock trading"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cryptocurrency trading"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to set a stop-loss for a stock or crypto strategy",
+      "description": "Five steps to place a stop-loss and size a position for stocks or crypto.",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "BitLogic Backtester (Windows)"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Decide where the idea is wrong",
+          "text": "Find the price that proves the trade idea wrong, such as below a recent swing low or a multiple of ATR from the entry.",
+          "url": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/#sl-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Prefer volatility-based distances",
+          "text": "Use an ATR multiple so the stop adapts to each stock or coin's normal daily movement.",
+          "url": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/#sl-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Size the position from the stop",
+          "text": "Choose a position size so that a stop-out loses a fixed share of the account, such as 1%.",
+          "url": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/#sl-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Allow for gaps",
+          "text": "Assume a stop that is gapped through fills at the next open, not at the stop price, especially for stocks overnight.",
+          "url": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/#sl-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Backtest a range of stops",
+          "text": "Test several distances, such as 1.5, 2, 2.5 and 3 ATR, and keep a range that works on many markets.",
+          "url": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/#sl-5"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How should I set a stop-loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Place the stop where your trade idea is proven wrong, not at a random percentage: beyond a recent swing low or high, or a multiple of ATR (often 1.5 to 3 ATR) from the entry. Then size the position so that hitting the stop loses a fixed small share of the account, commonly 0.5 to 2%. Backtest several stop distances and prefer a range that works, not one exact value."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should I set a take-profit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a risk-reward multiple of the stop distance (for example 1.5R to 3R) for swing and mean-reversion strategies, or no fixed target with a trailing stop for trend-following strategies, which depend on a few large winners. Test both in a backtest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What percentage should my stop-loss be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no universal percentage. A 3% stop is wide for a calm large-cap stock and normal noise for Bitcoin. Base the stop on volatility (ATR) or a swing level, then size the position so a stop-out loses about 0.5 to 2% of your account."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an ATR stop-loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An ATR stop-loss is placed a multiple of the Average True Range away from the entry, for example 2 × ATR(14). Because ATR measures how much a market normally moves, the stop is automatically wider on volatile coins and tighter on calm stocks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good risk-reward ratio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commonly 1:1.5 to 1:3. A higher ratio needs a lower win rate to break even: 1:2 breaks even at about 33% wins before costs, 1:3 at 25%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I always use a take-profit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Trend-following strategies often do better with a trailing stop or an exit signal and no fixed target. Backtest both versions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which indicators work best?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No indicator works best everywhere. Robust combinations pair one indicator for trend direction (such as a 200-period moving average or Supertrend), one for entry timing (such as RSI, Stochastic or a breakout), and one for risk (ATR). Use indicators from different families rather than several that measure the same thing, and validate on many markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best indicator for crypto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no single best one. Trend tools (moving averages, Supertrend, Donchian breakouts) with ATR stops are widely used for crypto because of its strong trends. Test them on several coins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best indicator for stocks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common robust choices are the 200-day moving average as a trend filter with RSI or Bollinger Bands for pullback entries. Validate on several stocks and markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many indicators should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually two or three, from different families. More conditions mean fewer trades and a higher risk of overfitting."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bitlogic.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://bitlogic.info/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stop-Loss, Take-Profit and Best Indicators",
+          "item": "https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Stop-Loss, Take-Profit and Best Indicators</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>11 min read</span>
+            </div>
+
+            <h1>How to Set Stop-Loss and Take-Profit, and Which Indicators Work Best for Stocks and Crypto</h1>
+
+            <div class="post-callout"><strong>Test stops, targets and indicators free:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows) lets you try fixed, ATR, swing-level and risk-reward stops, trailing stops and 60+ indicators on stocks and crypto, without code. 3 backtests and 1 optimization free. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> set the <strong>stop-loss</strong> at the price that proves your trade idea wrong (beyond a recent swing level, or 1.5 to 3 × ATR from the entry), then size the position so a stop-out costs 0.5 to 2% of your account. Set the <strong>take-profit</strong> at 1.5 to 3 times the stop distance for swing trades, or use a <strong>trailing stop with no fixed target</strong> for trend following. For <strong>indicators</strong>, combine one for trend, one for timing and one for risk, from different families. Then backtest several versions on many stocks or coins and keep the one that works across a range of values.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. Example strategies are for illustration and testing, not recommendations. This article is for education only and is not financial advice. Past results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Stop-loss:</strong> put it where your idea is proven wrong (a swing low or high, or 1.5 to 3 ATR away), then size the trade so a stop-out costs 0.5 to 2% of the account.</li>
+                <li><strong>Take-profit:</strong> 1.5R to 3R targets suit swing trading; trend following often works better with <strong>no fixed target and a trailing stop</strong>.</li>
+                <li><strong>Volatility-based stops (ATR)</strong> adapt to both calm stocks and wild crypto; fixed percentages do not.</li>
+                <li><strong>Stocks gap, crypto wicks:</strong> a realistic backtest fills a gapped stop at the open, not at your stop price.</li>
+                <li><strong>No single indicator is best.</strong> Combine one for trend, one for timing and one for risk, from different indicator families.</li>
+                <li>Test every stop, target and indicator choice on many markets. BitLogic Backtester lets you do this without code.</li>
+            </ul>
+
+            <h2>How Should I Set a Stop-Loss and Take-Profit?</h2>
+            <p><strong>Short answer:</strong> set the stop-loss at the price that proves your trade idea wrong (beyond a recent swing level, or a multiple of ATR from the entry), size the position from that stop, and set the take-profit as a multiple of the stop distance (1.5R to 3R), or use a trailing stop instead of a fixed target for trend-following strategies. Then backtest several versions and keep the one that works across a range of values and markets.</p>
+
+            <h3>The 5 Main Types of Stop-Loss and Take-Profit</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Type</th><th>How it works</th><th>Pros</th><th>Cons</th><th>Best for</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Fixed %</td><td>Stop 3% below entry, target 6% above</td><td>Simple</td><td>Ignores volatility: too tight for crypto, too loose for calm stocks</td><td>Quick first tests</td></tr>
+                        <tr><td>ATR multiple</td><td>Stop 2 × ATR(14) from entry</td><td>Adapts to each market's volatility</td><td>Wider stops in volatile periods mean smaller positions</td><td>Most strategies, stocks and crypto</td></tr>
+                        <tr><td>Swing level</td><td>Stop just beyond the recent swing low (long) or high (short)</td><td>Placed where the idea fails</td><td>Distance varies a lot from trade to trade</td><td>Breakouts, pullbacks, price action</td></tr>
+                        <tr><td>Indicator level</td><td>Stop at a moving average, Supertrend or Bollinger Band</td><td>Follows the trend logic</td><td>Can be far from entry</td><td>Trend following</td></tr>
+                        <tr><td>Risk-reward</td><td>Target = 2 × the stop distance (2R)</td><td>Keeps the win/loss ratio fixed</td><td>Caps big winners</td><td>Swing and mean reversion</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>BitLogic Backtester supports all five for both stop-loss and take-profit, plus a <strong>trailing stop</strong> and the option of <strong>no target at all</strong>. Every choice is made from menus, in the Risk &amp; Profit Exits panel.</p>
+
+            <h3>Why ATR Stops Work on Both Stocks and Crypto</h3>
+            <p>The Average True Range (ATR) measures how far a market normally moves per candle. A stop of 2 × ATR is the same rule everywhere, but it gives very different distances. Typical daily figures (they change with market conditions):</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Market</th><th>Typical daily ATR</th><th>2 × ATR stop</th><th>A fixed 3% stop would be</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Large-cap stock</td><td>About 1 to 2%</td><td>About 2 to 4%</td><td>About right, or a little wide</td></tr>
+                        <tr><td>Bitcoin</td><td>About 3 to 5%</td><td>About 6 to 10%</td><td>Inside normal daily noise</td></tr>
+                        <tr><td>Small altcoin</td><td>Often 6 to 10%+</td><td>12 to 20%+</td><td>Hit almost at random</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>That is why a strategy tested with one fixed percentage on Apple and on Solana usually fails on one of them. With an ATR stop and risk-based sizing, the same rules carry the same risk on both.</p>
+
+            <h3>Step-by-Step: Setting a Stop-Loss</h3>
+            <ol>
+                <li id="sl-1"><strong>Decide where the idea is wrong.</strong> For a breakout above a 20-day high, the idea fails if the price falls back well inside the range, for example below the 10-day low or 2 ATR below the entry.</li>
+                <li id="sl-2"><strong>Prefer volatility-based distances.</strong> Bitcoin can move 3 to 5% on a normal day; a large-cap stock 1 to 2%. A 2% stop is noise on Bitcoin and wide on a utility stock. ATR scales automatically.</li>
+                <li id="sl-3"><strong>Size from the stop.</strong> Risk-based sizing makes each stop-out cost the same share of the account (for example 1%), whatever the stop distance. BitLogic Backtester offers this as "risk % of the account".</li>
+                <li id="sl-4"><strong>Remember stops can gap.</strong> Stocks gap overnight and on earnings; crypto can wick through levels in seconds. A realistic backtest fills a gapped stop at the open, not at your stop price. BitLogic Backtester does this.</li>
+                <li id="sl-5"><strong>Test a range.</strong> Try 1.5, 2, 2.5 and 3 ATR. If only one value works, it is probably luck.</li>
+            </ol>
+
+            <h3>Position Size From the Stop: a Worked Example</h3>
+            <pre class="rule-block"><code>Size = risk amount ÷ stop distance</code></pre>
+            <p>With a $10,000 account and 1% risk per trade, you risk $100. On a stock with a 4% stop, the position is $100 ÷ 4% = <strong>$2,500</strong>. On Bitcoin with an 8% stop, it is $100 ÷ 8% = <strong>$1,250</strong>. Both trades lose the same $100 if stopped out, before costs and gaps.</p>
+
+            <h3>Step-by-Step: Setting a Take-Profit</h3>
+            <ol>
+                <li><strong>Match the target to the strategy type.</strong> Mean reversion (buy oversold, sell on the bounce) works with close targets; trend following needs room for big winners.</li>
+                <li><strong>For swing trades, start at 2R</strong> and compare 1.5R and 3R.</li>
+                <li><strong>For trend following, try no target and a trailing stop</strong>, or an exit signal such as a close below a moving average. Capping winners can ruin a trend system's profit factor.</li>
+                <li><strong>Check the win rate it implies.</strong> At 2R you need about 33% wins to break even before costs; at 3R, 25%. See <a href="../good-win-rate-profit-factor-sharpe-drawdown/">what is a good win rate and profit factor</a>.</li>
+            </ol>
+
+            <h3>Trailing Stops</h3>
+            <p>A trailing stop follows the price at a set distance (a % or ATR multiple) below the best price since entry, and never moves back. It locks in profit while letting winners run. Too tight, and normal pullbacks stop you out; too loose, and you give back most of the gain. In a correct backtest the trail only moves on <em>previous</em> candles; moving it on the current candle's high and then checking that candle's low assumes an order of events the data can't show (see <a href="../why-backtest-wins-but-loses-live/">look-ahead bias</a>).</p>
+
+            <h3>Example: a Breakout Strategy With an ATR Stop and a Trailing Exit</h3>
+            <ul>
+                <li><strong>Entry:</strong> close above the 20-day Donchian upper band.</li>
+                <li><strong>Stop-loss:</strong> 2 × ATR(14) below entry.</li>
+                <li><strong>Exit:</strong> close below the 10-day Donchian lower band, or a 10% trailing stop.</li>
+                <li><strong>Size:</strong> risk 1% of the account per trade.</li>
+            </ul>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/no-code-backtest-strategy-builder.webp" alt="BitLogic Backtester strategy builder with Turtle Breakout rules: buy when close is above the 20-period Donchian upper band, close when below the 10-period lower band" width="1280" height="720" loading="lazy">
+                <figcaption>The Turtle Breakout template in BitLogic Backtester. Rules are shown in plain English. Stops, targets and trailing stops are set in the Risk &amp; Profit Exits panel.</figcaption>
+            </figure>
+            <p>Tip: in BitLogic Backtester you can <strong>optimize fixed stop and target percentages</strong> with <a href="../walk-forward-out-of-sample-testing/">walk-forward testing</a> to find a robust range, rather than the single best value from the past.</p>
+
+            <h2>Which Indicators or Combinations Work Best?</h2>
+            <p><strong>Short answer:</strong> no indicator works best in every market. The combinations that hold up best combine three jobs: a <strong>trend filter</strong> (such as the 200-period moving average, Supertrend or ADX), an <strong>entry trigger</strong> (such as RSI, Stochastic, MACD or a Donchian or Bollinger breakout) and a <strong>risk measure</strong> (ATR for stops and sizing). Use indicators from different families, keep it to two or three conditions, and confirm with backtests on many markets.</p>
+
+            <h3>Indicator Families: Pick One From Each, Not Three From One</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Family</th><th>Examples</th><th>Answers the question</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trend</td><td>EMA/SMA, Supertrend, Ichimoku, Parabolic SAR, ADX, Aroon</td><td>Which way is the market going, and how strongly?</td></tr>
+                        <tr><td>Momentum</td><td>RSI, Stochastic, Stochastic RSI, MACD, CCI, Williams %R, MFI</td><td>Is the move stretched or gaining speed?</td></tr>
+                        <tr><td>Volatility</td><td>ATR, Bollinger Bands, Keltner Channels, Donchian Channels, Squeeze</td><td>How big are normal moves? Is price breaking out?</td></tr>
+                        <tr><td>Volume</td><td>OBV, Chaikin Money Flow, Accumulation/Distribution, Force Index</td><td>Is money flowing in or out?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>RSI, Stochastic and Williams %R all measure similar things. Requiring all three adds conditions (and overfitting risk) without adding information.</p>
+
+            <h3>Popular Combinations to Backtest</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Strategy</th><th>Rules</th><th>Often suits</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Trend + pullback</td><td>Price above 200 EMA (trend) and RSI(14) dips below 40 then recovers (timing); ATR stop</td><td>Stocks and major coins in uptrends</td></tr>
+                        <tr><td>Turtle breakout</td><td>Close above 20-day high; exit below 10-day low; ATR stop</td><td>Trending crypto, strongly trending stocks</td></tr>
+                        <tr><td>MA cross</td><td>EMA 20 crosses above EMA 50, with ADX above 20 to avoid chop</td><td>Daily and 4h charts</td></tr>
+                        <tr><td>Mean reversion</td><td>Close below lower Bollinger Band while above 200 SMA; exit at middle band</td><td>Large-cap stocks and indexes</td></tr>
+                        <tr><td>Supertrend</td><td>Enter when Supertrend flips up; exit when it flips down</td><td>Volatile crypto trends</td></tr>
+                        <tr><td>RSI(2) pullback</td><td>Price above 200 SMA and RSI(2) below 10; exit when RSI(2) rises above 70</td><td>Stock indexes and large caps</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>All of these are ready-made templates or take minutes to build in BitLogic Backtester, which has 16 templates (including Turtle Breakout, Golden Cross, EMA 20/50 Trend, Supertrend Follower, RSI(2) Pullback, Bollinger Band Bounce and MACD Momentum) and 60+ indicators and candlestick patterns. Our strategy guides cover several of these setups in detail, such as the <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/">Supertrend flip + RSI</a> and the <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/">Bollinger squeeze breakout</a>.</p>
+
+            <h3>Stocks vs Crypto: What Changes</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Topic</th><th>Stocks</th><th>Crypto</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Behaviour</td><td>Large caps often mean-revert in the short term</td><td>Strong, long trends and big swings</td></tr>
+                        <tr><td>Strategies</td><td>Pullback and mean-reversion systems are common</td><td>Trend and breakout systems with wide ATR stops</td></tr>
+                        <tr><td>Stop risk</td><td>Overnight and earnings gaps through stops</td><td>Wicks through levels, 24/7, and liquidation on futures</td></tr>
+                        <tr><td>Extra costs</td><td>Commission, spread, UK stamp duty</td><td>Exchange fees and futures funding</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>If you trade both, test across both: BitLogic Backtester covers crypto spot and futures, and stocks from the US, India, the UK, Germany, Hong Kong, Canada, Australia and Japan.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/backtest-stocks-symbol-picker.webp" alt="BitLogic Backtester symbol picker for stocks listing Apple, Microsoft, NVIDIA and Tesla, with search for any company or ticker" width="1280" height="720" loading="lazy">
+                <figcaption>Switch between Crypto and Stocks and search any company or ticker. The same indicators, stops and targets work on both.</figcaption>
+            </figure>
+
+            <h3>How to Find the Indicators That Work for You</h3>
+            <ol>
+                <li>Start from a template with a logical reason behind it.</li>
+                <li>Change one thing at a time and backtest after each change.</li>
+                <li>Use <strong>Test on many</strong> to check it on 10 coins or stocks.</li>
+                <li>Use <strong>walk-forward optimization</strong> to tune indicator lengths without overfitting (see <a href="../walk-forward-out-of-sample-testing/">walk-forward testing explained</a>).</li>
+                <li><a href="../paper-trading-vs-backtesting/">Paper trade</a> the result on live prices.</li>
+            </ol>
+
+            <div class="post-callout"><strong>Test stops, targets and indicators without code, free:</strong> BitLogic Backtester for Windows has 60+ indicators and patterns, AND/OR rules, multi-timeframe conditions, fixed, ATR, swing-level, indicator and risk-reward stops and targets, trailing stops and risk-based sizing, for stocks and crypto. Your first 3 backtests and 1 optimization are free. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>Get Indicator Alerts on Your Phone With BitLogic</h2>
+            <p>Once a combination tests well, you need to know when it triggers. <a href="../../">BitLogic</a>, our crypto screener for Windows, iPhone/iPad and Android, scans coins for indicator setups such as RSI levels, breakouts and trend changes, and sends alerts. One account works in both apps, and <strong>paying BitLogic Pro members get the full <a href="../../backtester/">BitLogic Backtester</a> included</strong>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">How should I set a stop-loss?</h3>
+            <p>Place the stop where your trade idea is proven wrong, not at a random percentage: beyond a recent swing low or high, or a multiple of ATR (often 1.5 to 3 ATR) from the entry. Then size the position so that hitting the stop loses a fixed small share of the account, commonly 0.5 to 2%. Backtest several stop distances and prefer a range that works, not one exact value.</p>
+
+            <h3 class="faq-q">How should I set a take-profit?</h3>
+            <p>Use a risk-reward multiple of the stop distance (for example 1.5R to 3R) for swing and mean-reversion strategies, or no fixed target with a trailing stop for trend-following strategies, which depend on a few large winners. Test both in a backtest.</p>
+
+            <h3 class="faq-q">What percentage should my stop-loss be?</h3>
+            <p>There is no universal percentage. A 3% stop is wide for a calm large-cap stock and normal noise for Bitcoin. Base the stop on volatility (ATR) or a swing level, then size the position so a stop-out loses about 0.5 to 2% of your account.</p>
+
+            <h3 class="faq-q">What is an ATR stop-loss?</h3>
+            <p>An ATR stop-loss is placed a multiple of the Average True Range away from the entry, for example 2 × ATR(14). Because ATR measures how much a market normally moves, the stop is automatically wider on volatile coins and tighter on calm stocks.</p>
+
+            <h3 class="faq-q">What is a good risk-reward ratio?</h3>
+            <p>Commonly 1:1.5 to 1:3. A higher ratio needs a lower win rate to break even: 1:2 breaks even at about 33% wins before costs, 1:3 at 25%.</p>
+
+            <h3 class="faq-q">Should I always use a take-profit?</h3>
+            <p>No. Trend-following strategies often do better with a trailing stop or an exit signal and no fixed target. Backtest both versions.</p>
+
+            <h3 class="faq-q">Which indicators work best?</h3>
+            <p>No indicator works best everywhere. Robust combinations pair one indicator for trend direction (such as a 200-period moving average or Supertrend), one for entry timing (such as RSI, Stochastic or a breakout), and one for risk (ATR). Use indicators from different families rather than several that measure the same thing, and validate on many markets.</p>
+
+            <h3 class="faq-q">What is the best indicator for crypto?</h3>
+            <p>There is no single best one. Trend tools (moving averages, Supertrend, Donchian breakouts) with ATR stops are widely used for crypto because of its strong trends. Test them on several coins.</p>
+
+            <h3 class="faq-q">What is the best indicator for stocks?</h3>
+            <p>Common robust choices are the 200-day moving average as a trend filter with RSI or Bollinger Bands for pullback entries. Validate on several stocks and markets.</p>
+
+            <h3 class="faq-q">How many indicators should I use?</h3>
+            <p>Usually two or three, from different families. More conditions mean fewer trades and a higher risk of overfitting.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>Put the stop where the idea fails, measure it in ATR rather than a fixed percentage, and size the trade from the stop so every loss costs the same. Use a 1.5R to 3R target for swing trades and a trailing stop for trends. Pick two or three indicators from different families, and backtest every choice on many stocks or coins before trusting it.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../good-win-rate-profit-factor-sharpe-drawdown/">Good win rate, profit factor, Sharpe and drawdown</a> | <a href="../walk-forward-out-of-sample-testing/">Walk-forward testing</a> | <a href="../paper-trading-vs-backtesting/">Paper trading vs backtesting</a> | <a href="../why-backtest-wins-but-loses-live/">Why a backtest wins but loses live</a> | <a href="../../backtester/">BitLogic Backtester</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. Example strategies are for illustration and testing, not recommendations. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../good-win-rate-profit-factor-sharpe-drawdown/" class="related-card">
+                        <h4>Good Win Rate and Drawdown?</h4>
+                        <p>Benchmarks for profit factor, Sharpe and drawdown.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../walk-forward-out-of-sample-testing/" class="related-card">
+                        <h4>Walk-Forward Testing</h4>
+                        <p>Tune stops and indicators without overfitting.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../paper-trading-vs-backtesting/" class="related-card">
+                        <h4>Paper Trading vs Backtesting</h4>
+                        <p>Prove a strategy on live prices before real money.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

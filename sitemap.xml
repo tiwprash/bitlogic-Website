@@ -14,13 +14,13 @@
   </url>
   <url>
     <loc>https://bitlogic.info/backtester/</loc>
-    <lastmod>2026-11-27T14:52:18+05:30</lastmod>
+    <lastmod>2026-11-27T14:58:46+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bitlogic.info/blog/</loc>
-    <lastmod>2026-11-27T14:52:18+05:30</lastmod>
+    <lastmod>2026-11-27T14:58:46+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -85,8 +85,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/</loc>
+    <lastmod>2026-11-27T11:55:01+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bitlogic.info/blog/how-much-data-and-trades-for-backtesting/</loc>
-    <lastmod>2026-11-27T09:26:28+00:00</lastmod>
+    <lastmod>2026-11-27T14:58:46+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -117,6 +123,12 @@
   <url>
     <loc>https://bitlogic.info/blog/okx-crypto-screener/</loc>
     <lastmod>2026-11-27T11:55:28+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/blog/paper-trading-vs-backtesting/</loc>
+    <lastmod>2026-11-27T11:54:14+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -163,6 +175,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://bitlogic.info/blog/stop-loss-take-profit-best-indicators/</loc>
+    <lastmod>2026-11-27T11:54:13+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bitlogic.info/blog/upbit-screener-korean-market/</loc>
     <lastmod>2026-11-27T11:55:28+05:30</lastmod>
     <changefreq>monthly</changefreq>
@@ -175,8 +193,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://bitlogic.info/blog/walk-forward-out-of-sample-testing/</loc>
+    <lastmod>2026-11-27T11:54:14+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bitlogic.info/blog/what-is-backtesting-without-coding/</loc>
-    <lastmod>2026-11-27T14:52:18+05:30</lastmod>
+    <lastmod>2026-11-27T14:58:46+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bitlogic.info/blog/why-backtest-wins-but-loses-live/</loc>
+    <lastmod>2026-11-27T11:55:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

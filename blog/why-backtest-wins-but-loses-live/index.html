@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>Why Your Backtest Wins but Loses Live (Stocks &amp; Crypto)</title>
+    <meta name="description" content="Why stock and crypto backtests look better than live trading: overfitting, look-ahead bias, repainting, survivorship bias, fees, slippage and funding, and how to fix each one.">
+    <link rel="canonical" href="https://bitlogic.info/blog/why-backtest-wins-but-loses-live/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Why Does My Strategy Win in the Backtest but Lose Live? (Stocks and Crypto)">
+    <meta property="og:description" content="Why stock and crypto backtests look better than live trading: overfitting, look-ahead bias, repainting, survivorship bias, fees, slippage and funding, and how to fix each one.">
+    <meta property="og:url" content="https://bitlogic.info/blog/why-backtest-wins-but-loses-live/">
+    <meta property="og:image" content="https://bitlogic.info/blog/why-backtest-wins-but-loses-live/og-backtest-vs-live.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Your Backtest Wins but Loses Live (Stocks &amp; Crypto)">
+    <meta name="twitter:description" content="Why stock and crypto backtests look better than live trading: overfitting, look-ahead bias, repainting, survivorship bias, fees, slippage and funding, and how to fix each one.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/why-backtest-wins-but-loses-live/og-backtest-vs-live.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Why Does My Strategy Win in the Backtest but Lose Live? Overfitting, Look-Ahead Bias, Survivorship Bias and Trading Costs",
+      "description": "Why stock and crypto backtests look better than live trading: overfitting, look-ahead bias, repainting, survivorship bias, fees, slippage and funding, and how to fix each one.",
+      "image": [
+        "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/og-backtest-vs-live.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/walk-forward-optimization.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/backtest-equity-curve-trades.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        { "@type": "Thing", "name": "Backtesting" },
+        { "@type": "Thing", "name": "Overfitting" },
+        { "@type": "Thing", "name": "Look-ahead bias" },
+        { "@type": "Thing", "name": "Survivorship bias" },
+        { "@type": "Thing", "name": "Trading costs" },
+        { "@type": "Thing", "name": "Stock trading" },
+        { "@type": "Thing", "name": "Cryptocurrency trading" },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to make a backtest match live trading",
+      "description": "Seven steps to close the gap between backtest results and live results for stock and crypto strategies.",
+      "tool": [
+        { "@type": "HowToTool", "name": "BitLogic Backtester (Windows)" }
+      ],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Use closed candles and next-candle fills", "text": "Check rules on a candle's close and fill orders at the next candle's open, using only higher-timeframe candles that have closed.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-1" },
+        { "@type": "HowToStep", "position": 2, "name": "Include every cost", "text": "Charge fees on entry and exit, slippage on every fill, stamp duty or other taxes for stocks, and funding for crypto perpetual futures.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-2" },
+        { "@type": "HowToStep", "position": 3, "name": "Keep the rules simple", "text": "Use two or three conditions with a logical reason behind them, and prefer a broad range of good settings over the single best one.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-3" },
+        { "@type": "HowToStep", "position": 4, "name": "Get enough trades", "text": "Aim for 100 or more trades and check that the result is unlikely to be luck.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-4" },
+        { "@type": "HowToStep", "position": 5, "name": "Test on many markets chosen in advance", "text": "Run the same rules on a list of stocks or coins chosen by a rule fixed at the start of the test, not by today's winners.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-5" },
+        { "@type": "HowToStep", "position": 6, "name": "Use walk-forward optimization", "text": "Choose settings on one period, test them on the next unseen period, and judge the strategy only by the unseen results.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-6" },
+        { "@type": "HowToStep", "position": 7, "name": "Paper trade before using real money", "text": "Run the strategy on live prices with virtual money and compare fills, fees and slippage with the backtest.", "url": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/#fix-7" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my strategy win in the backtest but lose live?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The usual causes are overfitting (rules tuned to past noise), look-ahead bias or repainting (the backtest used information that was not available at the time), survivorship bias (testing only stocks or coins that still exist), missing costs (fees, slippage, stamp duty, funding), too few trades, and a change in market conditions. Fix them with realistic costs, next-candle fills, many markets, walk-forward testing and paper trading." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is overfitting in trading?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Overfitting, or curve fitting, is tuning a strategy's rules and settings so closely to past data that it captures random noise rather than a real pattern. It looks excellent in the backtest and fails on new data, whether the market is a stock such as Tesla or a coin such as Ethereum." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I detect overfitting?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Warning signs: results that collapse when a setting changes slightly, many rules and parameters, few trades, a strategy that works on one symbol only, and big gaps between in-sample and out-of-sample results. Test with walk-forward optimization, on other markets and periods, and with small parameter changes." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is look-ahead bias?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Look-ahead bias is when a backtest uses data that would not have been known at the moment of the trade, such as trading at a candle's open based on that same candle's close, using a higher-timeframe candle before it closed, or reacting to stock earnings before they were released." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is repainting?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A repainting indicator changes its past values or signals after new candles arrive, so historical charts show perfect signals that were never visible in real time. Zigzag lines, some pivot and fractal indicators, and signals read from an unfinished candle can repaint." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is survivorship bias in stocks and crypto?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Survivorship bias is testing only the assets that survived to today. In stocks it means testing only today's index members and ignoring companies that went bankrupt or were removed, such as Lehman Brothers in 2008. In crypto it means leaving out coins that collapsed or were delisted, such as LUNA in 2022. Either way, a strategy looks better than it would have been." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I include fees, slippage and funding rates in a backtest?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Charge the exchange or broker fee on both entry and exit, apply slippage against you on every market order, add taxes such as UK stamp duty for stocks, and for perpetual futures add or subtract the funding payment at every settlement while a position is open. BitLogic Backtester includes fees, slippage and funding, with defaults of 0.1% fee per side and 0.05% slippage." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it normal for live results to be worse than the backtest?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Even a well-built backtest is usually somewhat better than live trading. Expect lower returns and deeper drawdowns live, and size positions accordingly." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much worse can live results be?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It varies. A common rule of thumb is to expect the worst live drawdown to be up to 1.5 to 2 times the backtest's maximum drawdown. Monte Carlo analysis gives a better estimate for your own strategy." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does optimization always cause overfitting?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Optimization causes overfitting when you trust the best in-sample result. Walk-forward optimization, which judges settings on data they never saw, is the safe way to optimize." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does BitLogic Backtester have look-ahead bias?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is designed to avoid it: rules use closed candles, orders fill at the next candle's open, higher timeframes use only closed candles, and stops are assumed to fill before targets on the same candle." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do these problems apply to stocks too?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every cause applies to stocks and crypto. Stocks add overnight and weekend gaps, which BitLogic Backtester fills at the open price, earnings surprises, and survivorship bias from index changes and bankruptcies. Crypto adds futures funding, liquidation and coins that collapse or are delisted." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitlogic.info/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bitlogic.info/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Why a Backtest Wins but Loses Live", "item": "https://bitlogic.info/blog/why-backtest-wins-but-loses-live/" }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Why a Backtest Wins but Loses Live</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>11 min read</span>
+            </div>
+
+            <h1>Why Does My Strategy Win in the Backtest but Lose Live? Overfitting, Look-Ahead Bias, Survivorship Bias and Trading Costs</h1>
+
+            <div class="post-callout"><strong>Test your strategy the honest way, free:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows) uses next-candle fills, fees, slippage, futures funding and walk-forward testing on every stock and crypto backtest. 3 backtests and 1 optimization free. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> a backtest beats live trading when it knew something the live market didn't let you know, or ignored something the live market charged you for. The six usual causes are <strong>overfitting</strong>, <strong>look-ahead bias</strong>, <strong>repainting indicators</strong>, <strong>survivorship bias</strong>, <strong>missing costs</strong> (fees, slippage, stamp duty, funding) and <strong>too few trades</strong>. A change in market conditions can also end a real edge. Each one has a fix, and they apply to Apple and NVIDIA just as much as to Bitcoin and Ethereum.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. Screenshots show real tests made in BitLogic Backtester in November 2026. This article is for education only and is not financial advice. Past results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Backtests usually look <strong>better than live trading</strong>. The gap comes from six causes: overfitting, look-ahead bias, repainting, survivorship bias, missing costs and too few trades.</li>
+                <li><strong>Overfitting</strong> is the biggest one. Detect it with walk-forward testing, other markets and small setting changes.</li>
+                <li><strong>Look-ahead bias</strong> disappears when rules use only closed candles and orders fill at the <strong>next candle's open</strong>.</li>
+                <li><strong>Survivorship bias:</strong> testing only today's winning stocks or coins ignores the ones that went bankrupt, collapsed or were delisted.</li>
+                <li><strong>Costs:</strong> include fees on both sides and slippage on every fill, plus stamp duty for UK shares and <strong>funding rates</strong> for crypto futures.</li>
+                <li>BitLogic Backtester builds these protections in, for stocks and crypto, without code.</li>
+            </ul>
+
+            <h2>Why Does My Strategy Win in the Backtest but Lose Live?</h2>
+            <p><strong>Short answer:</strong> because the backtest was easier than real trading. It used information you would not have had, ignored costs you would have paid, or fitted rules to a past that won't repeat. This table lists the six usual causes, how each one shows up and the fix:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Cause</th><th>What happens</th><th>Typical symptom</th><th>Fix</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Overfitting</td><td>Rules fit past noise</td><td>Great backtest, poor results on any new data</td><td>Walk-forward testing, fewer rules, more markets</td></tr>
+                        <tr><td>Look-ahead bias</td><td>Backtest uses future data</td><td>Entries at the perfect price, unreal win rates</td><td>Signal on close, fill at next open</td></tr>
+                        <tr><td>Repainting</td><td>Indicator rewrites its past</td><td>Signals on the chart that never appeared live</td><td>Use only closed-candle values</td></tr>
+                        <tr><td>Survivorship bias</td><td>Only survivors tested</td><td>Strategy "works on all the stocks or coins" you picked today</td><td>Choose symbols by rules fixed in advance</td></tr>
+                        <tr><td>Missing costs</td><td>Fees, slippage, funding ignored</td><td>A frequent-trading strategy turns from profit to loss</td><td>Model every cost</td></tr>
+                        <tr><td>Too few trades</td><td>Result is luck</td><td>Under 20 to 30 trades</td><td>More data and more markets (see <a href="../how-much-data-and-trades-for-backtesting/">how many trades you need</a>)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Stocks vs Crypto: Where the Gap Comes From</h3>
+            <p>The causes are the same in both markets, but they show up in different places. A stock trader and a crypto trader should check different things first:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Cause</th><th>Stocks</th><th>Crypto</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Look-ahead</td><td>Earnings and news released after the close; split- and dividend-adjusted prices</td><td>Unfinished candles on a market that never closes; open higher-timeframe candles</td></tr>
+                        <tr><td>Survivorship</td><td>Testing only today's S&amp;P 500 or NASDAQ-100 members; bankruptcies such as Lehman Brothers (2008)</td><td>Coins that collapsed or were delisted, such as LUNA and FTT (2022)</td></tr>
+                        <tr><td>Costs</td><td>Bid-ask spread, commission, UK stamp duty, short borrow fees</td><td>Exchange fees, slippage on small coins, futures funding</td></tr>
+                        <tr><td>Gaps</td><td>Overnight and weekend gaps straight through a stop</td><td>Fewer gaps (24/7 trading), but sudden wicks and liquidation cascades</td></tr>
+                        <tr><td>Leverage</td><td>Margin calls on leveraged positions</td><td>Liquidation on perpetual futures, often at high leverage</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>What Is Overfitting, and How Do I Detect It?</h2>
+            <p><strong>Short answer:</strong> overfitting (curve fitting) is tuning a strategy so closely to past data that it learns random noise instead of a real pattern. You detect it when results fall apart on data the strategy has not seen: a later period, other markets, or a setting nudged slightly.</p>
+            <p><strong>Crypto example:</strong> you test an RSI strategy, trying every RSI length from 2 to 50 and every threshold from 10 to 40. One combination, RSI(13) below 23, made 400% on Ethereum. That result is the best of over a thousand tries, so it is very likely luck. RSI(12) or RSI(14) would have made far less, and next year RSI(13) is unlikely to repeat.</p>
+            <p><strong>Stock example:</strong> the same trap works on stocks. Try 50 moving-average crossover pairs on Tesla and one of them will look brilliant by chance. If the 23/61 crossover wins but 20/60 and 25/65 lose, you have found noise, not an edge.</p>
+
+            <h3>Seven Signs Your Strategy Is Overfitted</h3>
+            <ol>
+                <li><strong>Fragile settings:</strong> changing a parameter by one or two steps turns profit into loss. A real edge has a broad "plateau" of good settings.</li>
+                <li><strong>Too many rules:</strong> each extra condition and parameter gives the strategy more freedom to fit noise.</li>
+                <li><strong>Few trades:</strong> 15 trades can be fitted perfectly by almost any rule set.</li>
+                <li><strong>One market only:</strong> it works on Apple but not Microsoft; on BTC but not ETH, SOL or BNB.</li>
+                <li><strong>One period only:</strong> great in 2021, flat or negative from 2022 to 2024.</li>
+                <li><strong>In-sample far better than out-of-sample:</strong> the settings that won on the training period do much worse on the period after it.</li>
+                <li><strong>Too smooth to be true:</strong> a near-perfect equity curve with tiny drawdowns on a volatile stock or coin.</li>
+            </ol>
+
+            <h3>How to Prevent Overfitting</h3>
+            <ul>
+                <li><strong><a href="../walk-forward-out-of-sample-testing/">Walk-forward optimization</a>:</strong> pick settings on one period, test them on the next unseen period, and repeat. BitLogic Backtester's optimizer does this and judges the result only by the unseen periods.</li>
+                <li><strong>Test on many markets:</strong> run the same rules on up to 10 stocks or coins at once.</li>
+                <li><strong>Keep it simple:</strong> two or three conditions with a logical reason behind them beat ten conditions that happen to fit.</li>
+                <li><strong>Prefer stable settings</strong> over the single best one.</li>
+                <li><strong>Paper trade</strong> before using real money.</li>
+            </ul>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/walk-forward-optimization.webp" alt="BitLogic Backtester walk-forward optimization: settings chosen on earlier data made money on unseen data in 3 of 4 rounds and passed the reality check" width="1280" height="720" loading="lazy">
+                <figcaption>Walk-forward optimization in BitLogic Backtester. Settings chosen on each practice period are tested on the period after it. Here they made money on unseen data in 3 of 4 rounds and "passed the reality check". The tuned (in-sample) results averaged +125.9%, the unseen ones +21.2%: the honest number is the second one.</figcaption>
+            </figure>
+            <p>Notice the gap in that screenshot: <strong>+125.9% in-sample versus +21.2% out-of-sample</strong>. A gap like this is normal. A plain optimization would have shown only the first number and hidden the overfitting from you.</p>
+
+            <h2>What Are Look-Ahead Bias and Repainting?</h2>
+            <p><strong>Short answer:</strong> look-ahead bias is when a backtest uses information that was not available at the time of the trade. Repainting is when an indicator changes its past values or signals after new candles arrive. Both make historical signals look perfect while live signals arrive late or never.</p>
+
+            <h3>Common Look-Ahead Mistakes</h3>
+            <ul>
+                <li><strong>Same-candle fills:</strong> the signal uses a candle's close, but the trade is filled at that candle's open or low. In reality you only know the close when the candle ends.</li>
+                <li><strong>Unfinished higher-timeframe candles:</strong> a 1-hour strategy checks the daily trend using today's daily candle, which has not closed yet. This is easy to miss in crypto, where the daily candle is always "live".</li>
+                <li><strong>Optimistic intrabar order:</strong> a candle touched both the stop and the target, and the backtest assumes the target was hit first.</li>
+                <li><strong>Trailing stops moved on the current candle's high</strong>, then checked against the same candle's low.</li>
+                <li><strong>Earnings and news timing (stocks):</strong> a rule reacts to quarterly results on the day they were announced, even though they came out after the close.</li>
+                <li><strong>Adjusted prices (stocks):</strong> split- and dividend-adjusted price history can show prices that never actually traded, and unadjusted data can show a fake crash on a split day.</li>
+            </ul>
+
+            <h3>Indicators That Can Repaint</h3>
+            <ul>
+                <li>Zigzag and swing-point indicators, which confirm a high or low only several candles later.</li>
+                <li>Some pivot and fractal indicators, for the same reason.</li>
+                <li>Any signal read from the <strong>current, unfinished candle</strong>, including higher-timeframe values.</li>
+            </ul>
+
+            <h3>How BitLogic Backtester Prevents Both</h3>
+            <ul>
+                <li><strong>Rules are checked on a candle's close, and orders fill at the next candle's open.</strong> Nothing is traded using the candle it fills on.</li>
+                <li><strong>Multi-timeframe rules use only higher-timeframe candles that have closed.</strong></li>
+                <li>When a candle touches <strong>both the stop and the target, the stop is assumed to fill first</strong>, because candles cannot show which came first.</li>
+                <li><strong>Gaps fill at the open:</strong> if a stock gaps below your stop overnight, you get the open price, not your stop price.</li>
+                <li><strong>Trailing stops move only on previous candles.</strong></li>
+            </ul>
+
+            <h2>What Is Survivorship Bias? (Delisted Stocks and Coins)</h2>
+            <p><strong>Short answer:</strong> survivorship bias is testing only the assets that survived to today. In stocks it means testing only today's index members and ignoring companies that went bankrupt, were taken over or were removed. In crypto it means leaving out coins that collapsed or were delisted (such as LUNA, which lost almost all its value in May 2022, or FTT after the FTX collapse). It makes almost any buying strategy look better than it really was.</p>
+            <p><strong>Stock example:</strong> you test a "buy the dip" strategy on today's NASDAQ-100 over 20 years. Those companies are in the index today <em>because</em> they grew. A trader in 2006 would also have bought dips in companies that later collapsed, such as Lehman Brothers, and in companies that later dropped out of the index. Your backtest never sees those losses.</p>
+            <p><strong>Crypto example:</strong> the same test on today's top 10 coins by market cap over 5 years has the same flaw. Those coins are in the top 10 because they went up. A trader in 2021 would have bought dips in coins that later went to almost zero.</p>
+
+            <h3>How to Reduce Survivorship Bias</h3>
+            <ul>
+                <li><strong>Choose symbols by a rule fixed in advance</strong>, as of the start of the test (for example, "the 10 largest stocks in my market in January 2016" or "the top 10 coins by volume in January 2021"), not by today's leaders.</li>
+                <li><strong>Include losers you know about</strong> that still have data: stocks and coins that fell 90% or more and are still listed.</li>
+                <li><strong>Treat results on today's winners with suspicion</strong>, especially long-only strategies.</li>
+                <li><strong>Prefer strategies that also work in a falling market</strong>, or that sit in cash in a downtrend.</li>
+            </ul>
+            <p class="post-disclaimer">Like most backtesters, BitLogic Backtester downloads history for markets that are currently listed, so a fully delisted stock or coin cannot be tested. The steps above are the practical way to limit the bias.</p>
+
+            <h2>How Do I Include Fees, Slippage and Funding Rates?</h2>
+            <p><strong>Short answer:</strong> charge the trading fee on both the entry and the exit, apply slippage against you on every market order, add taxes such as stamp duty where they apply, and, for crypto perpetual futures, add or subtract the funding payment at every settlement while the position is open. BitLogic Backtester builds in fees, slippage and funding: the default is 0.1% fee per side and 0.05% slippage, which you can change to match your broker or exchange, and futures tests use the exchange's real funding history.</p>
+
+            <h3>1. Trading Fees and Taxes</h3>
+            <p>A round trip pays the fee twice. At 0.1% per side, every trade costs 0.2% before slippage. A strategy averaging +0.3% per trade keeps only a third of its profit; at +0.15% per trade it loses money.</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Market</th><th>Typical cost to model</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>US stocks</td><td>Often $0 commission, but you still pay the bid-ask spread, plus small regulatory fees on sales</td></tr>
+                        <tr><td>UK stocks</td><td>Broker commission, plus 0.5% stamp duty on most UK share purchases</td></tr>
+                        <tr><td>Other stocks</td><td>Broker commission (often a flat fee per order in Germany, Canada and Australia) plus local taxes and exchange charges</td></tr>
+                        <tr><td>Crypto spot</td><td>About 0.1% per side on major exchanges, less with discounts or maker orders</td></tr>
+                        <tr><td>Crypto futures</td><td>About 0.02% maker / 0.05% taker per side, plus funding</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="post-disclaimer">Check your own broker's or exchange's fee page; rates differ by account level and country. A flat fee per order matters most on small positions: a &euro;5 fee on a &euro;1,000 trade is 0.5% each way.</p>
+
+            <h3>2. Slippage</h3>
+            <p>Slippage is the difference between the price your strategy expected and the price you actually got. It is larger on small coins and small-cap stocks, on fast candles, at the stock market open and during news. Model at least 0.05% per fill on liquid markets such as large US stocks or Bitcoin, and more on illiquid ones. In BitLogic Backtester's paper trading you can see real slippage measured against live prices.</p>
+
+            <h3>3. Funding Rates (Crypto Perpetual Futures)</h3>
+            <p>Perpetual futures charge or pay funding, usually every 8 hours. When funding is positive, longs pay shorts. A long position held for weeks in a bull market can lose several percent to funding alone. BitLogic Backtester applies the exchange's historical funding at every settlement while a futures position is open, and shows funding paid in paper trading. Our guide to <a href="../funding-rate-alerts-explained/">funding rates</a> explains how they work.</p>
+
+            <h3>4. Leverage, Liquidation and Gaps</h3>
+            <p>With leverage, a backtest that ignores liquidation is wrong: a 10&times; long is wiped out by a roughly 10% move against it, even if the price later recovers. BitLogic Backtester models <a href="../crypto-liquidation-alerts-explained/">liquidation</a> with isolated margin, so the optimizer cannot simply recommend maximum leverage. Stock traders face the same risk in a different form: an overnight gap on bad earnings can jump straight past a stop loss, which is why BitLogic fills gapped stops at the open price.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/backtest-equity-curve-trades.webp" alt="BitLogic Backtester charts tab with the equity curve against buy and hold, the drawdown chart and a monthly returns table, all after fees and slippage" width="1280" height="720" loading="lazy">
+                <figcaption>Every result in BitLogic Backtester is after fees and slippage. The charts tab shows the equity curve against buy and hold, the drawdown and a month-by-month return table.</figcaption>
+            </figure>
+
+            <h2>How to Make a Backtest Match Live Trading: 7 Steps</h2>
+            <p>Put the fixes together and you get a short routine you can run on any stock or crypto strategy before risking money:</p>
+            <ol>
+                <li id="fix-1"><strong>Use closed candles and next-candle fills.</strong> Check rules on a candle's close and fill orders at the next candle's open, using only higher-timeframe candles that have closed.</li>
+                <li id="fix-2"><strong>Include every cost.</strong> Fees on entry and exit, slippage on every fill, stamp duty or other taxes for stocks, and funding for crypto perpetual futures.</li>
+                <li id="fix-3"><strong>Keep the rules simple.</strong> Two or three conditions with a logical reason behind them, and a broad range of good settings rather than the single best one.</li>
+                <li id="fix-4"><strong>Get enough trades.</strong> Aim for 100 or more and check that the result is unlikely to be luck. See <a href="../how-much-data-and-trades-for-backtesting/">how much data and how many trades you need</a>.</li>
+                <li id="fix-5"><strong>Test on many markets chosen in advance.</strong> Use a list of stocks or coins picked by a rule fixed at the start of the test, not by today's winners.</li>
+                <li id="fix-6"><strong>Use walk-forward optimization.</strong> Choose settings on one period, test them on the next unseen period, and judge the strategy only by the unseen results.</li>
+                <li id="fix-7"><strong>Paper trade before using real money.</strong> Run the strategy on live prices with virtual money and compare fills, fees and slippage with the backtest (see <a href="../paper-trading-vs-backtesting/">paper trading vs backtesting</a>).</li>
+            </ol>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/paper-trading-live-prices.webp" alt="BitLogic Backtester paper trading screen running a strategy on live prices with virtual money, showing P&amp;L, win rate, fees and slippage" width="1280" height="720" loading="lazy">
+                <figcaption>Paper trading in BitLogic Backtester runs your strategy on live prices with virtual money and records the fees and slippage you would really have paid.</figcaption>
+            </figure>
+
+            <div class="post-callout"><strong>Test your strategy the honest way, free:</strong> BitLogic Backtester for Windows has next-candle fills, closed-candle multi-timeframe rules, fees, slippage, futures funding and liquidation, walk-forward optimization and luck checks. It covers crypto spot and futures, and stocks from the US, India, the UK, Germany, Hong Kong, Canada, Australia and Japan. Your first 3 backtests and 1 optimization are free. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>Find Setups with BitLogic, Prove Them with the Backtester</h2>
+            <p><a href="../../">BitLogic</a> is our crypto screener and alert app for Windows, iPhone/iPad and Android. It spots RSI extremes, breakouts and trend changes as they happen. Before you act on a setup you see often, test it in <a href="../../backtester/">BitLogic Backtester</a>, on the coin itself or on a list of stocks with the same rules. One account works in both apps, and <strong>paying BitLogic Pro members get the full BitLogic Backtester included</strong>.</p>
+            <p>New to backtesting? Start with <a href="../what-is-backtesting-without-coding/">What is backtesting? How to backtest stocks and crypto without coding</a>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">Why does my strategy win in the backtest but lose live?</h3>
+            <p>The usual causes are overfitting (rules tuned to past noise), look-ahead bias or repainting (the backtest used information that was not available at the time), survivorship bias (testing only stocks or coins that still exist), missing costs (fees, slippage, stamp duty, funding), too few trades, and a change in market conditions. Fix them with realistic costs, next-candle fills, many markets, walk-forward testing and paper trading.</p>
+
+            <h3 class="faq-q">What is overfitting in trading?</h3>
+            <p>Overfitting, or curve fitting, is tuning a strategy's rules and settings so closely to past data that it captures random noise rather than a real pattern. It looks excellent in the backtest and fails on new data, whether the market is a stock such as Tesla or a coin such as Ethereum.</p>
+
+            <h3 class="faq-q">How do I detect overfitting?</h3>
+            <p>Warning signs: results that collapse when a setting changes slightly, many rules and parameters, few trades, a strategy that works on one symbol only, and big gaps between in-sample and out-of-sample results. Test with walk-forward optimization, on other markets and periods, and with small parameter changes.</p>
+
+            <h3 class="faq-q">What is look-ahead bias?</h3>
+            <p>Look-ahead bias is when a backtest uses data that would not have been known at the moment of the trade, such as trading at a candle's open based on that same candle's close, using a higher-timeframe candle before it closed, or reacting to stock earnings before they were released.</p>
+
+            <h3 class="faq-q">What is repainting?</h3>
+            <p>A repainting indicator changes its past values or signals after new candles arrive, so historical charts show perfect signals that were never visible in real time. Zigzag lines, some pivot and fractal indicators, and signals read from an unfinished candle can repaint.</p>
+
+            <h3 class="faq-q">What is survivorship bias in stocks and crypto?</h3>
+            <p>Survivorship bias is testing only the assets that survived to today. In stocks it means testing only today's index members and ignoring companies that went bankrupt or were removed, such as Lehman Brothers in 2008. In crypto it means leaving out coins that collapsed or were delisted, such as LUNA in 2022. Either way, a strategy looks better than it would have been.</p>
+
+            <h3 class="faq-q">How do I include fees, slippage and funding rates in a backtest?</h3>
+            <p>Charge the exchange or broker fee on both entry and exit, apply slippage against you on every market order, add taxes such as UK stamp duty for stocks, and for perpetual futures add or subtract the funding payment at every settlement while a position is open. BitLogic Backtester includes fees, slippage and funding, with defaults of 0.1% fee per side and 0.05% slippage.</p>
+
+            <h3 class="faq-q">Is it normal for live results to be worse than the backtest?</h3>
+            <p>Yes. Even a well-built backtest is usually somewhat better than live trading. Expect lower returns and deeper drawdowns live, and size positions accordingly.</p>
+
+            <h3 class="faq-q">How much worse can live results be?</h3>
+            <p>It varies. A common rule of thumb is to expect the worst live drawdown to be up to 1.5 to 2 times the backtest's maximum drawdown. Monte Carlo analysis gives a better estimate for your own strategy.</p>
+            <p>For what counts as an acceptable drawdown on stocks and crypto, see <a href="../good-win-rate-profit-factor-sharpe-drawdown/">what is a good win rate, profit factor, Sharpe ratio and drawdown</a>.</p>
+
+            <h3 class="faq-q">Does optimization always cause overfitting?</h3>
+            <p>No. Optimization causes overfitting when you trust the best in-sample result. Walk-forward optimization, which judges settings on data they never saw, is the safe way to optimize.</p>
+
+            <h3 class="faq-q">Does BitLogic Backtester have look-ahead bias?</h3>
+            <p>It is designed to avoid it: rules use closed candles, orders fill at the next candle's open, higher timeframes use only closed candles, and stops are assumed to fill before targets on the same candle.</p>
+
+            <h3 class="faq-q">Do these problems apply to stocks too?</h3>
+            <p>Yes. Every cause applies to stocks and crypto. Stocks add overnight and weekend gaps, which BitLogic Backtester fills at the open price, earnings surprises, and survivorship bias from index changes and bankruptcies. Crypto adds futures funding, liquidation and coins that collapse or are delisted.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>A backtest is only as honest as its assumptions. Whether you trade stocks or crypto, use closed candles and next-candle fills, charge every cost, test many markets chosen in advance, get enough trades, judge settings on data they never saw, and paper trade before going live. Then expect live results to be a little worse than the backtest anyway, and size your positions for it.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../what-is-backtesting-without-coding/">What is backtesting?</a> | <a href="../walk-forward-out-of-sample-testing/">Walk-forward testing</a> | <a href="../paper-trading-vs-backtesting/">Paper trading vs backtesting</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades for backtesting</a> | <a href="../good-win-rate-profit-factor-sharpe-drawdown/">Good win rate, profit factor, Sharpe and drawdown</a> | <a href="../../backtester/">BitLogic Backtester</a> | <a href="../funding-rate-alerts-explained/">Funding rates explained</a> | <a href="../crypto-liquidation-alerts-explained/">Crypto liquidations explained</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Fee levels are typical examples; check your own broker or exchange. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../what-is-backtesting-without-coding/" class="related-card">
+                        <h4>What Is Backtesting?</h4>
+                        <p>Backtest stocks and crypto without coding, in 6 steps.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../how-much-data-and-trades-for-backtesting/" class="related-card">
+                        <h4>How Much Data and Trades?</h4>
+                        <p>Years of data and trade counts for a backtest you can trust.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../funding-rate-alerts-explained/" class="related-card">
+                        <h4>Funding Rates Explained</h4>
+                        <p>What perpetual futures funding costs you, and when to watch it.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>

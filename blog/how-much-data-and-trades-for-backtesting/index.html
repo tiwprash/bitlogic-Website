@@ -277,7 +277,7 @@
             <p>A 200-day moving average needs 200 days of data before it produces its first value. If your test starts on 1 January, the indicator must be calculated from earlier data, or your first months of signals are wrong. <strong>BitLogic Backtester loads the extra history before your start date automatically</strong>, and warns you if not enough history exists to warm up a slow indicator, which matters most for recently listed stocks and coins.</p>
 
             <h3>Can You Use Too Much Data?</h3>
-            <p>Yes, in one sense: markets evolve, and a rule tuned on 2012 data may not suit 2026. The answer is not to use less data but to validate properly. <strong>Walk-forward testing</strong> chooses settings on one period and tests them on the next, unseen period, round after round.</p>
+            <p>Yes, in one sense: markets evolve, and a rule tuned on 2012 data may not suit 2026. The answer is not to use less data but to validate properly. <a href="../walk-forward-out-of-sample-testing/"><strong>Walk-forward testing</strong></a> chooses settings on one period and tests them on the next, unseen period, round after round.</p>
             <figure class="blog-shot wide">
                 <img src="../what-is-backtesting-without-coding/images/walk-forward-optimization.webp" alt="BitLogic Backtester walk-forward optimization results: passed the reality check, settings made money on unseen data in 3 of 4 rounds, +21.2% average on unseen data" width="1280" height="720" loading="lazy">
                 <figcaption>Walk-forward optimization in BitLogic Backtester. Settings picked on earlier data made money on later, unseen data in 3 of 4 rounds. The app judges the strategy by the unseen periods, not the tuned ones.</figcaption>
@@ -367,10 +367,10 @@
                 <li>The test period includes a bull, a bear and a sideways market.</li>
                 <li>At least 100 trades (or 30+ per market across many markets).</li>
                 <li>The luck check says "unlikely to be luck" (t-statistic about 2 or higher).</li>
-                <li>Fees and slippage are included: broker costs for stocks, exchange fees (and funding on futures) for crypto.</li>
-                <li>It beats buy and hold, or has a much smaller drawdown.</li>
+                <li>Fees and slippage are included: broker costs for stocks, exchange fees (and funding on futures) for crypto. See <a href="../why-backtest-wins-but-loses-live/">why a backtest wins but loses live</a>.</li>
+                <li>It beats buy and hold, or has a much smaller drawdown (see <a href="../good-win-rate-profit-factor-sharpe-drawdown/">how much drawdown is acceptable</a>).</li>
                 <li>It holds up in walk-forward testing on unseen data.</li>
-                <li>It works in paper trading on live prices.</li>
+                <li>It works in <a href="../paper-trading-vs-backtesting/">paper trading</a> on live prices.</li>
             </ul>
 
             <h2>Where BitLogic Fits In</h2>
@@ -409,7 +409,7 @@
             <h2>The Bottom Line</h2>
             <p>For stocks and crypto alike, the trade count matters more than the calendar. Use enough history to see a bull, a bear and a sideways market, aim for 100+ trades, pool trades across several markets when a strategy trades rarely, and check that the edge is unlikely to be luck before you put money behind it.</p>
             <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
-            <p><strong>Related guides:</strong> <a href="../what-is-backtesting-without-coding/">What is backtesting?</a> | <a href="../../backtester/">BitLogic Backtester</a> | <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/">Supertrend flip + RSI strategy</a> | <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/">RSI reversal bounce strategy</a></p>
+            <p><strong>Related guides:</strong> <a href="../what-is-backtesting-without-coding/">What is backtesting?</a> | <a href="../walk-forward-out-of-sample-testing/">Walk-forward testing</a> | <a href="../paper-trading-vs-backtesting/">Paper trading vs backtesting</a> | <a href="../why-backtest-wins-but-loses-live/">Why a backtest wins but loses live</a> | <a href="../good-win-rate-profit-factor-sharpe-drawdown/">Good win rate, profit factor, Sharpe and drawdown</a> | <a href="../../backtester/">BitLogic Backtester</a> | <a href="../prebuilt-supertrend-flip-rsi-crypto-screener/">Supertrend flip + RSI strategy</a> | <a href="../prebuilt-rsi-reversal-bounce-crypto-screener/">RSI reversal bounce strategy</a></p>
             <p class="post-disclaimer">Nothing here is financial advice. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
 
             <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
@@ -436,10 +436,10 @@
                         <p>A trend setup worth testing across many markets first.</p>
                         <div class="read-more">Read the Strategy &rarr;</div>
                     </a>
-                    <a href="../prebuilt-bollinger-band-squeeze-breakout-screener/" class="related-card">
-                        <h4>Bollinger Squeeze Breakout</h4>
-                        <p>Volatility contraction, then expansion: rules and risk.</p>
-                        <div class="read-more">Read the Strategy &rarr;</div>
+                    <a href="../why-backtest-wins-but-loses-live/" class="related-card">
+                        <h4>Backtest Wins, Live Loses?</h4>
+                        <p>Overfitting, look-ahead bias and missing costs, fixed.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
                     </a>
                 </div>
             </div>

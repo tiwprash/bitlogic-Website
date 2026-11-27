@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLMLJEYY7R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YLMLJEYY7R');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06080f">
+    <title>What Is a Good Win Rate, Profit Factor, Sharpe &amp; Drawdown?</title>
+    <meta name="description" content="Benchmarks for stock and crypto backtests: what is a good win rate, profit factor and Sharpe ratio, how much drawdown is acceptable, and why a low win rate can still be very profitable.">
+    <link rel="canonical" href="https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="BitLogic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="What Is a Good Win Rate, Profit Factor and Sharpe Ratio? How Much Drawdown Is Acceptable? (Stocks and Crypto)">
+    <meta property="og:description" content="Benchmarks for stock and crypto backtests: what is a good win rate, profit factor and Sharpe ratio, how much drawdown is acceptable, and why a low win rate can still be very profitable.">
+    <meta property="og:url" content="https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/">
+    <meta property="og:image" content="https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/og-good-backtest-metrics.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is a Good Win Rate, Profit Factor, Sharpe &amp; Drawdown?">
+    <meta name="twitter:description" content="Benchmarks for stock and crypto backtests: what is a good win rate, profit factor and Sharpe ratio, how much drawdown is acceptable, and why a low win rate can still be very profitable.">
+    <meta name="twitter:image" content="https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/og-good-backtest-metrics.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="preload" as="image" href="../../app_logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "What Is a Good Win Rate, Profit Factor and Sharpe Ratio? And How Much Drawdown Is Acceptable?",
+      "description": "Benchmarks for stock and crypto backtests: what is a good win rate, profit factor and Sharpe ratio, how much drawdown is acceptable, and why a low win rate can still be very profitable.",
+      "image": [
+        "https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/og-good-backtest-metrics.jpg",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/turtle-breakout-bitcoin-backtest-results.webp",
+        "https://bitlogic.info/blog/what-is-backtesting-without-coding/images/nvidia-backtest-vs-buy-and-hold.webp"
+      ],
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "BitLogic Team",
+        "url": "https://bitlogic.info/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BitLogic",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bitlogic.info/app_logo.webp"
+        }
+      },
+      "about": [
+        { "@type": "Thing", "name": "Win rate" },
+        { "@type": "Thing", "name": "Profit factor" },
+        { "@type": "Thing", "name": "Sharpe ratio" },
+        { "@type": "Thing", "name": "Drawdown" },
+        { "@type": "Thing", "name": "Backtesting" },
+        { "@type": "Thing", "name": "Stock trading" },
+        { "@type": "Thing", "name": "Cryptocurrency trading" },
+        {
+          "@type": "SoftwareApplication",
+          "name": "BitLogic Backtester",
+          "url": "https://bitlogic.info/backtester/",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Windows"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good win rate for a trading strategy?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There is no single good win rate; it depends on the reward-to-risk ratio. Trend-following strategies are often profitable at 30 to 45% wins, swing strategies at 45 to 60%, and mean-reversion strategies often win 60 to 75% with smaller wins. The break-even win rate is 1 divided by (1 + average win / average loss), before costs. This is the same for stocks and crypto." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good profit factor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Profit factor is gross profit divided by gross loss, after costs. Below 1.0 loses money, 1.0 to 1.3 is marginal, 1.3 to 1.75 is decent, 1.75 to 2.5 is strong, and above 3 usually means too few trades or overfitting." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good Sharpe ratio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An annualized Sharpe ratio below 0.5 is weak, 0.5 to 1 is acceptable, 1 to 2 is good and above 2 is very good. Backtest Sharpe ratios above 3 should be treated with suspicion. Compare against buy and hold of the same stock or coin over the same period." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much drawdown is acceptable?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The drawdown you could live through without abandoning the strategy. Many traders aim for a maximum drawdown under about 20 to 25% for stock strategies and under about 30 to 40% for crypto strategies, and at least well below the asset's own buy-and-hold drawdown. Expect live drawdowns up to 1.5 to 2 times the backtest's." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a strategy with a low win rate be profitable?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. With an average win three times the average loss, a strategy breaks even at 25% wins before costs, and a 35 to 40% win rate is very profitable. Many trend-following systems on stocks and crypto win fewer than half their trades." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 50% win rate good?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is good if your average win is larger than your average loss after costs. At equal win and loss sizes, 50% only breaks even before fees." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a profit factor of 2 good?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, a profit factor of 2 after costs, with 100+ trades, is strong. Check that it holds on other markets and in walk-forward testing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a Sharpe ratio of 1 good?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. An annualized Sharpe ratio of 1 is generally considered good, provided it beats buy and hold of the same asset." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 30% drawdown too much?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For most stock strategies it is on the high side; for crypto it is moderate. What matters is whether you would keep following the strategy through it." }
+        },
+        {
+          "@type": "Question",
+          "name": "What matters more, win rate or profit factor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Profit factor, because it includes both how often you win and how much. Win rate tells you mainly how many losing streaks to expect." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are good backtest metrics different for stocks and crypto?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Win rate and profit factor benchmarks are the same. Drawdown and Sharpe differ: crypto is far more volatile, so a crypto strategy can accept a deeper drawdown than a stock strategy, and Bitcoin itself has fallen more than 75% from its peak. Annualize stock returns with about 252 trading days and crypto with 365, and always compare with buy and hold of the same asset." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bitlogic.info/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bitlogic.info/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Good Win Rate, Profit Factor, Sharpe and Drawdown", "item": "https://bitlogic.info/blog/good-win-rate-profit-factor-sharpe-drawdown/" }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../../" style="display: flex; align-items: center; gap: 0.65rem;">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032">
+                        <span class="logo-text">BitLogic</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="../../about.html">About</a>
+                    <a href="../../#features">Features</a>
+                    <a href="../../#indicators">Indicators</a>
+                    <a href="../../#exchanges">Exchanges</a>
+                    <a href="../../blog/">Blog</a>
+                    <a href="../../crypto-screener/">Crypto Screener</a>
+                    <a href="../../backtester/">Backtester</a>
+
+                    <div class="nav-download-dropdown">
+                        <a href="#" class="nav-cta-btn" onclick="event.preventDefault()">Download Free ▾</a>
+                        <div class="dropdown-content">
+                            <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">iOS App (App Store)</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Android App</a>
+                            <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Windows App</a>
+                            <span class="dropdown-divider" aria-hidden="true"></span>
+                            <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Backtester (Windows)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="blog-post">
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Good Win Rate, Profit Factor, Sharpe and Drawdown</li>
+                </ol>
+            </nav>
+            <div class="blog-meta">
+                <span class="blog-badge">Backtesting Guide</span>
+                <span>By <a href="../../about.html" style="color: var(--text-secondary);">BitLogic Team</a></span>
+                <span>Published <time datetime="2026-11-27">Nov 27, 2026</time></span>
+                <span>10 min read</span>
+            </div>
+
+            <h1>What Is a Good Win Rate, Profit Factor and Sharpe Ratio? And How Much Drawdown Is Acceptable?</h1>
+
+            <div class="post-callout"><strong>See your strategy's real numbers, free:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows) calculates win rate, profit factor, Sharpe, drawdown and losing streaks after fees and slippage, for stocks and crypto, and explains each one in plain English. 3 backtests and 1 optimization free. <a href="../../backtester/">See what it does</a>.</div>
+
+            <p><strong>Quick answer:</strong> a good <strong>profit factor</strong> is 1.3 to 2.5 after costs, a good <strong>Sharpe ratio</strong> is above 1, and an acceptable <strong>maximum drawdown</strong> is roughly under 20 to 25% for stock strategies and under 30 to 40% for crypto strategies. There is no single good <strong>win rate</strong>: a trend strategy can make money winning only 35% of its trades, if its winners are much bigger than its losers. Anything that looks too good (profit factor above 3, Sharpe above 3, almost no drawdown) usually means too few trades or overfitting.</p>
+            <p class="post-disclaimer">Written by the BitLogic Team, 27 November 2026. Examples are real backtests run in BitLogic Backtester in November 2026. Benchmarks are general rules of thumb. This article is for education only and is not financial advice. Past results do not guarantee future returns.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Win rate</strong> means nothing alone. Break-even win rate = 1 ÷ (1 + average win ÷ average loss).</li>
+                <li><strong>Profit factor:</strong> 1.3+ is decent, 1.75+ is strong, above 3 is usually too good to be true.</li>
+                <li><strong>Sharpe ratio:</strong> 1+ is good, 2+ is very good; always compare with buy and hold.</li>
+                <li><strong>Drawdown:</strong> a 50% loss needs a 100% gain to recover. Pick the drawdown you could really sit through, and expect live drawdowns to be deeper.</li>
+                <li><strong>Stocks vs crypto:</strong> the same win rate and profit factor rules apply, but crypto strategies usually carry deeper drawdowns.</li>
+                <li><strong>Low win rate strategies can be very profitable</strong> if winners are much bigger than losers.</li>
+            </ul>
+
+            <h2>Quick Reference: Good Values for Backtest Metrics</h2>
+            <p>Use this table as a first filter for any stock or crypto backtest. The Sharpe ratio is annualized.</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Metric</th><th>Weak</th><th>Acceptable</th><th>Good</th><th>Suspicious</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Profit factor</td><td>Below 1.1</td><td>1.1 to 1.3</td><td>1.3 to 2.5</td><td>Above 3</td></tr>
+                        <tr><td>Sharpe ratio</td><td>Below 0.5</td><td>0.5 to 1</td><td>1 to 2+</td><td>Above 3</td></tr>
+                        <tr><td>Drawdown, stocks</td><td>Over 40%</td><td>25 to 40%</td><td>Under 25%</td><td>Near 0% on a volatile stock</td></tr>
+                        <tr><td>Drawdown, crypto</td><td>Over 60%</td><td>40 to 60%</td><td>Under 40%</td><td>Near 0% on a volatile coin</td></tr>
+                        <tr><td>Number of trades</td><td>Under 20</td><td>30 to 100</td><td>100+</td><td>n/a</td></tr>
+                        <tr><td>Win rate</td><td colspan="4">Depends on reward-to-risk: see below</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="post-disclaimer">These are common rules of thumb, not laws. A metric is only meaningful after fees and slippage, with enough trades, and compared with simply holding the same stock or coin.</p>
+
+            <h3>A Real Example: the Same Strategy on Bitcoin and NVIDIA</h3>
+            <p>Here is one strategy, the Turtle Breakout on daily candles from November 2019 to November 2026, tested in BitLogic Backtester on a coin and on a stock. All numbers are after fees and slippage:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Metric</th><th>Bitcoin (crypto)</th><th>NVIDIA (stock)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Total return</td><td>+805.5%</td><td>+481.1%</td></tr>
+                        <tr><td>Buy and hold</td><td>+704.1% (beaten)</td><td>+2,954.0% (not beaten)</td></tr>
+                        <tr><td>CAGR (yearly)</td><td>37.1%</td><td>28.6%</td></tr>
+                        <tr><td>Profit factor</td><td>1.67</td><td>1.62</td></tr>
+                        <tr><td>Sharpe ratio</td><td>1.00</td><td>0.92</td></tr>
+                        <tr><td>Win rate</td><td>46% (16 wins, 19 losses)</td><td>44% (14 wins, 18 losses)</td></tr>
+                        <tr><td>Max drawdown</td><td>−54.2%</td><td>−39.1%</td></tr>
+                        <tr><td>Time under water</td><td>861 days</td><td>888 days</td></tr>
+                        <tr><td>Trades</td><td>35</td><td>32</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Both versions win fewer than half their trades and still have a decent profit factor. Both have Sharpe ratios around 1. Yet one beat holding its asset and the other trailed it by more than 2,400 points. We'll use these two results throughout this guide to show why <strong>no single metric is enough</strong>.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/turtle-breakout-bitcoin-backtest-results.webp" alt="BitLogic Backtester key numbers for Turtle Breakout on Bitcoin: CAGR 37.1%, max drawdown -54.2%, Sharpe ratio 1.00, profit factor 1.67, win rate 46%, 35 trades" width="1280" height="720" loading="lazy">
+                <figcaption>Key numbers for the Turtle Breakout on Bitcoin (daily, 2019 to 2026): profit factor 1.67, Sharpe 1.00, win rate 46%, max drawdown −54.2%, 35 trades. Tap any number in the app to see what it means.</figcaption>
+            </figure>
+
+            <h2>What Is a Good Win Rate?</h2>
+            <p><strong>Short answer:</strong> it depends on how big your wins are compared with your losses. A 35% win rate is excellent if winners are three times the size of losers; a 70% win rate loses money if each loss is three times a win. Trend-following strategies typically win 30 to 45% of trades, swing strategies 45 to 60%, and mean-reversion strategies 60 to 75%. The same holds whether you trade Apple or Ethereum.</p>
+
+            <h3>The Break-Even Win Rate</h3>
+            <pre class="rule-block"><code>Break-even win rate = 1 ÷ (1 + R)</code></pre>
+            <p>Here R is your average win divided by your average loss, before costs.</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>R (win ÷ loss)</th><th>Break-even win rate</th><th>Typical style</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0.5</td><td>67%</td><td>Mean reversion, scalping (wins half the size of losses)</td></tr>
+                        <tr><td>1</td><td>50%</td><td>Balanced swing trading</td></tr>
+                        <tr><td>1.5</td><td>40%</td><td>Swing trading with targets</td></tr>
+                        <tr><td>2</td><td>33%</td><td>Breakouts</td></tr>
+                        <tr><td>3</td><td>25%</td><td>Trend following</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Costs raise these break-even figures a little, more for strategies that trade often. Read <a href="../why-backtest-wins-but-loses-live/">why a backtest wins but loses live</a> for how fees, slippage and funding eat into small edges.</p>
+
+            <h2>Can a Strategy With a Low Win Rate Still Be Profitable?</h2>
+            <p><strong>Short answer:</strong> yes. If your average winner is much larger than your average loser, you can lose most of your trades and still make money. Most trend-following systems, which cut losers quickly and let winners run, win fewer than half their trades.</p>
+            <p><strong>Worked example:</strong> 100 trades, 35% win rate, average win +6%, average loss −2% (R = 3).</p>
+            <ul>
+                <li>Wins: 35 × 6% = +210%</li>
+                <li>Losses: 65 × 2% = −130%</li>
+                <li>Net: <strong>+80%</strong> (simple sum, before compounding and costs). Profit factor = 210 ÷ 130 = 1.6.</li>
+            </ul>
+            <p>The real examples above show the same thing: <strong>46% wins on Bitcoin and 44% on NVIDIA</strong>, with profit factors of 1.67 and 1.62, because winners were larger than losers.</p>
+
+            <h3>The Catch With Low Win Rates</h3>
+            <p>Low win rates mean <strong>long losing streaks</strong>. At a 35% win rate, 8 or more losses in a row are likely to happen at some point over a few hundred trades. That is psychologically hard, and it is why many traders abandon good trend systems at the worst moment. BitLogic Backtester shows the longest losing streak in the metrics, so you know what to expect.</p>
+
+            <h3>The Catch With High Win Rates</h3>
+            <p>Very high win rates (80%+) often come from tight targets and wide or no stops. They win small most of the time and occasionally lose big, for example when a stock gaps down on earnings or a coin crashes overnight. Always check the <strong>largest loss</strong> and the <strong>profit factor</strong>, not just the win rate.</p>
+
+            <h2>What Is a Good Profit Factor?</h2>
+            <p><strong>Short answer:</strong> profit factor is gross profit divided by gross loss, after costs. Above 1.0 makes money; 1.3 to 1.75 is decent; 1.75 to 2.5 is strong. Above 3 usually signals too few trades or overfitting rather than a great strategy.</p>
+            <pre class="rule-block"><code>PF = gross profit ÷ gross loss</code></pre>
+            <p>Profit factor combines win rate and win size into one number, which makes it more useful than win rate alone. A profit factor of 1.5 means you earned $1.50 for every $1.00 lost. Because live trading is usually worse than a backtest, a strategy with a backtest profit factor of 1.1 has little room for error, especially on stocks with high commissions or small coins with wide spreads.</p>
+
+            <h2>What Is a Good Sharpe Ratio?</h2>
+            <p><strong>Short answer:</strong> an annualized Sharpe ratio above 1 is good, above 2 is very good, and below 0.5 is weak. Above 3 in a backtest deserves suspicion. Always compare with the Sharpe ratio of buy and hold for the same asset and period.</p>
+            <pre class="rule-block"><code>Sharpe = excess return ÷ volatility</code></pre>
+            <p>"Excess return" is the average return minus the risk-free rate, and "volatility" is the standard deviation of returns, both annualized. A higher Sharpe means a smoother ride for the same return.</p>
+            <ul>
+                <li><strong>Stocks:</strong> broad stock indexes have historically had long-run Sharpe ratios of roughly 0.3 to 0.6, so a stock strategy above 1 is notable. Returns are annualized with about 252 trading days a year.</li>
+                <li><strong>Crypto:</strong> returns and volatility are both high; in strong bull years Bitcoin's own Sharpe has exceeded 1, so beating buy and hold matters more than the raw number. Crypto trades all 365 days, so returns are annualized over 365 days.</li>
+                <li><strong>Related ratios:</strong> the <strong>Sortino ratio</strong> counts only downside volatility; the <strong>Calmar ratio</strong> divides annual return by maximum drawdown.</li>
+            </ul>
+            <p>NVIDIA shows why the comparison matters: a Sharpe of 0.92 looks respectable, but the stock itself returned +2,954% over the same period, so the strategy added work and risk without adding return.</p>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/nvidia-backtest-vs-buy-and-hold.webp" alt="BitLogic Backtester verdict 'Underperformed buy and hold' for Turtle Breakout on NVIDIA stock: +481.1% vs +2954.0%, CAGR 28.6%, max drawdown -39.1%, Sharpe 0.92, profit factor 1.62, win rate 44%, 32 trades" width="1280" height="720" loading="lazy">
+                <figcaption>The same strategy on NVIDIA stock: decent profit factor (1.62) and Sharpe (0.92), but the app's verdict is "Underperformed buy &amp; hold". Good metrics are not enough if simply holding did better.</figcaption>
+            </figure>
+
+            <h2>How Much Drawdown Is Acceptable?</h2>
+            <p><strong>Short answer:</strong> the drawdown you could live through with real money without abandoning the strategy. As rough guides, many traders aim for a maximum drawdown under 20 to 25% for stock strategies and under 30 to 40% for crypto strategies, and well below the asset's own buy-and-hold drawdown. Expect live drawdowns up to 1.5 to 2 times the backtest's worst.</p>
+
+            <h3>Why Drawdowns Hurt More Than They Look: the Recovery Math</h3>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Drawdown</th><th>Gain needed to recover</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>10%</td><td>11%</td></tr>
+                        <tr><td>20%</td><td>25%</td></tr>
+                        <tr><td>30%</td><td>43%</td></tr>
+                        <tr><td>40%</td><td>67%</td></tr>
+                        <tr><td>50%</td><td>100%</td></tr>
+                        <tr><td>75%</td><td>300%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Stocks vs Crypto: Different Drawdown Yardsticks</h3>
+            <p>Judge a strategy's drawdown against what simply holding the market would have cost you. The yardsticks are very different:</p>
+            <div class="req-table-wrap">
+                <table class="req-table">
+                    <thead>
+                        <tr><th>Yardstick</th><th>Stocks</th><th>Crypto</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Market crashes</td><td>S&amp;P 500 fell about 57% in 2007 to 2009, 34% in early 2020 and 25% in 2022</td><td>Bitcoin fell about 84% in 2018 and 77% from late 2021 to late 2022</td></tr>
+                        <tr><td>Single assets</td><td>Even NVIDIA fell about two-thirds in 2022</td><td>Many altcoins fell 90% or more, and some never recovered</td></tr>
+                        <tr><td>Good strategy target</td><td>Under 20 to 25%</td><td>Under 30 to 40%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Drawdown Depth and Duration</h3>
+            <p>Check both how deep and how long. The Bitcoin strategy had a −54% maximum drawdown and stayed below its previous peak for 861 days. That is shallower than holding Bitcoin over the same period (which fell about 77% at worst), but over two years under water is more than most people can sit through. The NVIDIA version's drawdown was smaller at −39%, but it took even longer, 888 days, to recover.</p>
+
+            <h3>How to Reduce Drawdown</h3>
+            <ul>
+                <li><strong>Smaller position size</strong>, or risk-based sizing: BitLogic Backtester can size each trade so that a stop-out loses a fixed % of the account.</li>
+                <li><strong>A trend filter</strong>, such as trading only above the 200-day moving average.</li>
+                <li><strong>Stops and trailing stops</strong>, remembering that stocks can gap past a stop overnight (see our <a href="../stop-loss-take-profit-best-indicators/">stop-loss and take-profit guide</a>).</li>
+                <li><strong>Diversify</strong> across several stocks or coins with Test on many.</li>
+                <li><strong>Lower or no leverage</strong>, especially on crypto futures.</li>
+            </ul>
+            <figure class="blog-shot wide">
+                <img src="../what-is-backtesting-without-coding/images/backtest-equity-curve-trades.webp" alt="BitLogic Backtester drawdown chart and monthly returns table for a Bitcoin strategy, with the equity curve against buy and hold" width="1280" height="720" loading="lazy">
+                <figcaption>The drawdown chart shows how far the account sat below its previous high, day by day. The monthly returns table shows whether profits were steady or came from one lucky month.</figcaption>
+            </figure>
+            <p>For a realistic range rather than one historical path, use the <strong>Monte Carlo</strong> tab: it reshuffles your trades thousands of times and shows how bad drawdowns could plausibly get.</p>
+
+            <h2>Read Metrics Together, Never Alone</h2>
+            <ol>
+                <li><strong>Did it beat buy and hold?</strong> If not, the strategy isn't worth the effort. (Bitcoin: yes. NVIDIA: no.)</li>
+                <li><strong>Is the sample big enough?</strong> 100+ trades, and a luck check that passes. See <a href="../how-much-data-and-trades-for-backtesting/">how many trades you need</a>.</li>
+                <li><strong>Profit factor and Sharpe</strong> in the good range, after costs.</li>
+                <li><strong>Drawdown you can live with</strong>, in depth and duration.</li>
+                <li><strong>Holds up out of sample</strong>, in <a href="../walk-forward-out-of-sample-testing/">walk-forward testing</a>, and in <a href="../paper-trading-vs-backtesting/">paper trading</a>.</li>
+            </ol>
+            <p>BitLogic Backtester combines these into one plain-English verdict on every test, such as "Promising, with caveats" or "Underperformed buy &amp; hold", and lists the reasons.</p>
+
+            <div class="post-callout"><strong>See your strategy's real numbers, free:</strong> BitLogic Backtester for Windows calculates win rate, profit factor, Sharpe, Sortino, drawdown, losing streaks, statistical significance and Monte Carlo ranges, after fees and slippage. It covers crypto spot and futures, and stocks from the US, India, the UK, Germany, Hong Kong, Canada, Australia and Japan. No code. Your first 3 backtests and 1 optimization are free. <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">Get it on the Microsoft Store</a>.</div>
+
+            <h2>From Screener to Strategy: BitLogic + BitLogic Backtester</h2>
+            <p><a href="../../">BitLogic</a>, our crypto screener for Windows, iPhone/iPad and Android, alerts you to setups as they form. <a href="../../backtester/">BitLogic Backtester</a> tells you whether trading those setups would have had a good profit factor and a drawdown you can live with, on the coin itself or on a list of stocks with the same rules. One account works in both, and <strong>paying BitLogic Pro members get the full BitLogic Backtester included</strong>.</p>
+            <p>New to backtesting? Start with <a href="../what-is-backtesting-without-coding/">What is backtesting? How to backtest stocks and crypto without coding</a>.</p>
+
+            <h2>FAQ</h2>
+
+            <h3 class="faq-q">What is a good win rate for a trading strategy?</h3>
+            <p>There is no single good win rate; it depends on the reward-to-risk ratio. Trend-following strategies are often profitable at 30 to 45% wins, swing strategies at 45 to 60%, and mean-reversion strategies often win 60 to 75% with smaller wins. The break-even win rate is 1 divided by (1 + average win / average loss), before costs. This is the same for stocks and crypto.</p>
+
+            <h3 class="faq-q">What is a good profit factor?</h3>
+            <p>Profit factor is gross profit divided by gross loss, after costs. Below 1.0 loses money, 1.0 to 1.3 is marginal, 1.3 to 1.75 is decent, 1.75 to 2.5 is strong, and above 3 usually means too few trades or overfitting.</p>
+
+            <h3 class="faq-q">What is a good Sharpe ratio?</h3>
+            <p>An annualized Sharpe ratio below 0.5 is weak, 0.5 to 1 is acceptable, 1 to 2 is good and above 2 is very good. Backtest Sharpe ratios above 3 should be treated with suspicion. Compare against buy and hold of the same stock or coin over the same period.</p>
+
+            <h3 class="faq-q">How much drawdown is acceptable?</h3>
+            <p>The drawdown you could live through without abandoning the strategy. Many traders aim for a maximum drawdown under about 20 to 25% for stock strategies and under about 30 to 40% for crypto strategies, and at least well below the asset's own buy-and-hold drawdown. Expect live drawdowns up to 1.5 to 2 times the backtest's.</p>
+
+            <h3 class="faq-q">Can a strategy with a low win rate be profitable?</h3>
+            <p>Yes. With an average win three times the average loss, a strategy breaks even at 25% wins before costs, and a 35 to 40% win rate is very profitable. Many trend-following systems on stocks and crypto win fewer than half their trades.</p>
+
+            <h3 class="faq-q">Is a 50% win rate good?</h3>
+            <p>It is good if your average win is larger than your average loss after costs. At equal win and loss sizes, 50% only breaks even before fees.</p>
+
+            <h3 class="faq-q">Is a profit factor of 2 good?</h3>
+            <p>Yes, a profit factor of 2 after costs, with 100+ trades, is strong. Check that it holds on other markets and in walk-forward testing.</p>
+
+            <h3 class="faq-q">Is a Sharpe ratio of 1 good?</h3>
+            <p>Yes. An annualized Sharpe ratio of 1 is generally considered good, provided it beats buy and hold of the same asset.</p>
+
+            <h3 class="faq-q">Is a 30% drawdown too much?</h3>
+            <p>For most stock strategies it is on the high side; for crypto it is moderate. What matters is whether you would keep following the strategy through it.</p>
+
+            <h3 class="faq-q">What matters more, win rate or profit factor?</h3>
+            <p>Profit factor, because it includes both how often you win and how much. Win rate tells you mainly how many losing streaks to expect.</p>
+
+            <h3 class="faq-q">Are good backtest metrics different for stocks and crypto?</h3>
+            <p>Win rate and profit factor benchmarks are the same. Drawdown and Sharpe differ: crypto is far more volatile, so a crypto strategy can accept a deeper drawdown than a stock strategy, and Bitcoin itself has fallen more than 75% from its peak. Annualize stock returns with about 252 trading days and crypto with 365, and always compare with buy and hold of the same asset.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>Good numbers look the same on a stock or a coin: a profit factor of 1.3 or more after costs, a Sharpe ratio around 1 or better, a drawdown you could really sit through, and enough trades to trust. But no single metric decides it. Read them together, compare them with buy and hold, and check them on data the strategy has never seen.</p>
+            <p><strong>Get the apps:</strong> <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener">BitLogic Backtester on the Microsoft Store</a> (Windows; Mac, iPhone, iPad and Android coming soon) | BitLogic screener on the <a href="https://apps.apple.com/us/app/bitlogic-crypto-alert-screener/id6817704342" target="_blank" rel="noopener">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.bitlogic.screener.pro" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.microsoft.com/detail/9PGBXSLTP4DS" target="_blank" rel="noopener">Microsoft Store</a></p>
+            <p><strong>Related guides:</strong> <a href="../what-is-backtesting-without-coding/">What is backtesting?</a> | <a href="../stop-loss-take-profit-best-indicators/">Stop-loss, take-profit and indicators</a> | <a href="../walk-forward-out-of-sample-testing/">Walk-forward testing</a> | <a href="../how-much-data-and-trades-for-backtesting/">How much data and trades for backtesting</a> | <a href="../why-backtest-wins-but-loses-live/">Why a backtest wins but loses live</a> | <a href="../../backtester/">BitLogic Backtester</a></p>
+            <p class="post-disclaimer">Nothing here is financial advice. Benchmarks are general rules of thumb. BitLogic Backtester is an analysis tool: it does not place real trades. Past results do not guarantee future returns. Questions: <a href="mailto:backtester_support@bitlogic.info">backtester_support@bitlogic.info</a>.</p>
+
+            <div class="cta-actions" style="margin-top: 3rem; justify-content: flex-start;">
+                <a href="https://apps.microsoft.com/detail/9NMV7F8CNQCQ" target="_blank" rel="noopener" class="download-btn pulse">
+                    <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 72.8l219.4-29.8v207H0zM250.7 39l261.3-39v207H250.7zM0 266h219.4v207.8L0 444zM250.7 266h261.3v246l-261.3-37.1z" fill="currentColor"/></svg>
+                    <div class="btn-text">
+                        <span class="btn-small">BACKTESTER FOR WINDOWS</span>
+                        <span class="btn-large">Microsoft Store</span>
+                    </div>
+                </a>
+                <a href="../../backtester/" class="ghost-btn">Explore the Backtester →</a>
+            </div>
+
+            <div class="related-strategies">
+                <h3>Keep Reading</h3>
+                <div class="related-grid">
+                    <a href="../why-backtest-wins-but-loses-live/" class="related-card">
+                        <h4>Backtest Wins, Live Loses?</h4>
+                        <p>Overfitting, look-ahead bias and missing costs, fixed.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../how-much-data-and-trades-for-backtesting/" class="related-card">
+                        <h4>How Much Data and Trades?</h4>
+                        <p>Years of data and trade counts for a backtest you can trust.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                    <a href="../what-is-backtesting-without-coding/" class="related-card">
+                        <h4>What Is Backtesting?</h4>
+                        <p>Backtest stocks and crypto without coding, in 6 steps.</p>
+                        <div class="read-more">Read the Guide &rarr;</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="../../app_logo.webp" alt="BitLogic Logo" class="logo-img" width="1120" height="1032" loading="lazy">
+                        <span class="logo-text">BitLogic</span>
+                    </div>
+                    <p class="tagline">A no-code crypto strategy builder and live market screener for iOS, Android, Windows, and the web.</p>
+                    <p class="disclaimer">
+                        <strong>Disclaimer:</strong> BitLogic is a technical analysis tool and market scanner. It is not associated or partnered with any of the exchanges mentioned on this site. It does not provide financial advice, nor does it execute automated trades on your behalf. Always conduct your own research before trading cryptocurrencies.
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Exchange Guides</h4>
+                    <div class="footer-links">
+                        <a href="../kraken-crypto-screener/">Kraken Crypto Screener</a>
+                        <a href="../binance-crypto-screener/">Binance Screener</a>
+                        <a href="../binance-us-screener/">Binance.US Screener</a>
+                        <a href="../coinbase-custom-alerts/">Coinbase Custom Alerts</a>
+                        <a href="../bybit-futures-screener/">Bybit Futures Screener</a>
+                        <a href="../okx-crypto-screener/">OKX Screener</a>
+                        <a href="../bitstamp-screener-alerts/">Bitstamp Screener</a>
+                        <a href="../kucoin-altcoin-screener/">KuCoin Altcoin Screener</a>
+                        <a href="../upbit-screener-korean-market/">Upbit Screener</a>
+                        <a href="../valr-crypto-screener/">VALR Screener</a>
+                        <a href="../krypto-screener-mit-alarmen/">Krypto-Screener mit Alarmen (DE)</a>
+                        <a href="../how-to-screen-crypto-on-coindcx/">Screen Crypto on CoinDCX</a>
+                        <a href="../free-tradingview-alternative-crypto-alerts/">Free TradingView Alternative</a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Company &amp; Legal</h4>
+                    <div class="footer-links">
+                        <a href="../../about.html">About Us</a>
+                        <a href="../../privacy.html">Privacy Policy</a>
+                        <a href="../../terms.html">Terms &amp; Conditions</a>
+                        <a href="../../data-deletion.html">Data Deletion</a>
+                        <a href="../../support.html">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> BitLogic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../nav.js"></script>
+</body>
+</html>
